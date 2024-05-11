@@ -14,7 +14,7 @@
         crossorigin="anonymous">
     <!-- <link href="/static/bootstrapStyling.css" rel="stylesheet"> -->
 
-    <link rel="icon" id="favicon" href="/img/favicon.png" type="image/png">
+    <link rel="icon" id="favicon" href="img/favicon.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
@@ -28,10 +28,10 @@
 <body onload="setup()">
     <div class="container-fluid">
         <div id="marqueeContainer">
-            <marquee onmouseenter="this.stop()" onmouseleave="this.start()">
-                <pre>reach for the stars.         you forget a thousand things every day. make sure this is one of them.       where have u been?        this page was intended to be useful.          my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm</pre>
-            </marquee>
+            <pre id="marquee">reach for the stars.         you forget a thousand things every day. make sure this is one of them.       where have u been?        this page was intended to be useful.          my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm       </pre>
+            <pre id="followupMarquee">reach for the stars.         you forget a thousand things every day. make sure this is one of them.       where have u been?        this page was intended to be useful.          my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm       </pre>
         </div>
+        
         <div id="heroHeader">
             <img id="star1" src="img/star.png">
             <div>

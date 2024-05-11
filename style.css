@@ -15,11 +15,22 @@ html, body {
     padding: 0px;
     border-bottom: solid 3px black;
     display: flex;
+    position: relative;
+    overflow: hidden;
 }
 
-marquee{
+#marquee {
+    position: absolute;
+    font-size: 20px;
+    left: 99vw;
+}
+
+
+#followupMarquee {
+    position: absolute;
     font-size: 20px;
 }
+
 
 #heroHeader {
     width: 100%;
