@@ -56,3 +56,26 @@ marquee{
 #heroHeader a:hover {
     color: rgb(71, 0, 71);
 }
+
+#star1 {
+    width: 7vw;
+	margin: auto;
+	position: absolute;
+    left: 10px;
+    top: 5vh;
+}
+
+
+#star2 {
+    width: 7vw;
+	margin: auto;
+	position: absolute;
+    left: calc(100% - 10px - 7vw);
+    top: calc(100% - 1vh - 7.5vw);
+}
+
+
+#star1, #star2:hover {
+    cursor: grabbing;
+}
+

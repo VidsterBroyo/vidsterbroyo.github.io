@@ -6,9 +6,8 @@
 - with links to github/linkedin/stuffs
 - pic of rubber duck - caption: my debugging partner in crime
 - draggable pixelated stars for fun
-- maybe a cool pop up welcome like from the catOS
 - a chatgpt background asking for a description of me
 - include gallery of projects - ooh a cool flip thing, you hover/click and it flips
-- include link to resume
+- include download resume button in the banner (but first need to update resume)
 
 - CAS?

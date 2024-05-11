@@ -14,7 +14,7 @@
         crossorigin="anonymous">
     <!-- <link href="/static/bootstrapStyling.css" rel="stylesheet"> -->
 
-    <link rel="icon" id="favicon" href="static/img/faviconLogo.png" type="image/png">
+    <link rel="icon" id="favicon" href="/img/favicon.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
@@ -25,30 +25,30 @@
 </head>
 
 
-<body>
+<body onload="setup()">
     <div class="container-fluid">
         <div id="marqueeContainer">
             <marquee onmouseenter="this.stop()" onmouseleave="this.start()">
-                <pre>MOVE THE STARS AROUND         YOU FORGET A THOUSAND THINGS EVERY DAY. MAKE SURE THIS IS ONE OF THEM          MY MIND IS GOING A MILE AN HOUR</pre>
+                <pre>reach for the stars.         you forget a thousand things every day. make sure this is one of them.       where have u been?        this page was intended to be useful.          my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm</pre>
             </marquee>
         </div>
         <div id="heroHeader">
+            <img id="star1" src="img/star.png">
             <div>
                 <h1 id="heroTitle"><i>Vidu Widyalankara</i></h1>
                 <p id="subtitle">aka vidsterbroyo</p>
-                <p id="desc">highschool student in a long term and committed relationship with computer science </p>
+                <p id="desc">highschool student in a committed long term relationship with computer science </p>
                 <a href="https://github.com/VidsterBroyo" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/vidu-widyalankara-a36050194/" target="_blank"><i
                         class="fa-brands fa-linkedin"></i></a>
                 <br><br><br>
             </div>
+            <img id="star2" onmousedown="dragMouseDown()"  src="img/star.png">
         </div>
     </div>
 
     <div class="container-fluid">
-
         <br>
-
         <footer class="align-items-center border-top p-4">
             <p>thank you for visiting my tiny corner of the internet</p>
         </footer>
