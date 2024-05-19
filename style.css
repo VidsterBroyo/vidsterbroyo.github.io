@@ -128,3 +128,11 @@ html, body {
     font-family: 'Noto Sans';
     line-height: 1.8;
 }
+
+
+
+@media only screen and (max-width: 650px) {
+    #questionBox, #answer {
+        width: 90%;
+    }
+}
