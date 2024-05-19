@@ -20,6 +20,9 @@
     <script src="script.js"></script>
     <link href="style.css" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 </head>
@@ -28,10 +31,12 @@
 <body onload="setup()">
     <div class="container-fluid">
         <div id="marqueeContainer">
-            <pre id="marquee">reach for the stars.         you forget a thousand things every day. make sure this is one of them.       where have u been?        this page was intended to be useful.          my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm       </pre>
-            <pre id="followupMarquee">reach for the stars.         you forget a thousand things every day. make sure this is one of them.       where have u been?        this page was intended to be useful.          my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm       </pre>
+            <pre
+                id="marquee">reach for the stars.         you forget a thousand things every day. make sure this is one of them.       where have u been?        this page was intended to be useful.          my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm       </pre>
+            <pre
+                id="followupMarquee">reach for the stars.         you forget a thousand things every day. make sure this is one of them.       where have u been?        this page was intended to be useful.          my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm       </pre>
         </div>
-        
+
         <div id="heroHeader">
             <img id="star1" src="img/star.png">
             <div>
@@ -43,11 +48,18 @@
                         class="fa-brands fa-linkedin"></i></a>
                 <br><br><br>
             </div>
-            <img id="star2" onmousedown="dragMouseDown()"  src="img/star.png">
+            <img id="star2" onmousedown="dragMouseDown()" src="img/star.png">
         </div>
-    </div>
 
-    <div class="container-fluid">
+
+        <div id="gptDiv">
+            <p id="answer"></p>
+            <br>
+            <div id="questionBox">
+                <p id="question">Who is Vidu Widyalankara?</p><i class="fa-solid fa-circle-arrow-up"></i>
+            </div>
+        </div>
+
         <br>
         <footer class="align-items-center border-top p-4">
             <p>thank you for visiting my tiny corner of the internet</p>

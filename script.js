@@ -1,4 +1,11 @@
 let marquee1, marquee2;
+let aboutMe = `Vidu Widyalankara is a highschool student who is beyond passionate about Computer Science.
+              Since finding out Computer Science was a thing in grade 4, Vidu has been enamored by the discipline. 
+              He is proficient in Python, Javascript, HTML/CSS, Java, and has experience using C++. 
+              Vidu keeps himself busy throughout highschool by immersing himself in extracurriculars related to
+              Computer Science, allowing him to continue expanding his knowledge in the discipline. He believes 
+              that his greatest strength is his dedication and attention to detail of his work. In his free time, Vidu bikes, plays chess, and does puzzles.`
+let aboutMeIndex = 0;
 
 document.addEventListener("visibilitychange", (event) => {
   if (document.visibilityState != "visible") {
@@ -10,7 +17,7 @@ document.addEventListener("visibilitychange", (event) => {
   }
 });
 
-
+startGenerating()
 
 
 function move() {
@@ -18,18 +25,28 @@ function move() {
   marquee1.style.left = (marquee1.offsetLeft - 2) + "px"
   marquee2.style.left = (marquee2.offsetLeft - 2) + "px"
 
-  console.log(marquee1.offsetLeft)
-  console.log(marquee1.offsetWidth)
-
   if (marquee1.offsetLeft < -(marquee1.offsetWidth)) {
-    console.log('true')
     marquee1.style.left = marquee2.offsetWidth + "px"
   }
   if (marquee2.offsetLeft < -(marquee2.offsetWidth)) {
-    console.log('true')
     marquee2.style.left = marquee1.offsetWidth + "px"
   }
 
+}
+
+
+function generate() {
+  document.getElementById("answer").innerHTML += aboutMe.charAt(aboutMeIndex)
+  if (aboutMeIndex == aboutMe.length){
+    clearInterval()
+  }
+  aboutMeIndex++;
+}
+
+
+function startGenerating() {
+  i = 0
+  setInterval(generate, 15)
 }
 
 
