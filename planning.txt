@@ -1,6 +1,6 @@
 - can't explain but i like this aesthetic https://repository-images.githubusercontent.com/475129266/8edcf81b-7620-4313-a5ed-b66ae51831a1
 
-- marquee at the top, black all caps, random announcements
+- marquee at the top, random announcements
 - no nav bar
 - full size banner at the top
 - with links to github/linkedin/stuffs

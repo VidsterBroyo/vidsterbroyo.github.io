@@ -17,7 +17,6 @@ document.addEventListener("visibilitychange", (event) => {
   }
 });
 
-startGenerating()
 
 
 function move() {
@@ -32,6 +31,16 @@ function move() {
     marquee2.style.left = marquee1.offsetWidth + "px"
   }
 
+  console.log(document.getElementById("gptDiv").getBoundingClientRect().top < window.innerHeight-100)
+  // console.log(document.body.scrollTop)
+
+}
+
+function checkVisibility() {
+  if (document.getElementById("gptDiv").getBoundingClientRect().top < window.innerHeight-100){
+    startGenerating()
+    window.removeEventListener('scroll', checkVisibility)
+  }
 }
 
 
@@ -110,3 +119,6 @@ function setup() {
 
   setInterval(move, 30)
 }
+
+
+window.addEventListener('scroll', checkVisibility);
