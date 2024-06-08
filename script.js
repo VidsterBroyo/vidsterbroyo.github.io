@@ -5,7 +5,9 @@ let aboutMe = `Vidu Widyalankara is a highschool student who is beyond passionat
               Vidu keeps himself busy throughout highschool by immersing himself in extracurriculars related to
               Computer Science, allowing him to continue expanding his knowledge in the discipline. He believes 
               that his greatest strength is his dedication and attention to detail of his work. In his free time, Vidu bikes, plays chess, and does puzzles.`
-let aboutMeIndex = 0;
+let aboutMeIndex = 0
+let scroll = true
+let generateInterval
 
 document.addEventListener("visibilitychange", (event) => {
   if (document.visibilityState != "visible") {
@@ -19,25 +21,33 @@ document.addEventListener("visibilitychange", (event) => {
 
 
 
-function move() {
-
-  marquee1.style.left = (marquee1.offsetLeft - 2) + "px"
-  marquee2.style.left = (marquee2.offsetLeft - 2) + "px"
-
-  if (marquee1.offsetLeft < -(marquee1.offsetWidth)) {
-    marquee1.style.left = marquee2.offsetWidth + "px"
-  }
-  if (marquee2.offsetLeft < -(marquee2.offsetWidth)) {
-    marquee2.style.left = marquee1.offsetWidth + "px"
-  }
-
-  console.log(document.getElementById("gptDiv").getBoundingClientRect().top < window.innerHeight-100)
-  // console.log(document.body.scrollTop)
-
+function pauseScroll() {
+  scroll = false
 }
 
+function resumeScroll() {
+  scroll = true;
+}
+
+
+
+function move() {
+  if (scroll) {
+    marquee1.style.left = (marquee1.offsetLeft - 2) + "px"
+    marquee2.style.left = (marquee2.offsetLeft - 2) + "px"
+
+    if (marquee1.offsetLeft < -(marquee1.offsetWidth)) {
+      marquee1.style.left = marquee2.offsetWidth + "px"
+    }
+    if (marquee2.offsetLeft < -(marquee2.offsetWidth)) {
+      marquee2.style.left = marquee1.offsetWidth + "px"
+    }
+  }
+}
+
+
 function checkVisibility() {
-  if (document.getElementById("gptDiv").getBoundingClientRect().top < window.innerHeight-100){
+  if (document.getElementById("gptDiv").getBoundingClientRect().top < window.innerHeight - 100) {
     startGenerating()
     window.removeEventListener('scroll', checkVisibility)
   }
@@ -45,17 +55,22 @@ function checkVisibility() {
 
 
 function generate() {
-  document.getElementById("answer").innerHTML += aboutMe.charAt(aboutMeIndex)
-  if (aboutMeIndex == aboutMe.length){
-    clearInterval()
+  text = document.getElementById("answer").innerHTML
+  document.getElementById("answer").innerHTML = text.slice(0, text.length-2) + aboutMe.charAt(aboutMeIndex) + " ●"
+  
+  if (aboutMeIndex == aboutMe.length) {
+    clearInterval(generateInterval)
+    document.getElementById("answer").innerHTML = text.slice(0, text.length-1) 
+    console.log("does this ever run?")
   }
+
   aboutMeIndex++;
 }
 
 
 function startGenerating() {
   i = 0
-  setInterval(generate, 15)
+  generateInterval = setInterval(generate, 15)
 }
 
 

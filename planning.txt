@@ -7,7 +7,14 @@
 - pic of rubber duck - caption: my debugging partner in crime
 - draggable pixelated stars for fun
 - a chatgpt background asking for a description of me
+
+
 - include gallery of projects - ooh a cool flip thing, you hover/click and it flips
+    - halton chess (w/ pairing algorithm)
+    - game of pig (host on this site)
+    - minvest
+    - summit
+
 - include download resume button in the banner (but first need to update resume)
 
 - CAS?
