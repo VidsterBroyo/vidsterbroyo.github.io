@@ -33,8 +33,8 @@ function resumeScroll() {
 
 function move() {
   if (scroll) {
-    marquee1.style.left = (marquee1.offsetLeft - 2) + "px"
-    marquee2.style.left = (marquee2.offsetLeft - 2) + "px"
+    marquee1.style.left = (marquee1.offsetLeft - 4) + "px"
+    marquee2.style.left = (marquee2.offsetLeft - 4) + "px"
 
     if (marquee1.offsetLeft < -(marquee1.offsetWidth)) {
       marquee1.style.left = marquee2.offsetWidth + "px"
