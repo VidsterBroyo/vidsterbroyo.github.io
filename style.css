@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0px;
     padding: 0px;
 }
@@ -70,8 +71,8 @@ html, body {
 
 #star1 {
     width: 7vw;
-	margin: auto;
-	position: absolute;
+    margin: auto;
+    position: absolute;
     left: 10px;
     top: 5vh;
 }
@@ -79,14 +80,15 @@ html, body {
 
 #star2 {
     width: 7vw;
-	margin: auto;
-	position: absolute;
+    margin: auto;
+    position: absolute;
     left: calc(100% - 10px - 7vw);
     top: calc(100% - 1vh - 7.5vw);
 }
 
 
-#star1, #star2:hover {
+#star1,
+#star2:hover {
     cursor: grabbing;
 }
 
@@ -116,7 +118,7 @@ html, body {
 }
 
 
-#questionBox i{
+#questionBox i {
     font-size: 28px;
     color: #676767;
 }
@@ -129,10 +131,78 @@ html, body {
     line-height: 1.8;
 }
 
+#projectsDiv {
+    width: 80%;
+    margin: auto;
+}
+
+.card {
+    height: 300px;
+}
 
 
 @media only screen and (max-width: 650px) {
-    #questionBox, #answer {
+
+    #questionBox,
+    #answer {
         width: 90%;
     }
+}
+
+
+
+.card {
+    border: none;
+    perspective: 1000px;
+}
+
+.cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card:hover .cardInner {
+    transform: rotateX(180deg);
+}
+
+
+.cardFront,
+.oddCardBack,
+.evenCardBack {
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Lexend';
+    font-weight: 300;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+
+.cardFront {
+    font-family: 'Lexend';
+    color: white;
+
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oddCardBack {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    transform: rotateX(185deg) rotateY(-10deg);
+}
+
+.evenCardBack {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    transform: rotateX(185deg) rotateY(10deg);
 }
