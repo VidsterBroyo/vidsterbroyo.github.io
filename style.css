@@ -150,10 +150,11 @@ body {
 }
 
 
-
 .card {
     border: none;
     perspective: 1000px;
+    background-color: transparent;
+    margin-bottom: 20px;
 }
 
 .cardInner {
