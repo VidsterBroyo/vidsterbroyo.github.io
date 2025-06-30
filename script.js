@@ -15,10 +15,10 @@ let sparkle = document.getElementById("sparkle");
 document.addEventListener("visibilitychange", (event) => {
   if (document.visibilityState != "visible") {
     document.title = "get back in here"
-    document.getElementById("favicon").href = "assets/img/angryFavicon.svg"
+    document.getElementById("favicon").href = "/assets/img/angryFavicon.svg"
   } else {
-    document.title = "vidsterbroyo"
-    document.getElementById("favicon").href = "assets/img/favicon.png"
+    document.title = "Vidu Widyalankara"
+    document.getElementById("favicon").href = "/assets/img/favicon.png"
   }
 });
 
