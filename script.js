@@ -19,6 +19,43 @@ document.addEventListener("visibilitychange", (event) => {
   }
 });
 
+let animationPlaying = false;
+
+
+function triggerAnimation() {
+  let name = document.getElementById("name")
+
+  if (animationPlaying) {
+    return
+  }
+
+  animationPlaying = true;
+
+  document.querySelectorAll("#name span").forEach((span, i) =>
+    span.style.animation = `nameBounce 0.4s ease-in-out ${i * 0.1}s`
+  )
+
+
+  setTimeout(() => {
+    animationPlaying = false
+
+    // empty animation so it can replay later
+    document.querySelectorAll("#name span").forEach((span) => {
+      span.style.animation = "";
+      void span.offsetWidth; // force a reflow
+    }
+    )
+
+    // if user still hovering, repeat animation 
+    if (name.matches(":hover")) {
+      triggerAnimation()
+    }
+
+  }
+    , 1900)
+
+
+}
 
 
 function pauseScroll() {
@@ -56,11 +93,11 @@ function checkVisibility() {
 
 function generate() {
   text = document.getElementById("answer").innerHTML
-  document.getElementById("answer").innerHTML = text.slice(0, text.length-2) + aboutMe.charAt(aboutMeIndex) + " ●"
-  
+  document.getElementById("answer").innerHTML = text.slice(0, text.length - 2) + aboutMe.charAt(aboutMeIndex) + " ●"
+
   if (aboutMeIndex == aboutMe.length) {
     clearInterval(generateInterval)
-    document.getElementById("answer").innerHTML = text.slice(0, text.length-1) 
+    document.getElementById("answer").innerHTML = text.slice(0, text.length - 1)
     console.log("does this ever run?")
   }
 
