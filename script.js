@@ -8,14 +8,17 @@ let aboutMe = `Vidu Widyalankara is a highschool student who is beyond passionat
 let aboutMeIndex = 0
 let scroll = true
 let generateInterval
+let sparkle = document.getElementById("sparkle");
+
+
 
 document.addEventListener("visibilitychange", (event) => {
   if (document.visibilityState != "visible") {
     document.title = "get back in here"
-    document.getElementById("favicon").href = "img/angryFavicon.svg"
+    document.getElementById("favicon").href = "assets/img/angryFavicon.svg"
   } else {
     document.title = "vidsterbroyo"
-    document.getElementById("favicon").href = "img/favicon.png"
+    document.getElementById("favicon").href = "assets/img/favicon.png"
   }
 });
 
@@ -31,9 +34,11 @@ function triggerAnimation() {
 
   animationPlaying = true;
 
+
   document.querySelectorAll("#name span").forEach((span, i) =>
     span.style.animation = `nameBounce 0.4s ease-in-out ${i * 0.1}s`
   )
+  sparkle.play();
 
 
   setTimeout(() => {
