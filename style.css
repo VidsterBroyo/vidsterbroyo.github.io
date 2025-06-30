@@ -45,11 +45,48 @@ body {
     justify-content: center;
 }
 
-#heroTitle {
+
+#name {
     font-size: 50px;
     margin: 0px;
     padding: 0px;
 }
+
+#name span {
+    display: inline-block;
+}
+
+/* name bounce animation */
+@keyframes nameBounce {
+    0%  {transform: translateY(0px)}
+    50% {transform: translateY(-20px)}
+    100% {transform: translateY(0px)}
+}
+
+#name:hover span {
+    display: inline-block;
+    animation: nameBounce 0.4s ease-in-out;
+}
+
+#name span:nth-child(1) { animation-delay: 0s; }
+#name span:nth-child(2) { animation-delay: 0.1s; }
+#name span:nth-child(3) { animation-delay: 0.2s; }
+#name span:nth-child(4) { animation-delay: 0.3s; }
+#name span:nth-child(5) { animation-delay: 0.4s; }
+#name span:nth-child(6) { animation-delay: 0.5s; }
+#name span:nth-child(7) { animation-delay: 0.6s; }
+#name span:nth-child(8) { animation-delay: 0.7s; }
+#name span:nth-child(9) { animation-delay: 0.8s; }
+#name span:nth-child(10) { animation-delay: 0.9s; }
+#name span:nth-child(11) { animation-delay: 1s; }
+#name span:nth-child(12) { animation-delay: 1.1s; }
+#name span:nth-child(13) { animation-delay: 1.2s; }
+#name span:nth-child(14) { animation-delay: 1.3s; }
+#name span:nth-child(15) { animation-delay: 1.4s; }
+#name span:nth-child(16) { animation-delay: 1.5s; }
+
+
+
 
 #subtitle {
     font-size: 20px;
