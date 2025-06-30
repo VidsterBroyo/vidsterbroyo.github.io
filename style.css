@@ -75,6 +75,7 @@ body {
     position: absolute;
     left: 10px;
     top: 5vh;
+    animation: starShake 6s infinite;
 }
 
 
@@ -84,6 +85,7 @@ body {
     position: absolute;
     left: calc(100% - 10px - 7vw);
     top: calc(100% - 1vh - 7.5vw);
+    animation: starShake 6s infinite;
 }
 
 
@@ -155,6 +157,25 @@ body {
     50% {transform: rotateZ(-1deg);}
     100% {transform: rotateZ(1deg);}
 } */
+
+@keyframes starShake {
+    0%  {transform: rotateZ(0deg);}
+    3% {transform: rotateZ(-7deg);}
+    6% {transform: rotateZ(7deg);}
+
+    9% {transform: rotateZ(-7deg);}
+    12% {transform: rotateZ(7deg);}
+
+    15% {transform: rotateZ(-7deg);}
+    18% {transform: rotateZ(7deg);}
+
+
+    18% {transform: rotateZ(0deg);}
+    100% {transform: rotateZ(0deg);}
+}
+
+/* shake two oscillations for 2 seconds*/
+/* break for 3 seconds*/
 
 @media only screen and (max-width: 530px) {
     .card {
