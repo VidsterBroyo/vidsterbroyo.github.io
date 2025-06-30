@@ -150,11 +150,11 @@ body {
 }
 
 
-@keyframes cardShake {
+/* @keyframes cardShake {
     0%  {transform: rotateZ(1deg);}
     50% {transform: rotateZ(-1deg);}
     100% {transform: rotateZ(1deg);}
-}
+} */
 
 @media only screen and (max-width: 530px) {
     .card {
@@ -168,7 +168,6 @@ body {
     perspective: 1000px;
     background-color: transparent;
     margin-bottom: 20px;
-    animation: cardShake 500ms infinite;
 }
 
 .card ul li{
