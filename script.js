@@ -1,5 +1,5 @@
 let marquee1, marquee2;
-let aboutMe = `Vidu Widyalankara is a highschool student who is beyond passionate about Computer Science.
+let aboutMe = `Vidu Widyalankara is an incoming UWaterloo CS student who is beyond passionate about Computer Science.
               Since finding out Computer Science was a thing in grade 4, Vidu has been enamored by the discipline. 
               He is proficient in Python, Javascript, HTML/CSS, Java, and has experience using C++. 
               Vidu keeps himself busy throughout highschool by immersing himself in extracurriculars related to
