@@ -43,6 +43,7 @@ body {
 #followupMarquee {
     position: absolute;
     font-size: 20px;
+    color: white;
 }
 
 
