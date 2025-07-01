@@ -11,6 +11,8 @@ let generateInterval
 let sparkle = document.getElementById("sparkle");
 
 
+console.log("pls don't hack me")
+
 
 document.addEventListener("visibilitychange", (event) => {
   if (document.visibilityState != "visible") {

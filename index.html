@@ -14,7 +14,7 @@
     crossorigin="anonymous">
   <!-- <link href="/static/bootstrapStyling.css" rel="stylesheet"> -->
 
-    <audio id="sparkle">
+  <audio id="sparkle">
     <source src="assets/sounds/sparkle.mp3" type="audio/mp3">
   </audio>
 
@@ -44,7 +44,10 @@
     </div>
 
     <div id="heroHeader">
-      <img id="star1" src="assets/img/star.png">
+      <div class="grabbable">
+        <img id="star1" src="./assets/img/star.png" />
+      </div>
+
       <div>
         <h1 id="name" onmouseover="triggerAnimation()"><i>
             <span>V</span><span>i</span><span>d</span><span>u</span>
@@ -57,7 +60,7 @@
             class="fa-brands fa-linkedin"></i></a>
         <br><br><br>
       </div>
-      <img id="star2" onmousedown="dragMouseDown()" src="assets/img/star.png">
+      <img id="star2" src="assets/img/star.png">
     </div>
 
 
@@ -206,6 +209,14 @@
 
       </div>
     </div>
+
+    <br><br>
+    
+    <img id="love" width="200px" src="assets/img/love.gif">
+    <p class="text-center">inspired by <a id="MKCredit" href="https://michaelkolesidis.com/"
+        target="_blank">michaelkolesidis.com</a> and <a id="CWCredit" href="https://www.cameronsworld.net/"
+        target="_blank">cameronsworld.net</a></p>
+
 
   </div>
 
