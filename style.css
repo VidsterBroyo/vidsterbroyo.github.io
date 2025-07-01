@@ -2,11 +2,12 @@ html,
 body {
     margin: 0;
     padding: 0;
-    cursor: url("./assets/img/cursors/cursorBlue.png") 0 0, auto;
+    cursor: url("./assets/img/cursors/whiteCursor.svg") 0 0, auto;
+
     /* background-image: url("https://cdnb.artstation.com/p/assets/images/images/035/877/167/large/gregory-ligman-brickwall.jpg?1616129547");
     background-size: 300px; */
 
-    background-image: url("assets/img/cobblestone.png");
+    background-image: url("assets/img/bgs/cobblestone.png");
     background-size: 100px;
     background-position: 0px 100px;
 }
@@ -29,7 +30,7 @@ body {
     display: flex;
     position: relative;
     overflow: hidden;
-    background-color: rgba(0,0,0,0.5)
+    background-color: rgba(0, 0, 0, 0.5)
 }
 
 #marquee {
@@ -151,8 +152,9 @@ body {
 }
 
 
-a {
-    cursor: url("./assets/img/cursors/blueClickTwo.png") 0 0, auto;
+a,
+.clickable {
+    cursor: url("./assets/img/cursors/whitePointer.svg") 15 0, auto;
 }
 
 
@@ -349,7 +351,6 @@ a {
 .oddCardBack,
 .evenCardBack {
     padding: 15px;
-    border-radius: 10px;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -381,10 +382,44 @@ a {
     transform: rotateX(185deg) rotateY(10deg);
 }
 
+.heartContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 200px; /* heart width, so it will center on the heart */
+    margin: auto;
+}
 
-#love {
+.heartContainer>div {
+    text-align: center;
+    /* border: 2px black solid; */
+    padding: -5px;
+    width: 10px;
+}
+
+#speech {
+    transform: translate(-20px, 30px);
+    width: 300px;
+}
+
+#heart {
     display: block;
     margin: auto;
+    width: 200px;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .heartContainer {
+        width: 250px;
+    }
+
+    #speech {
+        width: 200px;
+    }
+
+    #heart {
+        width: 150px;
+    }
 }
 
 #MKCredit {

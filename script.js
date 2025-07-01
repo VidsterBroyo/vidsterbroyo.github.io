@@ -9,9 +9,12 @@ let aboutMeIndex = 0
 let scroll = true
 let generateInterval
 let sparkle = document.getElementById("sparkle");
+let backgrounds = [["assets/img/bgs/cobblestone.png", "100px"],  ["assets/img/bgs/bricks.webp", "200px"],  ["assets/img/bgs/018prp.gif", "100px"]]
+let bgIndex = 0
 
 
 console.log("pls don't hack me")
+console.log("this site is held together solely by hopes and dreams")
 
 
 document.addEventListener("visibilitychange", (event) => {
@@ -28,7 +31,7 @@ let animationPlaying = false;
 
 
 function triggerAnimation() {
-  let name = document.getElementById("name")
+  let nameContainer = document.getElementById("nameContainer")
 
   if (animationPlaying) {
     return
@@ -49,12 +52,14 @@ function triggerAnimation() {
     // empty animation so it can replay later
     document.querySelectorAll("#name span").forEach((span) => {
       span.style.animation = "";
-      void span.offsetWidth; // force a reflow
     }
     )
 
+    void nameContainer.offsetWidth; // force a reflow
+
+
     // if user still hovering, repeat animation 
-    if (name.matches(":hover")) {
+    if (nameContainer.matches(":hover")) {
       triggerAnimation()
     }
 
@@ -105,7 +110,6 @@ function generate() {
   if (aboutMeIndex == aboutMe.length) {
     clearInterval(generateInterval)
     document.getElementById("answer").innerHTML = text.slice(0, text.length - 1)
-    console.log("does this ever run?")
   }
 
   aboutMeIndex++;
@@ -181,3 +185,13 @@ function setup() {
 
 
 window.addEventListener('scroll', checkVisibility);
+
+
+
+function changeBG() {
+  bgIndex += 1
+  bgIndex = bgIndex % backgrounds.length;
+
+  document.body.style.backgroundImage = `url("${backgrounds[bgIndex][0]}")`
+  document.body.style.backgroundSize = backgrounds[bgIndex][1]
+}

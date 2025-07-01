@@ -44,12 +44,10 @@
     </div>
 
     <div id="heroHeader">
-      <div class="grabbable">
-        <img id="star1" src="./assets/img/star.png" />
-      </div>
+      <img id="star1" src="./assets/img/star.png" />
 
-      <div>
-        <h1 id="name" onmouseover="triggerAnimation()"><i>
+      <div id="nameContainer" onmouseover="triggerAnimation()">
+        <h1 id="name"><i>
             <span>V</span><span>i</span><span>d</span><span>u</span>
             <span>W</span><span>i</span><span>d</span><span>y</span><span>a</span><span>l</span><span>a</span><span>n</span><span>k</span><span>a</span><span>r</span><span>a</span>
           </i></h1>
@@ -60,6 +58,7 @@
             class="fa-brands fa-linkedin"></i></a>
         <br><br><br>
       </div>
+
       <img id="star2" src="assets/img/star.png">
     </div>
 
@@ -72,7 +71,8 @@
       </div>
     </div>
 
-    <div id="projectsDiv" >
+    <div id="projectsDiv">
+
       <h2 style="font-family: Lexend; color: white;" class="text-center mt-5 mb-4">what i've been up to</h2>
 
       <div class="row">
@@ -210,12 +210,21 @@
       </div>
     </div>
 
-    <br><br>
+    <br><br><br>
 
-    <img id="love" width="200px" src="assets/img/love.gif">
-    <p class="text-center" style="color: white; background-color: rgba(0, 0, 0, 0.5); width:50%; margin:auto;">inspired by <a id="MKCredit" href="https://michaelkolesidis.com/"
-        target="_blank">michaelkolesidis.com</a> and <a id="CWCredit" href="https://www.cameronsworld.net/"
-        target="_blank">cameronsworld.net</a></p>
+    <div class="heartContainer">
+      <div></div>
+      <div><img id="speech" src="assets/img/pixel-speech-bubble.gif"></div>
+      <div><img id="heart" class="clickable" onclick="changeBG()" src="assets/img/love.gif"></div>
+      <div></div> 
+
+    </div>
+
+    
+    <p class="text-center" style="color: white; background-color: rgba(0, 0, 0, 0.5); width:50%; margin:auto;">inspired
+      by <a id="MKCredit" href="https://michaelkolesidis.com/" target="_blank">michaelkolesidis.com</a> and <a
+        id="CWCredit" href="https://www.cameronsworld.net/" target="_blank">cameronsworld.net</a></p>
+    <br>
 
 
   </div>
