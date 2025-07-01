@@ -1,8 +1,14 @@
 html,
 body {
-  margin: 0;
-  padding: 0;
-  cursor: url("./assets/img/cursors/cursorBlue.png") 0 0, auto;
+    margin: 0;
+    padding: 0;
+    cursor: url("./assets/img/cursors/cursorBlue.png") 0 0, auto;
+    /* background-image: url("https://cdnb.artstation.com/p/assets/images/images/035/877/167/large/gregory-ligman-brickwall.jpg?1616129547");
+    background-size: 300px; */
+
+    background-image: url("assets/img/cobblestone.png");
+    background-size: 100px;
+    background-position: 0px 100px;
 }
 
 
@@ -23,12 +29,14 @@ body {
     display: flex;
     position: relative;
     overflow: hidden;
+    background-color: rgba(0,0,0,0.5)
 }
 
 #marquee {
     position: absolute;
     font-size: 20px;
     left: 99vw;
+    color: white;
 }
 
 
@@ -187,7 +195,8 @@ a {
 
 #star1,
 #star2:hover {
-    cursor: url("assets/img/cursors/grabBlue.png") 0 0, grab;;
+    cursor: url("assets/img/cursors/grabBlue.png") 0 0, grab;
+    ;
 }
 
 
@@ -233,6 +242,7 @@ a {
     width: 80%;
     margin: auto;
 }
+
 
 .card {
     height: 350px;
