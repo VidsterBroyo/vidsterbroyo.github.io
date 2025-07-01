@@ -12,9 +12,51 @@ body {
     background-position: 0px 100px;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 25px;
+}
 
-/*cursorWhite.png*/
-/*icons8-cursor-96.png*/
+
+::-webkit-scrollbar-button {
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    background-color: #c0c0c0;
+    ;
+    border: outset 3px rgb(168, 168, 168);
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url("assets/img/up.png");
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url("assets/img/down.png");
+}
+
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-image: url("https://t3.ftcdn.net/jpg/04/96/63/80/360_F_496638091_v0Y3hmCvb9y8JDKEGyWC455Ex4aNGPen.jpg");
+    background-size: 150px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border: 3px rgb(168, 168, 168) outset;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a9a9a9;
+}
+
+
 
 .container-fluid {
     margin: 0px;
@@ -159,6 +201,10 @@ a,
 
 
 #subtitle {
+    font-size: 18px;
+}
+
+#subtitle span {
     font-size: 20px;
 }
 
@@ -385,7 +431,8 @@ a,
 .heartContainer {
     display: grid;
     grid-template-columns: auto auto;
-    width: 200px; /* heart width, so it will center on the heart */
+    width: 200px;
+    /* heart width, so it will center on the heart */
     margin: auto;
 }
 
