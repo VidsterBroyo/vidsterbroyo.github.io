@@ -20,10 +20,10 @@ console.log("this site is held together solely by hopes and dreams")
 document.addEventListener("visibilitychange", (event) => {
   if (document.visibilityState != "visible") {
     document.title = "get back in here"
-    document.getElementById("favicon").href = "/assets/img/angryFavicon.svg"
+    document.getElementById("favicon").href = "assets/img/angryFavicon.svg?v=2"
   } else {
     document.title = "Vidu Widyalankara"
-    document.getElementById("favicon").href = "/assets/img/favicon.png"
+    document.getElementById("favicon").href = "assets/img/favicon.png?v=2"
   }
 });
 

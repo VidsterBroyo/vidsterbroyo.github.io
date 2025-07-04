@@ -244,7 +244,7 @@ a,
 
 #star1,
 #star2:hover {
-    cursor: url("assets/img/cursors/grabBlue.png") 0 0, grab;
+    cursor: url("assets/img/cursors/whiteGrab.webp") 0 0, grab;
     ;
 }
 
@@ -288,7 +288,7 @@ a,
 }
 
 #projectsDiv {
-    width: 80%;
+    width: 95%;
     margin: auto;
 }
 
@@ -385,11 +385,15 @@ a,
 }
 
 .card:hover .cardInner {
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
 }
 
 .card:hover {
     animation-play-state: paused;
+}
+
+.card {
+    perspective: 1000px;
 }
 
 
@@ -419,26 +423,25 @@ a,
 .oddCardBack {
     background-color: rgb(44, 44, 44);
     color: white;
-    transform: rotateX(185deg) rotateY(-10deg);
+    transform: rotateY(180deg);
 }
 
 .evenCardBack {
     background-color: rgb(44, 44, 44);
     color: white;
-    transform: rotateX(185deg) rotateY(10deg);
+    transform: rotateY(180deg);
 }
 
 .heartContainer {
     display: grid;
     grid-template-columns: auto auto;
     width: 200px;
-    /* heart width, so it will center on the heart */
+    /* = heart width, so it will center on the heart */
     margin: auto;
 }
 
 .heartContainer>div {
     text-align: center;
-    /* border: 2px black solid; */
     padding: -5px;
     width: 10px;
 }

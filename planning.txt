@@ -1,0 +1,34 @@
+- can't explain but i like this aesthetic https://michaelkolesidis.com/
+- also consult cameron's website
+
+
+
+- fix favicons
+- settle with these cards for now
+- import jquery and get the functionality of the cards right
+- integrate them into main page
+- get cards to originate from their proper positions
+- make card displays better
+    - include carousel of images, ppl like to see not read
+    - tags for technologies used (bootstrap has those if u want them)
+    
+- add speedrun
+- "want a change of scenery?" .... "click me!"
+- add more backgrounds
+
+
+- no nav bar
+- pic of rubber duck - caption: my debugging partner in crime
+
+
+- include gallery of projects - ooh a cool flip thing, you hover/click and it flips
+    - halton chess (w/ pairing algorithm)
+    - minvest
+    - summit
+    - tu20
+
+
+
+resources:
+https://pixelmoondust.neocities.org/archives/archivedtiles/backgroundsindex
+https://1-background.com/

@@ -18,7 +18,6 @@
     <source src="assets/sounds/sparkle.mp3" type="audio/mp3">
   </audio>
 
-  <link rel="icon" id="favicon" href="assets/img/favicon.png" type="image/png">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
@@ -30,9 +29,12 @@
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon" id="favicon" href="assets/img/favicon.png?v=3" type="image/png">
 </head>
 
 
@@ -54,7 +56,7 @@
             <span>W</span><span>i</span><span>d</span><span>y</span><span>a</span><span>l</span><span>a</span><span>n</span><span>k</span><span>a</span><span>r</span><span>a</span>
           </i></h1>
         <p id="subtitle">aka&nbsp;&nbsp;<span style="font-family: 'Bitcount Grid Double'">vidsterbroyo</span></p>
-        <!-- <p id="desc">incoming CS @ UWaterloo. lifelong builder </p> -->
+        <p id="desc">incoming CS @ UWaterloo</p>
         <a href="https://github.com/VidsterBroyo" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/vidu-widyalankara-a36050194/" target="_blank"><i
             class="fa-brands fa-linkedin"></i></a>
@@ -65,7 +67,7 @@
     </div>
 
 
-    <div id="gptDiv">
+    <div style="display: none;" id="gptDiv">
       <p id="answer"></p>
       <br>
       <div id="questionBox">
@@ -76,10 +78,11 @@
     <div id="projectsDiv">
 
       <h2 style="font-family: Lexend; color: white;" class="text-center mt-5 mb-4">what i've been up to</h2>
-
+      <br>
       <div class="row">
 
         <div class="col-md-6">
+          
           <div class="card">
             <div class="cardInner">
 
@@ -218,11 +221,11 @@
       <div></div>
       <div><img id="speech" src="assets/img/pixel-speech-bubble.gif"></div>
       <div class="clickable"><img id="heart" class="clickable" onclick="changeBG()" src="assets/img/love.gif"></div>
-      <div class="clickable"></div> 
+      <div class="clickable"></div>
 
     </div>
 
-    
+
     <p class="text-center" style="color: white; background-color: rgba(0, 0, 0, 0.5); width:50%; margin:auto;">inspired
       by <a id="MKCredit" href="https://michaelkolesidis.com/" target="_blank">michaelkolesidis.com</a> and <a
         id="CWCredit" href="https://www.cameronsworld.net/" target="_blank">cameronsworld.net</a></p>
