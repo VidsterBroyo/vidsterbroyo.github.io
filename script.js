@@ -1,3 +1,9 @@
+console.log("%cpls don't hack me", "color: lime; font-size: 20px; background: black; padding: 4px; border: 1px solid lime;");
+console.log("this site is held together solely by hopes and dreams")
+/* WHY ARE YOU HERE DID YOU NOT HEED MY REQUEST ??? */
+
+
+
 let marquee1, marquee2;
 let aboutMe = `Vidu Widyalankara is an incoming UWaterloo CS student who is beyond passionate about Computer Science.
               Since finding out Computer Science was a thing in grade 4, Vidu has been enamored by the discipline. 
@@ -11,10 +17,6 @@ let generateInterval
 let sparkle = document.getElementById("sparkle");
 let backgrounds = [["assets/img/bgs/cobblestone.png", "100px"],  ["assets/img/bgs/bricks.webp", "200px"],  ["assets/img/bgs/018prp.gif", "100px"]]
 let bgIndex = 0
-
-
-console.log("pls don't hack me")
-console.log("this site is held together solely by hopes and dreams")
 
 
 document.addEventListener("visibilitychange", (event) => {
