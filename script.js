@@ -169,6 +169,8 @@ function closeDragElement() {
   document.onmousemove = null;
 }
 
+
+
 function setup() {
   star = document.getElementById("star1")
   star.addEventListener("mousedown", dragMouseDown);
@@ -181,6 +183,14 @@ function setup() {
   marquee2.style.left = marquee1.offsetWidth + marquee1.offsetLeft + "px"
 
   setInterval(move, 30)
+
+
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none"
+    document.getElementById("content").style.display = "block"
+    document.body.style.backgroundImage = "url('assets/img/bgs/cobblestone.png')"
+    document.body.style.cursor = "url('./assets/img/cursors/whiteCursor.svg') 0 0, auto"
+  }, 3000)
 }
 
 

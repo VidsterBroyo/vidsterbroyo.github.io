@@ -2,22 +2,43 @@ html,
 body {
     margin: 0;
     padding: 0;
-    cursor: url("./assets/img/cursors/whiteCursor.svg") 0 0, auto;
+    cursor: url("./assets/img/cursors/whiteWait.webp") 0 0, auto;
+    /* cursor: url("./assets/img/cursors/whiteCursor.svg") 0 0, auto; */
 
-    /* background-image: url("https://cdnb.artstation.com/p/assets/images/images/035/877/167/large/gregory-ligman-brickwall.jpg?1616129547");
-    background-size: 300px; */
+    background-color: #000080; /* dial up loading background */
 
-    background-image: url("assets/img/bgs/cobblestone.png");
     background-size: 100px;
     background-position: 0px 100px;
 }
 
+#loading {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#loading img {
+    width: 100%;
+    border: 3px solid black;
+}
+
+
+/* SCROLL BAR */
 /* width */
 ::-webkit-scrollbar {
     width: 25px;
 }
 
+/* track */
+::-webkit-scrollbar-track {
+    background-image: url("https://t3.ftcdn.net/jpg/04/96/63/80/360_F_496638091_v0Y3hmCvb9y8JDKEGyWC455Ex4aNGPen.jpg");
+    background-size: 150px;
+}
 
+/* buttons */
 ::-webkit-scrollbar-button {
     background-size: 10px;
     background-repeat: no-repeat;
@@ -29,6 +50,14 @@ body {
     border: outset 3px rgb(168, 168, 168);
 }
 
+::-webkit-scrollbar-button:hover {
+    background-color: #a9a9a9;
+}
+
+::-webkit-scrollbar-button:active {
+    background-color: #8a8a8a;
+}
+
 ::-webkit-scrollbar-button:vertical:decrement {
     background-image: url("assets/img/up.png");
 }
@@ -38,15 +67,7 @@ body {
 }
 
 
-
-/* Track */
-::-webkit-scrollbar-track {
-    background-image: url("https://t3.ftcdn.net/jpg/04/96/63/80/360_F_496638091_v0Y3hmCvb9y8JDKEGyWC455Ex4aNGPen.jpg");
-    background-size: 150px;
-}
-
-
-/* Handle */
+/* handle */
 ::-webkit-scrollbar-thumb {
     background-color: #c0c0c0;
     border: 3px rgb(168, 168, 168) outset;
@@ -56,6 +77,14 @@ body {
     background: #a9a9a9;
 }
 
+::-webkit-scrollbar-thumb:active {
+    background: #8a8a8a;
+}
+
+
+#content {
+    display: none;
+}
 
 
 .container-fluid {
