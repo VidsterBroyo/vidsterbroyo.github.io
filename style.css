@@ -139,6 +139,16 @@ body {
     padding: 0px;
 }
 
+#name div {
+    display: inline-block;
+}
+
+@media screen and (max-width: 650px) {
+    #name div {
+        display: block;
+    }
+}
+
 #name span {
     display: inline-block;
 }
@@ -521,7 +531,8 @@ a,
 }
 
 #waterlooWR img {
-    filter: invert(23%) sepia(70%) saturate(4464%) hue-rotate(304deg) brightness(89%) contrast(98%); /* make pink */
+    filter: invert(23%) sepia(70%) saturate(4464%) hue-rotate(304deg) brightness(89%) contrast(98%);
+    /* make pink */
     width: 30px;
     height: auto;
     opacity: 1;
