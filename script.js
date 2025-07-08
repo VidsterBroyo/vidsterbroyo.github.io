@@ -182,9 +182,7 @@ function setup() {
   marquee1 = document.getElementById("marquee")
   marquee2 = document.getElementById("followupMarquee")
 
-  marquee2.style.left = marquee1.offsetWidth + marquee1.offsetLeft + "px"
-
-  setInterval(move, 30)
+  
 
 
   let dialUpInterval = 850; //850
@@ -210,6 +208,9 @@ function setup() {
     document.getElementById("content").style.display = "block"
     document.body.style.backgroundImage = "url('assets/img/bgs/cobblestone.png')"
     document.body.style.cursor = "url('./assets/img/cursors/whiteCursor.svg') 0 0, auto"
+    marquee2.style.left = marquee1.offsetWidth + marquee1.offsetLeft + "px"
+    setInterval(move, 30)
+
   }, dialUpInterval*5)
 
 }

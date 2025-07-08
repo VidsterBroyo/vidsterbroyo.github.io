@@ -35,12 +35,12 @@
 
     <link rel="icon" id="favicon" href="assets/img/favicon.png?v=3" type="image/png">
 
-    <script>
+      <script>
         function setup() {
             document.querySelectorAll('.cardInner').forEach(card => {
                 card.addEventListener('click', () => {
 
-                    
+
 
                     const isFlipped = card.classList.contains('flipped');
                     const allFaces = document.querySelectorAll('.face');
@@ -76,14 +76,23 @@
         }
 
 
+        function toggleDrawer(element) {
+            // If the close button is clicked, grab the closest drawer
+            const drawer = element.classList.contains('closeBtn')
+                ? element.closest('.drawer')
+                : element.nextElementSibling;
+
+            drawer.classList.toggle('open');
+        }
+
+
+
     </script>
 </head>
 
 
 <body onload="setup()">
     <div class="container-fluid">
-
-
 
         <div id="projectsDiv">
 
@@ -94,14 +103,14 @@
                 <div class="col-md-6">
 
                     <div class="card" id="card1">
-                        <div class="cardInner" >
+                        <div class="cardInner">
 
                             <div class="face cardFront"
                                 style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://haltonchess.github.io/static/img/haltonChessLogo.png);">
                                 <h2>CTO of Halton Chess</h2>
                             </div>
 
-                            <div  class="face evenCardBack">
+                            <div class="face evenCardBack">
                                 <h2>CTO of Halton Chess</h2>
                                 <ul>
                                     <li>Created a (gorgeous) <a href="https://haltonchess.github.io">website</a> for
@@ -237,11 +246,11 @@
                     </div>
                 </div>
 
-                 <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="cardInner">
 
-                            
+
 
                         </div>
                     </div>
