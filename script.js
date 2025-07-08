@@ -187,12 +187,31 @@ function setup() {
   setInterval(move, 30)
 
 
+  let dialUpInterval = 850;
+
+  setTimeout(() => {
+    document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
+  }, dialUpInterval)
+
+  setTimeout(() => {
+    document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame3.png"
+  }, dialUpInterval*2)
+
+  setTimeout(() => {
+    document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame4.png"
+  }, dialUpInterval*3)
+
+  setTimeout(() => {
+    document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame5.png"
+  }, dialUpInterval*4)
+
   setTimeout(() => {
     document.getElementById("loading").style.display = "none"
     document.getElementById("content").style.display = "block"
     document.body.style.backgroundImage = "url('assets/img/bgs/cobblestone.png')"
     document.body.style.cursor = "url('./assets/img/cursors/whiteCursor.svg') 0 0, auto"
-  }, 3000)
+  }, dialUpInterval*5)
+
 }
 
 

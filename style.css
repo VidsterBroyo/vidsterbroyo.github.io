@@ -501,6 +501,18 @@ a,
     }
 }
 
+#footer {
+    width: 100%;
+    background-color: #C0C0C0;
+    border-top: 3px solid black;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+#footer p {
+    margin-bottom: 0;
+}
+
 #MKCredit {
     font-family: 'Helvetica';
     cursor: pointer;
