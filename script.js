@@ -187,7 +187,7 @@ function setup() {
   setInterval(move, 30)
 
 
-  let dialUpInterval = 850;
+  let dialUpInterval = 50; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"

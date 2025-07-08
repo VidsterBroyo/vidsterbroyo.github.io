@@ -5,7 +5,8 @@ body {
     cursor: url("./assets/img/cursors/whiteWait.webp") 0 0, auto;
     /* cursor: url("./assets/img/cursors/whiteCursor.svg") 0 0, auto; */
 
-    background-color: #000080; /* dial up loading background */
+    background-color: #000080;
+    /* dial up loading background */
 
     background-size: 100px;
     background-position: 0px 100px;
@@ -241,15 +242,16 @@ a,
     font-size: 20px;
 }
 
-#heroHeader a {
+.fa-brands {
     font-size: 55px;
     margin: 10px;
     color: rgb(95, 0, 95);
 }
 
-#heroHeader a:hover {
+.fa-brands:hover {
     color: rgb(71, 0, 71);
 }
+
 
 #star1 {
     width: 7vw;
@@ -503,14 +505,37 @@ a,
 
 #footer {
     width: 100%;
-    background-color: #C0C0C0;
+    background-color: rgb(0, 0, 0, 0.5);
     border-top: 3px solid black;
     margin-bottom: 0;
     padding: 10px;
 }
 
+#waterlooWR {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 20px;
+    margin: auto;
+}
+
+#waterlooWR img {
+    filter: invert(23%) sepia(70%) saturate(4464%) hue-rotate(304deg) brightness(89%) contrast(98%); /* make pink */
+    width: 30px;
+    height: auto;
+    opacity: 1;
+}
+
+#waterlooWR a {
+    text-decoration: none;
+    color: #DF1AA0;
+    cursor: pointer;
+}
+
 #footer p {
     margin-bottom: 0;
+    color: white;
 }
 
 #MKCredit {
