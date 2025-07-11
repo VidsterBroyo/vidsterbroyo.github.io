@@ -18,12 +18,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 #loading img {
     width: 100%;
     border: 3px solid black;
+}
+
+@media screen and (max-width: 1024px) {
+    #loading {
+        width: 90%;
+    }
 }
 
 
@@ -533,6 +538,7 @@ a,
 #waterlooWR img {
     filter: invert(23%) sepia(70%) saturate(4464%) hue-rotate(304deg) brightness(89%) contrast(98%);
     /* make pink */
+
     width: 30px;
     height: auto;
     opacity: 1;
@@ -540,7 +546,7 @@ a,
 
 #waterlooWR a {
     text-decoration: none;
-    color: #DF1AA0;
+    color: #ee2cb0;
     cursor: pointer;
 }
 
