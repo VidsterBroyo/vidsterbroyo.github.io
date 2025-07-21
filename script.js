@@ -14,6 +14,12 @@ let netscapeContent;
 let netscapeLocation;
 let backBtn;
 let forwardBtn;
+let seeLiveLink;
+let seeLiveBtn;
+let githubLink;
+let githubBtn;
+let devpostLink;
+let devpostBtn;
 
 let currentProjectIndex = 0;
 
@@ -162,12 +168,17 @@ function setup() {
   netscapeWindow = document.getElementById("netscapeWindow")
   netscapeContent = document.getElementById("netscapeContent")
   netscapeLocation = document.getElementById("netscapeLocation")
-  forwardBtn = document.getElementById("forwardBtn")
+
   backBtn = document.getElementById("backBtn")
+  forwardBtn = document.getElementById("forwardBtn")
+  seeLiveLink = document.getElementById("seeLiveLink")
+  seeLiveBtn = document.getElementById("seeLiveBtn")
+  githubLink = document.getElementById("githubLink")
+  githubBtn = document.getElementById("githubBtn")
+  devpostLink = document.getElementById("devpostLink")
+  devpostBtn = document.getElementById("devpostBtn")
 
-
-
-  let dialUpInterval = 50; //850
+  let dialUpInterval = 850; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
@@ -235,7 +246,7 @@ function openNetscape(index) {
     forwardBtn.disabled = true
     forwardBtn.style.backgroundImage = 'url("assets/img/netscapeWindow/forwardDisabled.png")'
 
-    
+
     // if current project is first project, disable back btn
   } else if (currentProjectIndex == 0) {
     backBtn.disabled = true
@@ -256,6 +267,30 @@ function openNetscape(index) {
   netscapeWindow.style.display = "block"
   netscapeContent.innerHTML = content[index].html
   netscapeLocation.innerHTML = content[index].location
+
+  if (content[index].liveSite) {
+    seeLiveLink.href = content[index].liveSite
+    seeLiveLink.disabled = false
+  } else {
+    seeLiveBtn.disabled = true
+    seeLiveLink.href = ''
+  }
+
+  if (content[index].github) {
+    githubLink.href = content[index].github
+    githubBtn.disabled = false
+  } else {
+    githubBtn.disabled = true
+    githubLink.href = ''
+  }
+
+  if (content[index].devpost) {
+    devpostLink.href = content[index].devpost
+    devpostBtn.disabled = false
+  } else {
+    devpostBtn.disabled = true
+    devpostLink.href = ''
+  }
 }
 
 
@@ -275,18 +310,21 @@ function backProject() {
 
 const content = [
   {
-    location: 'haltonChess:',
+    location: 'ontarioslca:',
+    liveSite: 'https://ontarioslca.ca/',
+    github: 'https://github.com/HaltonChess/haltonchess.github.io',
     html: `
-      <h2>CTO of Halton Chess</h2>
+      <h2>CTO of Ontario Student Led Chess Association</h2>
       <ul>
-        <li>Created a (gorgeous) <a href="https://haltonchess.github.io">website</a> for Halton Chess using Bootstrap</li>
-        <li>Programmed a Python algorithm to manage the club’s Google Sheets Chess Leaderboard</li>
-        <li>Created <a href="https://haltonchess.github.io/PAWn">PAWn</a>, a Javascript Chess pairing algorithm compatible for both team and individual competitions</li>
+        <li>Created a (gorgeous) <a href="https://ontarioslca.ca">website</a> for OntarioSLCA using Bootstrap</li>
+        <li>Programmed an algorithm to manage the club’s Google Sheets Chess Leaderboard</li>
+        <li>Created <a href="https://ontarioslca.ca/PAWn">PAWn</a>, a Javascript Chess pairing algorithm following the Swiss System compatible for both team and individual competitions</li>
       </ul>
     `
   },
   {
     location: 'minvestFinance:',
+    liveSite: 'https://beta.minvestfinance.com/',
     html: `
       <h2>Minvest Finance</h2>
       <ul>
@@ -303,6 +341,7 @@ const content = [
   },
   {
     location: 'summit:',
+    github: 'https://github.com/VidsterBroyo/SummIT',
     html: `
       <h2>SummIT</h2>
       <ul>
@@ -315,6 +354,7 @@ const content = [
   },
   {
     location: 'tu20:',
+    liveSite: 'https://techundertwenty.com/',
     html: `
       <h2>Tech Under Twenty</h2>
       <ul>
@@ -326,6 +366,7 @@ const content = [
   },
   {
     location: 'twitterFeelsDetector:',
+    liveSite: 'https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook',
     html: `
       <h2>Twitter Sentiment Detection</h2>
       <ul>
