@@ -5,14 +5,10 @@
   <title>Vidu Widyalankara</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+  <script src="assets/temp/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/539cdfb9b6.js" crossorigin="anonymous"></script>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    crossorigin="anonymous">
-  <!-- <link href="/static/bootstrapStyling.css" rel="stylesheet"> -->
+  <link href="assets/temp/bootstrap.min.css" rel="stylesheet">
 
   <audio id="sparkle">
     <source src="assets/sounds/sparkle.mp3" type="audio/mp3">
@@ -51,18 +47,20 @@
     </div>
 
     <div id="heroHeader">
-      <img id="star1" src="./assets/img/star.png" />
+      <img id="star1" src="assets/img/star.png" />
 
       <div id="nameContainer" onmouseover="triggerAnimation()">
         <h1 id="name"><i>
             <div><span>V</span><span>i</span><span>d</span><span>u</span>
-            <div><span>W</span><span>i</span><span>d</span><span>y</span><span>a</span><span>l</span><span>a</span><span>n</span><span>k</span><span>a</span><span>r</span><span>a</span></div>
+              <div>
+                <span>W</span><span>i</span><span>d</span><span>y</span><span>a</span><span>l</span><span>a</span><span>n</span><span>k</span><span>a</span><span>r</span><span>a</span>
+              </div>
           </i></h1>
         <p id="subtitle">aka&nbsp;&nbsp;<span style="font-family: 'Bitcount Grid Double'">vidsterbroyo</span></p>
         <p id="desc">incoming CS @ UWaterloo</p>
 
-        <a href="https://github.com/VidsterBroyo" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/vidu-widyalankara-a36050194/" target="_blank"><i
+        <a id="githubA" href="https://github.com/VidsterBroyo" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a id="linkedinA" href="https://www.linkedin.com/in/vidu-widyalankara-a36050194/" target="_blank"><i
             class="fa-brands fa-linkedin"></i></a>
         <br><br><br>
       </div>
@@ -71,13 +69,6 @@
     </div>
 
 
-    <div style="display: none;" id="gptDiv">
-      <p id="answer"></p>
-      <br>
-      <div id="questionBox">
-        <p id="question">Who is Vidu Widyalankara?</p><i class="fa-solid fa-circle-arrow-up"></i>
-      </div>
-    </div>
 
     <div id="projectsDiv">
 
@@ -88,23 +79,10 @@
         <div class="col-md-6">
 
           <div class="card">
-            <div class="cardInner">
+            <div class="cardInner"
+              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://haltonchess.github.io/static/img/haltonChessLogo.png);">
 
-              <div class="cardFront"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://haltonchess.github.io/static/img/haltonChessLogo.png);">
-                <h2>CTO of Halton Chess</h2>
-              </div>
-
-              <div class="evenCardBack">
-                <h2>CTO of Halton Chess</h2>
-                <ul>
-                  <li>Created a (gorgeous) <a href="https://haltonchess.github.io">website</a> for Halton Chess using
-                    Bootstrap</li>
-                  <li>Programmed a Python algorithm to manage the club’s Google Sheets Chess Leaderboard</li>
-                  <li>Created <a href="https://haltonchess.github.io/PAWn">PAWn</a>, a Javascript Chess pairing
-                    algorithm compatible for both team and individual competitions</li>
-                </ul>
-              </div>
+              <h2>CTO of Halton Chess</h2>
 
             </div>
           </div>
@@ -113,28 +91,10 @@
 
         <div class="col-md-6">
           <div class="card">
-            <div class="cardInner">
+            <div class="cardInner"
+              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/minfin.jpg);">
 
-              <div class="cardFront"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/minfin.jpg);">
-                <h2>Minvest Finance</h2>
-              </div>
-
-              <div class="oddCardBack">
-                <h2>Minvest Finance</h2>
-                <ul>
-                  <li>As a <b>Co-Lead Software Engineer</b>, I lead a team focused on creating <a
-                      href="https://beta.minvestfinance.com">Minvest's "MinvestEd" page</a>, a resource to teach GenZ
-                    financial lessons</li>
-                  <ul>
-                    <li>Created using ReactJS, Flask, and Auth0's API</li>
-                  </ul>
-                  <li>As a <b>Cloud Specialist</b>, I built Minvest's AWS environment from the ground up</li>
-                  <ul>
-                    <li>I also save the company a minimum of CA$580+ per year by using AWS resources efficiently</li>
-                  </ul>
-                </ul>
-              </div>
+              <h2>Minvest Finance</h2>
 
             </div>
           </div>
@@ -143,23 +103,10 @@
 
         <div class="col-md-6">
           <div class="card">
-            <div class="cardInner">
+            <div class="cardInner"
+              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/summitSurfersLogo.png);">
 
-              <div class="cardFront"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/summitSurfersLogo.png);">
-                <h2>SummIT</h2>
-              </div>
-
-              <div class="evenCardBack">
-                <h2>SummIT</h2>
-                <ul>
-                  <li>An application designed to remove high-data content from websites, reducing the website's size
-                  </li>
-                  <li>This results in faster load times, less bandwidth used, and less carbon emissions</li>
-                  <li>From collected data, the application can reduce the size of sites by an average of 95%</li>
-                  <li>Created using Python and BeautifulSoup</li>
-                </ul>
-              </div>
+              <h2>SummIT</h2>
 
             </div>
           </div>
@@ -168,24 +115,11 @@
 
         <div class="col-md-6">
           <div class="card">
-            <div class="cardInner">
+            <div class="cardInner"
+              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/tu20.jpg);">
 
-              <div class="cardFront"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/tu20.jpg);">
-                <h2>Tech Under Twenty</h2>
-              </div>
 
-              <div class="oddCardBack">
-                <h2>TU20</h2>
-                <ul>
-                  <li>As <b>Team Lead</b>, I lead a <a href="https://techundertwenty.com">team of 30+ students</a> to
-                    provide youth in the GTA with opportunities in tech, business & entrepreneurship</li>
-                  <li>I increased the total number of event attendees by 3x, helping to fulfill TU20’s mission statement
-                  </li>
-                  <li>As <b>Development Team Lead</b>, I increase attendee satisfaction by leading a team to create IT
-                    solutions for TU20 events</li>
-                </ul>
-              </div>
+              <h2>Tech Under Twenty</h2>
 
             </div>
           </div>
@@ -194,28 +128,49 @@
 
         <div class="col-md-6">
           <div class="card">
-            <div class="cardInner">
+            <div class="cardInner"
+              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/tsd.png);">
 
-              <div class="cardFront"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/tsd.png);">
-                <h2>Twitter Sentiment Detection</h2>
-              </div>
 
-              <div class="evenCardBack">
-                <h2>Twitter Sentiment Detection</h2>
-                <ul>
-                  <li>I created a <a
-                      href="https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook">machine
-                      learning model</a> trained on a dataset of 1.6 million tweets to predict a Tweet’s sentiment</li>
-                  <li>I performed exploratory data analysis and trained the model using both Random Forest and XGBoost
-                  </li>
-                </ul>
-              </div>
+              <h2>Twitter Sentiment Detection</h2>
 
             </div>
           </div>
         </div>
 
+      </div>
+
+      <!-- netscape window -->
+      <div id="netscapeWindow" style="display: none">
+        <div id="netscapeTopBar">
+          <img src="assets/img/favicon.png">
+          Version 4.04 [en]<span>-011507 | Netscape</span>
+
+          <div>
+            <button onclick="closeWindow()"></button><button disabled></button><button
+              onclick="closeWindow()"></button>
+          </div>
+        </div>
+        
+        <button id="backBtn" disabled onclick="backProject()"></button><button id="forwardBtn" onclick="forwardProject()"></button>
+        <button id="seeLiveBtn"></button><button id="githubBtn"></button><button id="devpostBtn"></button>
+        <br>
+
+        <hr>
+
+        <div style="display: flex;  justify-content: center; margin: 10px 0px 10px 0px;">
+          <p id="locationBarLabel">Address</p>
+          <div id="locationBar">
+            <p id="netscapeLocation">https://vidsterbroyo.com/haltonChess</p>
+          </div>
+        </div>
+
+        <hr>
+
+
+        <div id="netscapeContent">
+          [content here]
+        </div>
       </div>
     </div>
 
@@ -230,11 +185,11 @@
 
     <div id="footer">
       <div id="waterlooWR">
-        <a href="https://cs.uwatering.com/#https://vidsterbroyo.com?nav=prev">←</a>
+        <a href="https://cs.uwatering.com/#https://vidsterbroyo.com?nav=prev">↜</a>
         <a href="https://cs.uwatering.com/#https://vidsterbroyo.com/" target="_blank">
-          <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring"/>
+          <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" />
         </a>
-        <a href="https://cs.uwatering.com/#https://vidsterbroyo.com/?nav=next">→</a>
+        <a href="https://cs.uwatering.com/#https://vidsterbroyo.com/?nav=next">↝</a>
       </div>
       <p class="text-center">
         inspired
