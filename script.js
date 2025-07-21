@@ -178,7 +178,7 @@ function setup() {
   devpostLink = document.getElementById("devpostLink")
   devpostBtn = document.getElementById("devpostBtn")
 
-  let dialUpInterval = 850; //850
+  let dialUpInterval = 50; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
@@ -264,7 +264,7 @@ function openNetscape(index) {
   }
 
 
-  netscapeWindow.style.display = "block"
+  netscapeWindow.style.display = "flex"
   netscapeContent.innerHTML = content[index].html
   netscapeLocation.innerHTML = content[index].location
 

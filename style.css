@@ -30,6 +30,8 @@ body {
 
     background-size: 100px;
     background-position: 0px 100px;
+
+    overflow-x:hidden;
 }
 
 .container-fluid {
@@ -306,7 +308,7 @@ a,
 
 
 #star1 {
-    width: 7vw;
+    width: 130px;
     margin: auto;
     position: absolute;
     left: 10px;
@@ -316,11 +318,11 @@ a,
 
 
 #star2 {
-    width: 7vw;
+    width: 130px;
     margin: auto;
     position: absolute;
-    left: calc(100% - 10px - 7vw);
-    top: calc(100% - 1vh - 7.5vw);
+    right: 10px;
+    bottom: 10px;
     animation: starShake 4s infinite;
 }
 
@@ -328,6 +330,13 @@ a,
 #star1,
 #star2:hover {
     cursor: url("assets/img/cursors/whiteGrab.webp") 0 0, grab;
+}
+
+/* star size adjustments for phone screen */
+@media screen and (max-width: 768px) {
+    #star1, #star2 {
+        width: 80px;
+    }
 }
 
 
@@ -426,6 +435,9 @@ a,
 
     z-index: 1000;
     user-select: none;
+
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -443,9 +455,12 @@ a,
 }
 
 
-
+/* netscape adjustments for phone screen */
 @media screen and (max-width: 768px) {
-
+    #netscapeWindow {
+        width: 95vw;
+    }
+    
     #netscapeWindow span {
         display: none;
     }
@@ -573,6 +588,10 @@ a,
     padding: 20px;
     font-family: 'windows95';
     font-size: 20px;
+    /* height: calc(); */
+    flex: 1;
+
+    overflow-y: auto;
 }
 
 #netscapeContent h2 {
