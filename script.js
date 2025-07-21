@@ -1,21 +1,23 @@
 console.log("%cpls don't hack me", "color: lime; font-size: 20px; background: black; padding: 4px; border: 1px solid lime;");
 console.log("this site is held together solely by hopes and dreams")
-/* WHY ARE YOU HERE DID YOU NOT HEED MY REQUEST ??? */
-
+/* WHY ARE YOU HERE - DID YOU NOT HEED MY REQUEST ??? */
 
 
 let marquee1, marquee2;
-let aboutMe = `Vidu Widyalankara is an incoming UWaterloo CS student who is beyond passionate about Computer Science.
-              Since finding out Computer Science was a thing in grade 4, Vidu has been enamored by the discipline. 
-              He is proficient in Python, Javascript, HTML/CSS, Java, and has experience using C++. 
-              Vidu keeps himself busy throughout highschool by immersing himself in extracurriculars related to
-              Computer Science, allowing him to continue expanding his knowledge in the discipline. He believes 
-              that his greatest strength is his dedication and attention to detail of his work. In his free time, Vidu bikes, plays chess, and does puzzles.`
-let aboutMeIndex = 0
 let scroll = true
-let generateInterval
-let sparkle = document.getElementById("sparkle");
-let backgrounds = [["assets/img/bgs/cobblestone.png", "100px"],  ["assets/img/bgs/bricks.webp", "200px"],  ["assets/img/bgs/018prp.gif", "100px"]]
+
+const sparkle = document.getElementById("sparkle");
+let animationPlaying = false;
+
+let netscapeWindow;
+let netscapeContent;
+let netscapeLocation;
+let backBtn;
+let forwardBtn;
+
+let currentProjectIndex = 0;
+
+const backgrounds = [["assets/img/bgs/cobblestone.png", "100px"], ["assets/img/bgs/bricks.webp", "200px"], ["assets/img/bgs/018prp.gif", "100px"]]
 let bgIndex = 0
 
 
@@ -29,7 +31,6 @@ document.addEventListener("visibilitychange", (event) => {
   }
 });
 
-let animationPlaying = false;
 
 
 function triggerAnimation() {
@@ -97,31 +98,7 @@ function move() {
 }
 
 
-function checkVisibility() {
-  if (document.getElementById("gptDiv").getBoundingClientRect().top < window.innerHeight - 100) {
-    startGenerating()
-    window.removeEventListener('scroll', checkVisibility)
-  }
-}
 
-
-function generate() {
-  text = document.getElementById("answer").innerHTML
-  document.getElementById("answer").innerHTML = text.slice(0, text.length - 2) + aboutMe.charAt(aboutMeIndex) + " ●"
-
-  if (aboutMeIndex == aboutMe.length) {
-    clearInterval(generateInterval)
-    document.getElementById("answer").innerHTML = text.slice(0, text.length - 1)
-  }
-
-  aboutMeIndex++;
-}
-
-
-function startGenerating() {
-  i = 0
-  generateInterval = setInterval(generate, 15)
-}
 
 
 
@@ -182,10 +159,15 @@ function setup() {
   marquee1 = document.getElementById("marquee")
   marquee2 = document.getElementById("followupMarquee")
 
-  
+  netscapeWindow = document.getElementById("netscapeWindow")
+  netscapeContent = document.getElementById("netscapeContent")
+  netscapeLocation = document.getElementById("netscapeLocation")
+  forwardBtn = document.getElementById("forwardBtn")
+  backBtn = document.getElementById("backBtn")
 
 
-  let dialUpInterval = 850; //850
+
+  let dialUpInterval = 50; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
@@ -193,15 +175,15 @@ function setup() {
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame3.png"
-  }, dialUpInterval*2)
+  }, dialUpInterval * 2)
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame4.png"
-  }, dialUpInterval*3)
+  }, dialUpInterval * 3)
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame5.png"
-  }, dialUpInterval*4)
+  }, dialUpInterval * 4)
 
   setTimeout(() => {
     document.getElementById("loading").style.display = "none"
@@ -211,12 +193,21 @@ function setup() {
     marquee2.style.left = marquee1.offsetWidth + marquee1.offsetLeft + "px"
     setInterval(move, 30)
 
-  }, dialUpInterval*5)
+  }, dialUpInterval * 5)
+
+
+
+  // convert this to jquery later
+  // card click function
+  document.querySelectorAll('.cardInner').forEach((card, index) => {
+    card.addEventListener('click', () => {
+      openNetscape(index)
+    }
+    )
+  })
+
 
 }
-
-
-window.addEventListener('scroll', checkVisibility);
 
 
 
@@ -227,3 +218,120 @@ function changeBG() {
   document.body.style.backgroundImage = `url("${backgrounds[bgIndex][0]}")`
   document.body.style.backgroundSize = backgrounds[bgIndex][1]
 }
+
+
+function closeWindow() {
+  netscapeWindow.style.display = "none"
+}
+
+
+function openNetscape(index) {
+  currentProjectIndex = index
+
+  // if current project is last project, disable forward btn
+  if (currentProjectIndex == content.length - 1) {
+    backBtn.disabled = false
+    backBtn.style.backgroundImage = 'url("assets/img/netscapeWindow/backActive.png")'
+    forwardBtn.disabled = true
+    forwardBtn.style.backgroundImage = 'url("assets/img/netscapeWindow/forwardDisabled.png")'
+
+    
+    // if current project is first project, disable back btn
+  } else if (currentProjectIndex == 0) {
+    backBtn.disabled = true
+    backBtn.style.backgroundImage = 'url("assets/img/netscapeWindow/backDisabled.png")'
+    forwardBtn.disabled = false
+    forwardBtn.style.backgroundImage = 'url("assets/img/netscapeWindow/forwardActive.png")'
+  }
+
+  // else, enable both
+  else {
+    forwardBtn.disabled = false
+    forwardBtn.style.backgroundImage = 'url("assets/img/netscapeWindow/forwardActive.png")'
+    backBtn.disabled = false
+    backBtn.style.backgroundImage = 'url("assets/img/netscapeWindow/backActive.png")'
+  }
+
+
+  netscapeWindow.style.display = "block"
+  netscapeContent.innerHTML = content[index].html
+  netscapeLocation.innerHTML = content[index].location
+}
+
+
+
+function forwardProject() {
+  currentProjectIndex += 1
+
+  openNetscape(currentProjectIndex)
+}
+
+function backProject() {
+  currentProjectIndex -= 1
+
+  openNetscape(currentProjectIndex)
+}
+
+
+const content = [
+  {
+    location: 'haltonChess:',
+    html: `
+      <h2>CTO of Halton Chess</h2>
+      <ul>
+        <li>Created a (gorgeous) <a href="https://haltonchess.github.io">website</a> for Halton Chess using Bootstrap</li>
+        <li>Programmed a Python algorithm to manage the club’s Google Sheets Chess Leaderboard</li>
+        <li>Created <a href="https://haltonchess.github.io/PAWn">PAWn</a>, a Javascript Chess pairing algorithm compatible for both team and individual competitions</li>
+      </ul>
+    `
+  },
+  {
+    location: 'minvestFinance:',
+    html: `
+      <h2>Minvest Finance</h2>
+      <ul>
+        <li>As a <b>Co-Lead Software Engineer</b>, I lead a team focused on creating <a href="https://beta.minvestfinance.com">Minvest's "MinvestEd" page</a>, a resource to teach GenZ financial lessons</li>
+        <ul>
+          <li>Created using ReactJS, Flask, and Auth0's API</li>
+        </ul>
+        <li>As a <b>Cloud Specialist</b>, I built Minvest's AWS environment from the ground up</li>
+        <ul>
+          <li>I also save the company a minimum of CA$580+ per year by using AWS resources efficiently</li>
+        </ul>
+      </ul>
+    `
+  },
+  {
+    location: 'summit:',
+    html: `
+      <h2>SummIT</h2>
+      <ul>
+        <li>An application designed to remove high-data content from websites, reducing the website's size</li>
+        <li>This results in faster load times, less bandwidth used, and less carbon emissions</li>
+        <li>From collected data, the application can reduce the size of sites by an average of 95%</li>
+        <li>Created using Python and BeautifulSoup</li>
+      </ul>
+    `
+  },
+  {
+    location: 'tu20:',
+    html: `
+      <h2>Tech Under Twenty</h2>
+      <ul>
+        <li>As <b>Team Lead</b>, I lead a <a href="https://techundertwenty.com">team of 30+ students</a> to provide youth in the GTA with opportunities in tech, business & entrepreneurship</li>
+        <li>I increased the total number of event attendees by 3x, helping to fulfill TU20’s mission statement</li>
+        <li>As <b>Development Team Lead</b>, I increase attendee satisfaction by leading a team to create IT solutions for TU20 events</li>
+      </ul>
+    `
+  },
+  {
+    location: 'twitterFeelsDetector:',
+    html: `
+      <h2>Twitter Sentiment Detection</h2>
+      <ul>
+        <li>I created a <a href="https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook">machine learning model</a> trained on a dataset of 1.6 million tweets to predict a Tweet’s sentiment</li>
+        <li>I performed exploratory data analysis and trained the model using both Random Forest and XGBoost</li>
+      </ul>
+    `
+  }
+];
