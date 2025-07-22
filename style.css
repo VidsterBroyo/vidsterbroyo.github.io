@@ -347,14 +347,8 @@ a,
 
 
 
-
-#projectsDiv {
-    width: 95%;
-    margin: auto;
-}
-
-
-
+/* shake two oscillations for 2 seconds*/
+/* break for 3 seconds*/
 @keyframes starShake {
     0% {
         transform: rotateZ(0deg);
@@ -394,8 +388,14 @@ a,
     }
 }
 
-/* shake two oscillations for 2 seconds*/
-/* break for 3 seconds*/
+#projectsDiv {
+    width: 95%;
+    margin: auto;
+}
+
+#projectsDiv > h2 {
+    text-shadow: 3px 3px #b219b4;
+}
 
 @media screen and (max-width: 530px) {
     .card {
@@ -423,9 +423,31 @@ a,
     justify-content: center;
     align-items: center;
 
+    text-align: center;
+
     padding: 15px;
 }
 
+.cardInner h2 {
+    margin-top: 20px; /* to offset the technologies used tags and keep title centered */
+}
+
+.cardInner span {
+    background-color: black;
+    margin-right: 3px;
+    padding: 3px;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+
+    /* display: none; */
+    visibility: hidden;
+}
+
+.card:hover .cardInner span {
+    /* display: inline-block; */
+    visibility: visible;
+}
 
 
 #netscapeWindow {
@@ -441,9 +463,11 @@ a,
     z-index: 1000;
     user-select: none;
 
-    display: flex;
+    display: none;
     flex-direction: column;
 }
+
+
 
 
 /* all buttons in netscape window are just buttons with image backgrounds */
@@ -528,7 +552,7 @@ a,
 }
 
 #techUsed span {
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 #netscapeWindow button {
@@ -593,7 +617,11 @@ a,
 #netscapeWindow hr {
     margin: 0px;
     opacity: 1;
-    border: 1px solid black;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid white;
+
+    width: 99%;
+    margin: auto;
 }
 
 #netscapeContent {
@@ -660,7 +688,9 @@ a,
     border-top: 3px solid black;
     margin-bottom: 0;
     padding: 10px;
+    font-family:'Times New Roman', Times, serif;
 }
+
 
 #waterlooWR {
     display: flex;

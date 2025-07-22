@@ -405,7 +405,7 @@ const content = [
       <p style="text-align: center">*for Any% Glitchless 2-player 1.9-1.15 (Easy) category.... sorry if i baited you into thinking i'm actually good </p>
       <ul>
         <li>My friend and I started our Summer after Grade 12 by trying to get a top 100 Minecraft speedrun in any category</li>
-        <li>After tons of practices and attempts, we ended up with a <b>1:03:51.297</b> time, placing us <b>93rd</b> in our category</li>
+        <li>After tons of practices and attempts, we ended up with a <b>1:03:51.297</b> time, placing us <a href="https://www.speedrun.com/mc?h=Any_Glitchless_Co-op-Difficulty1%28Easy%29-random-seed-1-9-1-15-2-players&x=zd301qed-9l737pn1.4lxg24q2-rn1p34dn.5lm7wvjl-68kd9yql.jqzywvml-68k5jz82.jqz6vmm1"><b>93rd</b></a> in our category</li>
       </ul>
     `
   }
