@@ -466,7 +466,7 @@ a,
         width: 95vw;
     }
 
-    #netscapeWindow span {
+    #netscapeTopBar span {
         display: none;
     }
 }
@@ -522,7 +522,14 @@ a,
     background-image: url("assets/img/netscapeWindow/close.png");
 }
 
+#techUsed {
+    margin: 0px 0px 0px 10px;
+    font-family: "windows95";
+}
 
+#techUsed span {
+    text-decoration:underline;
+}
 
 #netscapeWindow button {
     height: 50px;

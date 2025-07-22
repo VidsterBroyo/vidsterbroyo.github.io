@@ -262,33 +262,50 @@ function openNetscape(index) {
   }
 
 
-  netscapeWindow.style.display = "flex"
+  // set the content and address
   netscapeContent.innerHTML = content[index].html
   netscapeLocation.innerHTML = content[index].location
 
+  techUsed.innerHTML = ""
+  content[index].tech.forEach((name) => {
+    techUsed.innerHTML += `<span>${name[0]}</span>${name.slice(1)}&nbsp;&nbsp;&nbsp;&nbsp;`
+  })
+
+
+  // set the see live, github, and devpost button links
   if (content[index].liveSite) {
     seeLiveLink.href = content[index].liveSite
-    seeLiveLink.disabled = false
+    seeLiveBtn.disabled = false
+    seeLiveBtn.style.filter = "grayscale(0%)"
   } else {
-    seeLiveBtn.disabled = true
     seeLiveLink.href = ''
+    seeLiveBtn.disabled = true
+    seeLiveBtn.style.filter = "grayscale(100%)"
   }
 
   if (content[index].github) {
     githubLink.href = content[index].github
     githubBtn.disabled = false
+    githubBtn.style.filter = "grayscale(0%)"
   } else {
-    githubBtn.disabled = true
     githubLink.href = ''
+    githubBtn.disabled = true
+    githubBtn.style.filter = "grayscale(100%)"
   }
 
   if (content[index].devpost) {
     devpostLink.href = content[index].devpost
     devpostBtn.disabled = false
+    devpostBtn.style.filter = "grayscale(0%)"
   } else {
-    devpostBtn.disabled = true
     devpostLink.href = ''
+    devpostBtn.disabled = true
+    devpostBtn.style.filter = "grayscale(100%)"
   }
+
+
+  // show the window
+  netscapeWindow.style.display = "flex"
 }
 
 
@@ -311,6 +328,7 @@ const content = [
     location: 'ontarioslca:',
     liveSite: 'https://ontarioslca.ca/',
     github: 'https://github.com/HaltonChess/haltonchess.github.io',
+    tech: ['HTML/CSS', 'JS', 'Bootstrap', 'Google API'],
     html: `
       <h2>CTO of Ontario Student Led Chess Association</h2>
       <ul>
@@ -323,6 +341,7 @@ const content = [
   {
     location: 'minvestFinance:',
     liveSite: 'https://beta.minvestfinance.com/',
+    tech: ['React.js', 'Typescript', 'AWS', 'Flask', 'Auth0'],
     html: `
       <h2>Minvest Finance</h2>
       <ul>
@@ -340,6 +359,7 @@ const content = [
   {
     location: 'summit:',
     github: 'https://github.com/VidsterBroyo/SummIT',
+    tech: ['Flask', 'BeautifulSoup4', 'Web Scraping', 'AWS'],
     html: `
       <h2>SummIT</h2>
       <ul>
@@ -353,6 +373,7 @@ const content = [
   {
     location: 'tu20:',
     liveSite: 'https://techundertwenty.com/',
+    tech: ['Node.js', 'Javascript', 'AWS'],
     html: `
       <h2>Tech Under Twenty</h2>
       <ul>
@@ -365,11 +386,26 @@ const content = [
   {
     location: 'twitterFeelsDetector:',
     liveSite: 'https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook',
+    tech: ['pandas', 'numpy', 'Random Forest', 'XGBoost'],
     html: `
       <h2>Twitter Sentiment Detection</h2>
       <ul>
         <li>I created a <a href="https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook">machine learning model</a> trained on a dataset of 1.6 million tweets to predict a Tweet’s sentiment</li>
         <li>I performed exploratory data analysis and trained the model using both Random Forest and XGBoost</li>
+      </ul>
+    `
+  },
+  {
+    location: 'proGamer:',
+    liveSite: 'https://youtu.be/vlZ9YsXv1dc',
+    tech: ['File', 'Edit', 'View', 'Options'],
+    html: `
+      
+      <h2>Top 100 Minecraft Speedrun*</h2>
+      <p style="text-align: center">*for Any% Glitchless 2-player 1.9-1.15 (Easy) category.... sorry if i baited you into thinking i'm actually good </p>
+      <ul>
+        <li>My friend and I started our Summer after Grade 12 by trying to get a top 100 Minecraft speedrun in any category</li>
+        <li>After tons of practices and attempts, we ended up with a <b>1:03:51.297</b> time, placing us <b>93rd</b> in our category</li>
       </ul>
     `
   }
