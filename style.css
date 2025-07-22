@@ -4,11 +4,6 @@
 }
 
 @font-face {
-    font-family: 'MSSansSerif';
-    src: url('./assets/fonts/msSansSerif.ttf') format('truetype');
-}
-
-@font-face {
     font-family: 'comicSans';
     src: url('./assets/fonts/comicSans.ttf') format('truetype');
 }
@@ -31,7 +26,7 @@ body {
     background-size: 100px;
     background-position: 0px 100px;
 
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 .container-fluid {
@@ -40,10 +35,10 @@ body {
 }
 
 :disabled {
-    cursor: url("./assets/img/cursors/Not-allowed.png") 30 30, auto !important;
+    cursor: url("./assets/img/cursors/notAllowed.png") 25 25, auto !important;
 }
 
-a, 
+a,
 #netscapeWindow button,
 .cardInner,
 .clickable {
@@ -98,7 +93,7 @@ a,
     width: 25px;
     height: 25px;
     background-color: #c0c0c0;
-    
+
     border: 2px solid;
     border-color: white gray gray white;
 }
@@ -294,6 +289,7 @@ a,
 
 #desc {
     font-size: 20px;
+    font-family: 'windows95'
 }
 
 .fa-brands {
@@ -302,7 +298,8 @@ a,
     color: rgb(95, 0, 95);
 }
 
-#githubA:hover i, #linkedinA:hover i{
+#githubA:hover i,
+#linkedinA:hover i {
     color: rgb(71, 0, 71);
 }
 
@@ -321,8 +318,11 @@ a,
     width: 130px;
     margin: auto;
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+
+    /* has to be in relation to left and top, otherwise the drag function won't work */
+    left: calc(100% - 10px - 130px);
+    top: calc(100% - 10px - 130px);
+
     animation: starShake 4s infinite;
 }
 
@@ -334,8 +334,14 @@ a,
 
 /* star size adjustments for phone screen */
 @media screen and (max-width: 768px) {
-    #star1, #star2 {
+    #star1 {
         width: 80px;
+    }
+
+    #star2 {
+        width: 80px;
+        left: calc(100% - 10px - 80px);
+        top: calc(100% - 10px - 80px);
     }
 }
 
@@ -411,7 +417,6 @@ a,
     height: 100%;
     color: white;
     font-family: 'Lexend';
-    font-weight: 300;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -460,7 +465,7 @@ a,
     #netscapeWindow {
         width: 95vw;
     }
-    
+
     #netscapeWindow span {
         display: none;
     }
@@ -498,21 +503,21 @@ a,
 #netscapeTopBar div button {
     width: 26px;
     height: 23px;
-    
+
     margin: 0px;
 
     background-color: #c0c0c0;
 }
 
-#netscapeTopBar div button:nth-of-type(1){
+#netscapeTopBar div button:nth-of-type(1) {
     background-image: url("assets/img/netscapeWindow/min.png");
 }
 
-#netscapeTopBar div button:nth-of-type(2){
+#netscapeTopBar div button:nth-of-type(2) {
     background-image: url("assets/img/netscapeWindow/max.png");
 }
 
-#netscapeTopBar div button:nth-of-type(3){
+#netscapeTopBar div button:nth-of-type(3) {
     margin-left: 4px;
     background-image: url("assets/img/netscapeWindow/close.png");
 }
@@ -556,7 +561,7 @@ a,
 #locationBarLabel {
     display: inline-block;
     font-family: "DOSVGA";
-    color: black; 
+    color: black;
     margin: 0px;
     margin-right: 5px;
     font-weight: normal;
@@ -607,6 +612,7 @@ a,
     /* = heart width, so it will center on the heart */
 
     margin: auto;
+    z-index: 100;
 }
 
 .heartContainer>div {

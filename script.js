@@ -157,10 +157,8 @@ function closeDragElement() {
 
 
 function setup() {
-  star = document.getElementById("star1")
-  star.addEventListener("mousedown", dragMouseDown);
-  star = document.getElementById("star2")
-  star.addEventListener("mousedown", dragMouseDown);
+  document.getElementById("star1").addEventListener("mousedown", dragMouseDown);
+  document.getElementById("star2").addEventListener("mousedown", dragMouseDown);
 
   marquee1 = document.getElementById("marquee")
   marquee2 = document.getElementById("followupMarquee")
