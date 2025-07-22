@@ -176,7 +176,7 @@ function setup() {
   devpostLink = document.getElementById("devpostLink")
   devpostBtn = document.getElementById("devpostBtn")
 
-  let dialUpInterval = 50; //850
+  let dialUpInterval = 850; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
