@@ -358,18 +358,22 @@ const projects = [
     `
   },
   {
-    title: 'SummIT',
-    cover: 'assets/img/projects/ss/newsPostSummit.jpg',
-    location: 'summit:',
-    github: 'https://github.com/VidsterBroyo/SummIT',
-    tech: ['Flask', 'BeautifulSoup4', 'Web Scraping', 'AWS'],
+    title: 'Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity',
+    cover: 'assets/img/projects/pposac/cover.png',
+    location: 'iLoveSuikaGame:',
+    liveSite: 'https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub',
+    tech: ['Unity', 'ML-Agents', 'TensorFlow', 'C#'],
     html: `
-      <h2>SummIT</h2>
+      <h2>Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity</h2>
       <ul>
-        <li>An application designed to remove high-data content from websites, reducing the website's size</li>
-        <li>This results in faster load times, less bandwidth used, and less carbon emissions</li>
-        <li>From collected data, the application can reduce the size of sites by an average of 95%</li>
-        <li>Created using Python and BeautifulSoup</li>
+        <li>For my IB Extended Essay in Computer Science, I answered the research question: <b>How do the cumulative reward and convergence rate of Proximal Policy Optimization and Soft Actor-Critic algorithms compare when applied to learning puzzle games?</b></li>
+        <ul>
+        <li>Basically, which algorithm was better for this use case</li>
+        </ul>
+        <li>To answer it, I recreated <em>Suika Game</em> in Unity, trained a PPO and SAC model to play the game for <b>500,000</b> steps using ML-Agents, and compared their results using <b>TensorBoard</b>.</li>
+        
+        <li>The experiment found that the <b>PPO</b> algorithm achieved a greater cumulative reward and convergence rate</li>
+        <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub">here<a></li>
       </ul>
     `
   },
@@ -393,7 +397,7 @@ const projects = [
     cover: 'assets/img/projects/ssync/cover.jpg',
     location: 'hackTheNorthWin',
     devpost: 'https://devpost.com/software/studying-with-hack-the-north',
-    tech: ['MongoDB', 'ReactJS', 'Auth0', 'Hackathon Win'],
+    tech: ['MongoDB', 'Express.js', 'ReactJS', 'Auth0', 'Flask', 'Hackathon Win'],
     html: `
       <h2>StudySync - HTN '24</h2>
       <ul>
@@ -405,13 +409,29 @@ const projects = [
         <li>StudySync was awarded the <b>Best Use of Auth0</b> award</li>
       </ul>
     `
+  }, 
+  {
+    title: 'SummIT',
+    cover: 'assets/img/projects/ss/newsPostSummit.jpg',
+    location: 'summit:',
+    github: 'https://github.com/VidsterBroyo/SummIT',
+    tech: ['Flask', 'BeautifulSoup4', 'Web Scraping', 'AWS'],
+    html: `
+      <h2>SummIT</h2>
+      <ul>
+        <li>An application designed to remove high-data content from websites, reducing the website's size</li>
+        <li>This results in faster load times, less bandwidth used, and less carbon emissions</li>
+        <li>From collected data, the application can reduce the size of sites by an average of 95%</li>
+        <li>Created using Python and BeautifulSoup</li>
+      </ul>
+    `
   },
   {
     title: 'Twitter Sentiment Detection',
     cover: 'assets/img/projects/twitter/oldTwitter.png',
     location: 'twitterFeelsDetector:',
     liveSite: 'https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook',
-    tech: ['pandas', 'numpy', 'Random Forest', 'XGBoost'],
+    tech: ['Pandas', 'Matplotlib', 'numpy', 'scikit-learn', 'Random Forest', 'XGBoost'],
     html: `
       <h2>Twitter Sentiment Detection</h2>
       <ul>

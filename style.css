@@ -557,6 +557,8 @@ a,
 #techUsed {
     margin: 0px 0px 0px 10px;
     font-family: "windows95";
+    overflow-x: hidden;
+    white-space: nowrap;
 }
 
 #techUsed span {
@@ -646,6 +648,7 @@ a,
     font-weight: bold;
     font-size: 30px;
     text-align: center;
+    margin-bottom: 19px;
 }
 
 #netscapeContent li {
