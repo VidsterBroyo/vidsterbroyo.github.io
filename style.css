@@ -393,8 +393,16 @@ a,
     margin: auto;
 }
 
-#projectsDiv > h2 {
-    text-shadow: 3px 3px #b219b4;
+#projectsTitle {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+@media screen and (max-width: 820px) {
+    #projectsTitle {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 530px) {
@@ -640,6 +648,10 @@ a,
     text-align: center;
 }
 
+#netscapeContent li {
+    margin-top:5px;
+}
+
 .heartContainer {
     display: grid;
     grid-template-columns: auto auto;
@@ -684,11 +696,15 @@ a,
 
 #footer {
     width: 100%;
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.601);
     border-top: 3px solid black;
     margin-bottom: 0;
     padding: 10px;
     font-family:'Times New Roman', Times, serif;
+}
+
+#footer a {
+    color:rgb(100, 160, 255);
 }
 
 

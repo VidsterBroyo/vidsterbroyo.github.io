@@ -14,7 +14,7 @@
     <source src="assets/sounds/sparkle.mp3" type="audio/mp3">
   </audio>
 
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
   <link href="style.css" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,101 +71,19 @@
 
     <div id="projectsDiv">
 
-      <h2 style="font-family: Lexend; color: rgb(255, 255, 255);" class="text-center mt-5 mb-4">what i've been up to</h2>
+      <!-- <h2 style="font-family: Lexend; color: rgb(255, 255, 255);" class="text-center mt-5 mb-4"> what i've been up to</h2> -->
+
+      <br><br>
+      <img id="projectsTitle" src="assets/img/whativebeen.gif" >
+
       <br>
-      <div class="row">
-
-        <div class="col-md-6">
-
-          <div class="card">
-            <div class="cardInner"
-              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/cards/slca/2goats.jpg);">
-
-              <div>
-                <h2>CTO of OntarioSLCA</h2>
-                <p><span>HTML/CSS</span> <span>JS</span> <span>Bootstrap</span> <span>Google API</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
-        <div class="col-md-6">
-          <div class="card">
-            <div class="cardInner"
-              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/minfin.jpg);">
-
-              <div>
-                <h2>Minvest Finance</h2>
-                <p><span>React.js</span> <span>Typescript</span> <span>AWS</span> <span>Flask</span> <span>Auth0</span>
-                </p>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-md-6">
-          <div class="card">
-            <div class="cardInner"
-              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/summitSurfersLogo.png);">
-
-              <div>
-                <h2>SummIT</h2>
-                <p><span>Flask</span> <span>BeautifulSoup4</span> <span>Web Scraping</span> <span>AWS</span> </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-md-6">
-          <div class="card">
-            <div class="cardInner"
-              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/tu20.jpg);">
-
-              <div>
-                <h2>Tech Under Twenty</h2>
-                <p><span>Node.js</span> <span>Javascript</span> <span>AWS</span> </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="col-md-6">
-          <div class="card">
-            <div class="cardInner"
-              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/tsd.png);">
-
-              <div>
-                <h2>Twitter Sentiment Detection</h2>
-                <p><span>pandas</span> <span>numpy</span> <span>Random Forest</span> <span>XGBoost</span> </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card">
-            <div class="cardInner"
-              style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/cards/mc/cover.jpg);">
-              <div>
-                <h2>Top 100 Minecraft Speedrun*</h2>
-                <p><span>pro gamer skills</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-      </div>
+      <!-- project gallery -->
+      <div class="row" id="projectGallery"></div>
 
       <!-- netscape window -->
-      <div id="netscapeWindow" >
+      <div id="netscapeWindow">
         <div id="netscapeNotContent">
           <div id="netscapeTopBar">
             <img src="assets/img/favicon.png">
