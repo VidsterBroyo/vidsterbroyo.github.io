@@ -5,9 +5,19 @@
   <title>Vidu Widyalankara</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vidu Widyalankara's personal portfolio | Student, Developer, Builder.">
+
+  <!-- open graph properties -->
+  <meta property="og:title" content="Vidu Widyalankara | Student, Developer, Builder" />
+  <meta property="og:description" content="Vidu Widyalankara's personal portfolio" />
+  <meta property="og:image" content="https://vidsterbroyo.com/assets/img/favicon.png" />
+  <meta property="og:url" content="https://vidsterbroyo.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+
+
   <script src="assets/bootstrap/"></script>
   <script src="https://kit.fontawesome.com/539cdfb9b6.js" crossorigin="anonymous"></script>
-
   <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
 
   <audio id="sparkle">
@@ -20,9 +30,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap"
     rel="stylesheet">
 
@@ -38,6 +45,7 @@
   </div>
 
   <div class="container-fluid" id="content">
+
     <div id="marqueeContainer" onmouseenter="pauseScroll()" onmouseleave="resumeScroll()">
       <pre
         id="marquee">reach for the <b>stars</b>.         Best viewed in Netscape Navigator™       where have u been?        my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm       please don't break anything       no actually i don't think this purple color is obnoxious       </pre>
@@ -45,108 +53,113 @@
         id="followupMarquee">reach for the <b>stars</b>.         Best viewed in Netscape Navigator™       where have u been?        my mind is going a mile an hour.       qwertyuiopasdfghjklzxcvbnm       please don't break anything       no actually i don't think this purple color is obnoxious       </pre>
     </div>
 
-    <div id="heroHeader">
-      <img id="star1" src="assets/img/star.png" />
+    <header>
+      <div id="heroHeader">
+        <img id="star1" src="assets/img/star.png" />
 
-      <div id="nameContainer" onmouseover="triggerAnimation()">
-        <h1 id="name"><i>
-            <div><span>V</span><span>i</span><span>d</span><span>u</span>
+        <div id="nameContainer" onmouseover="triggerAnimation()">
+          <h1 id="name"><i>
+              <div><span>V</span><span>i</span><span>d</span><span>u</span>
+                <div>
+                  <span>W</span><span>i</span><span>d</span><span>y</span><span>a</span><span>l</span><span>a</span><span>n</span><span>k</span><span>a</span><span>r</span><span>a</span>
+                </div>
+            </i></h1>
+          <p id="subtitle">aka&nbsp;&nbsp;<span style="font-family: 'Bitcount Grid Double'">vidsterbroyo</span></p>
+          <p id="desc">incoming CS @ UWaterloo</p>
+
+          <a id="githubA" href="https://github.com/VidsterBroyo" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a id="linkedinA" href="https://www.linkedin.com/in/vidu-widyalankara/" target="_blank"><i
+              class="fa-brands fa-linkedin"></i></a>
+          <br><br><br>
+        </div>
+
+        <img id="star2" src="assets/img/star.png">
+      </div>
+    </header>
+
+    <main>
+
+      <div id="projectsDiv">
+
+        <!-- <h2 style="font-family: Lexend; color: rgb(255, 255, 255);" class="text-center mt-5 mb-4"> what i've been up to</h2> -->
+
+        <br><br>
+        <img id="projectsTitle" src="assets/img/whativebeen.gif">
+
+        <br>
+
+
+        <!-- project gallery -->
+        <div class="row" id="projectGallery"></div>
+
+        <!-- netscape window -->
+        <div id="netscapeWindow">
+          <div id="netscapeNotContent">
+            <div id="netscapeTopBar">
+              <img src="assets/img/favicon.png">
+              Version 4.04 [en]<span>-011507 | Netscape</span>
+
               <div>
-                <span>W</span><span>i</span><span>d</span><span>y</span><span>a</span><span>l</span><span>a</span><span>n</span><span>k</span><span>a</span><span>r</span><span>a</span>
+                <button onclick="closeWindow()"></button><button disabled></button><button
+                  onclick="closeWindow()"></button>
               </div>
-          </i></h1>
-        <p id="subtitle">aka&nbsp;&nbsp;<span style="font-family: 'Bitcount Grid Double'">vidsterbroyo</span></p>
-        <p id="desc">incoming CS @ UWaterloo</p>
-
-        <a id="githubA" href="https://github.com/VidsterBroyo" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a id="linkedinA" href="https://www.linkedin.com/in/vidu-widyalankara/" target="_blank"><i
-            class="fa-brands fa-linkedin"></i></a>
-        <br><br><br>
-      </div>
-
-      <img id="star2" src="assets/img/star.png">
-    </div>
-
-
-
-    <div id="projectsDiv">
-
-      <!-- <h2 style="font-family: Lexend; color: rgb(255, 255, 255);" class="text-center mt-5 mb-4"> what i've been up to</h2> -->
-
-      <br><br>
-      <img id="projectsTitle" src="assets/img/whativebeen.gif" >
-
-      <br>
-
-
-      <!-- project gallery -->
-      <div class="row" id="projectGallery"></div>
-
-      <!-- netscape window -->
-      <div id="netscapeWindow">
-        <div id="netscapeNotContent">
-          <div id="netscapeTopBar">
-            <img src="assets/img/favicon.png">
-            Version 4.04 [en]<span>-011507 | Netscape</span>
-
-            <div>
-              <button onclick="closeWindow()"></button><button disabled></button><button
-                onclick="closeWindow()"></button>
             </div>
-          </div>
 
-          <p id="techUsed">
-            <span>R</span>eact.js&nbsp;&nbsp;&nbsp;&nbsp;<span>N</span>ode.js&nbsp;&nbsp;&nbsp;&nbsp;<span>F</span>lask
-          </p>
+            <p id="techUsed">
+              <span>R</span>eact.js&nbsp;&nbsp;&nbsp;&nbsp;<span>N</span>ode.js&nbsp;&nbsp;&nbsp;&nbsp;<span>F</span>lask
+            </p>
 
-          <hr>
+            <hr>
 
-          <button id="backBtn" disabled onclick="backProject()"></button><button id="forwardBtn"
-            onclick="forwardProject()"></button>
-          <a id="seeLiveLink" target="_blank"><button id="seeLiveBtn"></button></a><a id="githubLink"
-            target="_blank"><button id="githubBtn"></button></a><a id="devpostLink" target="_blank"><button
-              id="devpostBtn"></button></a>
-          <br>
+            <button id="backBtn" disabled onclick="backProject()"></button><button id="forwardBtn"
+              onclick="forwardProject()"></button>
+            <a id="seeLiveLink" target="_blank"><button id="seeLiveBtn"></button></a><a id="githubLink"
+              target="_blank"><button id="githubBtn"></button></a><a id="devpostLink" target="_blank"><button
+                id="devpostBtn"></button></a>
+            <br>
 
-          <hr>
+            <hr>
 
-          <div style="display: flex;  justify-content: center; margin: 10px 0px 10px 0px;">
-            <p id="locationBarLabel">Address</p>
-            <div id="locationBar">
-              <p id="netscapeLocation"></p>
+            <div style="display: flex;  justify-content: center; margin: 10px 0px 10px 0px;">
+              <p id="locationBarLabel">Address</p>
+              <div id="locationBar">
+                <p id="netscapeLocation"></p>
+              </div>
             </div>
+
+            <hr>
+
           </div>
-
-          <hr>
-
-        </div>
-        <div id="netscapeContent">
-          [hi]
+          <div id="netscapeContent">
+            [hi]
+          </div>
         </div>
       </div>
-    </div>
 
-    <br><br><br>
+      <br><br><br>
 
-    <div class="heartContainer">
-      <div></div>
-      <div><img id="speech" src="assets/img/pixel-speech-bubble.gif"></div>
-      <div class="clickable"><img id="heart" class="clickable" onclick="changeBG()" src="assets/img/love.gif"></div>
-    </div>
-
-    <div id="footer">
-      <div id="waterlooWR">
-        <a href="https://cs.uwatering.com/#https://vidsterbroyo.com?nav=prev">↜</a>
-        <a href="https://cs.uwatering.com/#https://vidsterbroyo.com/" target="_blank">
-          <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" />
-        </a>
-        <a href="https://cs.uwatering.com/#https://vidsterbroyo.com/?nav=next">↝</a>
+      <div class="heartContainer">
+        <div></div>
+        <div><img id="speech" src="assets/img/pixel-speech-bubble.gif"></div>
+        <div class="clickable"><img id="heart" class="clickable" onclick="changeBG()" src="assets/img/love.gif"></div>
       </div>
-      <p class="text-center">
-        inspired
-        by <a id="MKCredit" href="https://michaelkolesidis.com/" target="_blank">michaelkolesidis.com</a> and <a
-          id="CWCredit" href="https://www.cameronsworld.net/" target="_blank">cameronsworld.net</a></p>
-    </div>
+    </main>
+
+    <footer>
+      <div id="footer">
+        <div id="waterlooWR">
+          <a href="https://cs.uwatering.com/#https://vidsterbroyo.com?nav=prev">↜</a>
+          <a href="https://cs.uwatering.com/#https://vidsterbroyo.com/" target="_blank">
+            <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" />
+          </a>
+          <a href="https://cs.uwatering.com/#https://vidsterbroyo.com/?nav=next">↝</a>
+        </div>
+        <p class="text-center">
+          inspired
+          by <a id="MKCredit" href="https://michaelkolesidis.com/" target="_blank">michaelkolesidis.com</a> and <a
+            id="CWCredit" href="https://www.cameronsworld.net/" target="_blank">cameronsworld.net</a></p>
+      </div>
+    </footer>
 
 
 
