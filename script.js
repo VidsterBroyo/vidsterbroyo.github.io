@@ -412,7 +412,7 @@ const projects = [
   }, 
   {
     title: 'SummIT',
-    cover: 'assets/img/projects/ss/newsPostSummit.jpg',
+    cover: 'assets/img/projects/ss/newsPostSummIT.jpg',
     location: 'summit:',
     github: 'https://github.com/VidsterBroyo/SummIT',
     tech: ['Flask', 'BeautifulSoup4', 'Web Scraping', 'AWS'],
