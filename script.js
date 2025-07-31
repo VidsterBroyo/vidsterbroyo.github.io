@@ -193,7 +193,7 @@ function setup() {
   }, dialUpInterval * 5)
 
 
-
+  
   // load project cards
   projects.forEach((project, i) =>
     projectGallery.innerHTML += `
