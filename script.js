@@ -164,7 +164,7 @@ function closeDragElement() {
 function setup() {
 
   // dial up animation
-  let dialUpInterval = 50; //850
+  let dialUpInterval = 850; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
