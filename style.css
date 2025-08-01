@@ -20,7 +20,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    cursor: url("./assets/img/cursors/whiteWait.webp") 0 0, auto;
+    cursor: url("./assets/img/cursors/wait.png") 0 0, auto;
 
     background-color: #000080;
     /* dial up loading background */
