@@ -419,10 +419,17 @@ const projects = [
     html: `
       <h2>SummIT</h2>
       <ul>
-        <li>An application designed to remove high-data content from websites, reducing the website's size</li>
-        <li>This results in faster load times, less bandwidth used, and less carbon emissions</li>
-        <li>From collected data, the application can reduce the size of sites by an average of 95%</li>
-        <li>Created using Python and BeautifulSoup</li>
+        <li>A (formerly live) web browser designed to <b>remove high-bandwidth content</b> such as images, videos, ad trackers, and inessential JS scripts from websites</li>
+        <li>The primary intended use case is to allow those in <b>communities lacking high-speed internet</b> to still access important sites such as news sites</li>
+        <br>
+        <li>From testing, SummIT showed to result in a <b>92% reduction</b> in both download and upload sizes of sites</li>
+        <li>This translates to 92%:</li>
+        <ul>
+          <li>faster load times</li>
+          <li>lower internet costs</li>
+          <li>lower carbon emissions generated from servers</li>
+        </ul>
+        <li>Created using Flask & BeautifulSoup4</li>
       </ul>
     `
   },
