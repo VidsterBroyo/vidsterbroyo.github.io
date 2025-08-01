@@ -164,7 +164,7 @@ function closeDragElement() {
 function setup() {
 
   // dial up animation
-  let dialUpInterval = 850; //850
+  let dialUpInterval = 50; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
@@ -193,7 +193,7 @@ function setup() {
   }, dialUpInterval * 5)
 
 
-  
+
   // load project cards
   projects.forEach((project, i) =>
     projectGallery.innerHTML += `
@@ -327,14 +327,38 @@ const projects = [
     location: 'ontarioslca:',
     liveSite: 'https://ontarioslca.ca/',
     github: 'https://github.com/HaltonChess/haltonchess.github.io',
-    tech: ['HTML/CSS', 'JS', 'Bootstrap', 'Google API'],
+    tech: ['HTML/CSS', 'JS', 'Bootstrap', 'Google API', 'SEO'],
     html: `
       <h2>CTO of Ontario Student Led Chess Association</h2>
       <ul>
-        <li>Created a (gorgeous) <a href="https://ontarioslca.ca">website</a> for OntarioSLCA using Bootstrap</li>
-        <li>Programmed an algorithm to manage the club’s Google Sheets Chess Leaderboard</li>
-        <li>Created <a href="https://ontarioslca.ca/PAWn">PAWn</a>, a Javascript Chess pairing algorithm following the Swiss System compatible for both team and individual competitions</li>
+        <li>Designed a (gorgeous) website for <a href="https://ontarioslca.ca" target="_blank">OntarioSLCA</a> using <b>Bootstrap</b></li>
+        <li>Regularly updated website to showcase new tournaments & articles</li>
+        <li>Optimized SEO, bringing the website from <b>#33</b> to the <b>#1</b> spot for our search terms ("high school chess league").</li>
+        <li>Programmed an algorithm in JS to automate the management of the club’s <b>Chess Leaderboard</b> on <b>Google Sheets</b></li>
+        <li>Built <a href="https://ontarioslca.ca/PAWn" target="_blank"><b>PAWn</b></a> (Pairing Algorithm Wizard), a Swiss System-based pairing algorithm used to create match-ups in both team & individual competitions.</li>
       </ul>
+
+      <div class="row g-2">
+        <div class="col-md-6"> 
+          <img width="100%" src="assets/img/projects/slca/websiteHead.png">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/slca/websiteAbout.png">
+        </div>
+        <div class="col-md-6">
+          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/slca/pawnAdd.png">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/slca/pawnPairings.png">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12 col-lg-6" style="display:block; margin: auto; margin-top: 10px">
+          <img width="100%" src="assets/img/projects/slca/leaderboard.png">
+        </div>
+      </div>
+
     `
   },
   {
@@ -409,7 +433,7 @@ const projects = [
         <li>StudySync was awarded the <b>Best Use of Auth0</b> award</li>
       </ul>
     `
-  }, 
+  },
   {
     title: 'SummIT',
     cover: 'assets/img/projects/ss/newsPostSummIT.jpg',
@@ -425,12 +449,32 @@ const projects = [
         <li>From testing, SummIT showed to result in a <b>92% reduction</b> in both download and upload sizes of sites</li>
         <li>This translates to 92%:</li>
         <ul>
-          <li>faster load times</li>
-          <li>lower internet costs</li>
-          <li>lower carbon emissions generated from servers</li>
+          <li style="margin-top: -1px">faster load times</li>
+          <li style="margin-top: -1px">lower internet costs</li>
+          <li style="margin-top: -1px">lower carbon emissions generated from servers</li>
         </ul>
         <li>Created using Flask & BeautifulSoup4</li>
       </ul>
+
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <video width="100%" controls >
+            <source src="assets/img/projects/ss/SummITDemo.mp4" type="video/mp4">
+            a video demo of Vidu Widyalankara's project SummIT
+          </video>
+        </div>
+      </div>
+      <br>
+      <div class="row g-2">
+        <div class="col-md-6"> 
+          <img width="100%" src="assets/img/projects/ss/articlePostSummIT.jpg">
+          <p style="text-align: center"><em>News article accessed through SummIT</em></p>
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/ss/demo.png">
+        </div>
+      </div>
+
     `
   },
   {
