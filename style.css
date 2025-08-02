@@ -657,6 +657,16 @@ a,
     margin-top:5px;
 }
 
+#netscapeContent .subList li {
+    margin-top: -1px;
+}
+
+#netscapeContent .caption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 3px;
+}
+
 .heartContainer {
     display: grid;
     grid-template-columns: auto auto;

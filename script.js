@@ -372,7 +372,7 @@ const projects = [
       <ul>
         <li>As a <b>Co-Lead Software Engineer</b>, I led a team focused on creating Minvest's <b>MinvestEd</b>, an online resource to teach Gen Z financial lessons</li>
         <li>I also led the team in creating <b>Simvest</b>, a paper-trading service to give Gen Z investors experience in investing without real money </li>
-        <ul>
+        <ul class="subList">
           <li>Created using ReactJS, Flask, and Auth0's API</li>
         </ul>
         <li>As a <b>Cloud Specialist</b>, I built Minvest's AWS environment from the ground up using Docker, EC2 servers, ECS, and ACM</li>
@@ -385,27 +385,27 @@ const projects = [
       <div class="row g-2">
         <div class="col-md-6">
           <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;"  src="assets/img/projects/mf/minvestHome.png">
-          <p style="text-align: center"><em>Home page</em></p>
+          <p class="caption">Home page</p>
         </div>
         <div class="col-md-6">
           <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/minvestStock.png">
-          <p style="text-align: center"><em>A stock's page</em></p>
+          <p class="caption">A stock's page</p>
         </div>
         <div class="col-md-6"> 
           <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/minvested.png">
-          <p style="text-align: center"><em>MinvestEd</em></p>
+          <p class="caption">MinvestEd</p>
         </div>
         <div class="col-md-6">
           <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/article.png">
-          <p style="text-align: center"><em>A MinvestEd article</em></p>
+          <p class="caption">A MinvestEd article</p>
         </div>
         <div class="col-md-6">
           <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/quiz.png">
-          <p style="text-align: center"><em>A MinvestEd quiz</em></p>
+          <p class="caption">A MinvestEd quiz</p>
         </div>
         <div class="col-md-6">
           <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/simvest.png">
-          <p style="text-align: center"><em>Simvest</em></p>
+          <p class="caption">Simvest</p>
         </div>
       </div>
     `
@@ -420,14 +420,26 @@ const projects = [
       <h2>Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity</h2>
       <ul>
         <li>For my IB Extended Essay in Computer Science, I answered the research question: <b>How do the cumulative reward and convergence rate of Proximal Policy Optimization and Soft Actor-Critic algorithms compare when applied to learning puzzle games?</b></li>
-        <ul>
-        <li>Basically, which algorithm was better for this use case</li>
+        <ul class="subList">
+          <li>Basically, which algorithm was better for this use case</li>
         </ul>
-        <li>To answer it, I recreated <em>Suika Game</em> in Unity, trained a PPO and SAC model to play the game for <b>500,000</b> steps using ML-Agents, and compared their results using <b>TensorBoard</b>.</li>
+        <li>To answer it, I recreated <a href="https://suikagame.com/" target="_blank"><em>Suika Game</em></a> in Unity, trained a PPO and SAC model to play the game for <b>500,000</b> steps using ML-Agents, and compared their results using <b>TensorBoard</b>.</li>
         
         <li>The experiment found that the <b>PPO</b> algorithm achieved a greater cumulative reward and convergence rate</li>
         <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub" target="_blank">here<a></li>
       </ul>
+
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/pposac/suikaTraining.png">
+          <p class="caption">the PPO model training</p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/pposac/graph1.png">
+          <p class="caption">"rewards" = points scored, "steps" = # of decisions made</p>
+        </div>
+      </div>
     `
   },
   {
@@ -477,10 +489,10 @@ const projects = [
         <br>
         <li>From testing, SummIT showed to result in a <b>92% reduction</b> in both download and upload sizes of sites</li>
         <li>This translates to 92%:</li>
-        <ul>
-          <li style="margin-top: -1px">faster load times</li>
-          <li style="margin-top: -1px">lower internet costs</li>
-          <li style="margin-top: -1px">lower carbon emissions generated from servers</li>
+        <ul class="subList">
+          <li>faster load times</li>
+          <li>lower internet costs</li>
+          <li>lower carbon emissions generated from servers</li>
         </ul>
         <li>Created using Flask & BeautifulSoup4</li>
       </ul>
@@ -497,7 +509,7 @@ const projects = [
       <div class="row g-2">
         <div class="col-md-6"> 
           <img width="100%" src="assets/img/projects/ss/articlePostSummIT.jpg">
-          <p style="text-align: center"><em>News article accessed through SummIT</em></p>
+          <p class="caption">News article accessed through SummIT</p>
         </div>
         <div class="col-md-6">
           <img width="100%" src="assets/img/projects/ss/demo.png">
