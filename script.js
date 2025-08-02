@@ -366,19 +366,48 @@ const projects = [
     cover: 'assets/img/projects/mf/minvestStock.png',
     location: 'minvestFinance:',
     liveSite: 'https://beta.minvestfinance.com/',
-    tech: ['React.js', 'Typescript', 'AWS', 'Flask', 'Auth0'],
+    tech: ['React.js', 'Typescript', 'AWS', 'Docker', 'Flask', 'Auth0'],
     html: `
       <h2>Minvest Finance</h2>
       <ul>
-        <li>As a <b>Co-Lead Software Engineer</b>, I lead a team focused on creating <a href="https://beta.minvestfinance.com">Minvest's "MinvestEd" page</a>, a resource to teach GenZ financial lessons</li>
+        <li>As a <b>Co-Lead Software Engineer</b>, I led a team focused on creating Minvest's <b>MinvestEd</b>, an online resource to teach Gen Z financial lessons</li>
+        <li>I also led the team in creating <b>Simvest</b>, a paper-trading service to give Gen Z investors experience in investing without real money </li>
         <ul>
           <li>Created using ReactJS, Flask, and Auth0's API</li>
         </ul>
-        <li>As a <b>Cloud Specialist</b>, I built Minvest's AWS environment from the ground up</li>
+        <li>As a <b>Cloud Specialist</b>, I built Minvest's AWS environment from the ground up using Docker, EC2 servers, ECS, and ACM</li>
         <ul>
-          <li>I also save the company a minimum of CA$580+ per year by using AWS resources efficiently</li>
+          <li>I also saved the company a minimum of CA$580+ per year by using AWS resources efficiently</li>
         </ul>
       </ul>
+
+   
+      <div class="row g-2">
+        <div class="col-md-6">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;"  src="assets/img/projects/mf/minvestHome.png">
+          <p style="text-align: center"><em>Home page</em></p>
+        </div>
+        <div class="col-md-6">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/minvestStock.png">
+          <p style="text-align: center"><em>A stock's page</em></p>
+        </div>
+        <div class="col-md-6"> 
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/minvested.png">
+          <p style="text-align: center"><em>MinvestEd</em></p>
+        </div>
+        <div class="col-md-6">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/article.png">
+          <p style="text-align: center"><em>A MinvestEd article</em></p>
+        </div>
+        <div class="col-md-6">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/quiz.png">
+          <p style="text-align: center"><em>A MinvestEd quiz</em></p>
+        </div>
+        <div class="col-md-6">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/simvest.png">
+          <p style="text-align: center"><em>Simvest</em></p>
+        </div>
+      </div>
     `
   },
   {
@@ -386,7 +415,7 @@ const projects = [
     cover: 'assets/img/projects/pposac/cover.png',
     location: 'iLoveSuikaGame:',
     liveSite: 'https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub',
-    tech: ['Unity', 'ML-Agents', 'TensorFlow', 'C#'],
+    tech: ['Unity', 'ML-Agents', 'TensorBoard', 'C#'],
     html: `
       <h2>Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity</h2>
       <ul>
@@ -397,7 +426,7 @@ const projects = [
         <li>To answer it, I recreated <em>Suika Game</em> in Unity, trained a PPO and SAC model to play the game for <b>500,000</b> steps using ML-Agents, and compared their results using <b>TensorBoard</b>.</li>
         
         <li>The experiment found that the <b>PPO</b> algorithm achieved a greater cumulative reward and convergence rate</li>
-        <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub">here<a></li>
+        <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub" target="_blank">here<a></li>
       </ul>
     `
   },
@@ -410,7 +439,7 @@ const projects = [
     html: `
       <h2>Tech Under Twenty</h2>
       <ul>
-        <li>As <b>Team Lead</b>, I lead a <a href="https://techundertwenty.com">team of 30+ students</a> to provide youth in the GTA with opportunities in tech, business & entrepreneurship</li>
+        <li>As <b>Team Lead</b>, I lead a <a href="https://techundertwenty.com" target="_blank">team of 30+ students</a> to provide youth in the GTA with opportunities in tech, business & entrepreneurship</li>
         <li>I increased the total number of event attendees by 3x, helping to fulfill TU20’s mission statement</li>
         <li>As <b>Development Team Lead</b>, I increase attendee satisfaction by leading a team to create IT solutions for TU20 events</li>
       </ul>
@@ -486,7 +515,7 @@ const projects = [
     html: `
       <h2>Twitter Sentiment Detection</h2>
       <ul>
-        <li> I built a <a href="https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook">machine learning model</a> to classify the sentiment of tweets (positive or negative) using <b>1.6M pre-labeled tweets</b>. </li>
+        <li> I built a <a href="https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook" target="_blank">machine learning model</a> to classify the sentiment of tweets (positive or negative) using <b>1.6M pre-labeled tweets</b>. </li>
         <li> I performed <b>data preprocessing</b> by normalizing timestamps, converting time zones to EST, and removing noisy text/stopwords. </li>
         <li> I performed <b>EDA</b>, exploring tweet frequency by sentiment and time of day, generating word clouds, and comparing the average tweet length based on sentiment.</li>
         <li> I trained two different models, <b>Random Forest and XGBoost</b>, and hypertuned them to find the best possible hyperparameters. </li>
@@ -507,8 +536,8 @@ const projects = [
       <p style="text-align: center">*for Any% Glitchless 2-player 1.9-1.15 (Easy) category.... sorry if i baited you into thinking i'm actually good </p>
       <ul>
         <li>My friend and I started our Summer after Grade 12 by trying to get a top 100 Minecraft speedrun in any category</li>
-        <li>After tons of practices and attempts, we ended up with a <b>1:03:51.297</b> time, placing us <a href="https://www.speedrun.com/mc?h=Any_Glitchless_Co-op-Difficulty1%28Easy%29-random-seed-1-9-1-15-2-players&x=zd301qed-9l737pn1.4lxg24q2-rn1p34dn.5lm7wvjl-68kd9yql.jqzywvml-68k5jz82.jqz6vmm1"><b>93rd</b></a> in our category</li>
-        <li>Watch the <a href="https://youtu.be/vlZ9YsXv1dc">VOD</a></li>
+        <li>After tons of practices and attempts, we ended up with a <b>1:03:51.297</b> time, placing us <a target="_blank" href="https://www.speedrun.com/mc?h=Any_Glitchless_Co-op-Difficulty1%28Easy%29-random-seed-1-9-1-15-2-players&x=zd301qed-9l737pn1.4lxg24q2-rn1p34dn.5lm7wvjl-68kd9yql.jqzywvml-68k5jz82.jqz6vmm1"><b>93rd</b></a> in our category</li>
+        <li>Watch the <a href="https://youtu.be/vlZ9YsXv1dc" target="_blank">VOD</a></li>
       </ul>
     `
   }
