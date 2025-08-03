@@ -527,14 +527,29 @@ const projects = [
     html: `
       <h2>Twitter Sentiment Detection</h2>
       <ul>
-        <li> I built a <a href="https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook" target="_blank">machine learning model</a> to classify the sentiment of tweets (positive or negative) using <b>1.6M pre-labeled tweets</b>. </li>
-        <li> I performed <b>data preprocessing</b> by normalizing timestamps, converting time zones to EST, and removing noisy text/stopwords. </li>
-        <li> I performed <b>EDA</b>, exploring tweet frequency by sentiment and time of day, generating word clouds, and comparing the average tweet length based on sentiment.</li>
-        <li> I trained two different models, <b>Random Forest and XGBoost</b>, and hypertuned them to find the best possible hyperparameters. </li>
-        <li> The best test accuracy obtained was <b>~78.5%</b>, achieved using the XGBoost model with 1,000,000 training tweets and 2500 trees.</li>
-        <li> I included functionality for <b>real-time classification</b> on new tweet input using the trained model and vectorizer. </li>
+        <li> I built a <a href="https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook" target="_blank">machine learning model</a> to classify the sentiment of tweets (positive or negative) using <b>1.6M pre-labeled tweets</b> </li>
+        <li> I performed <b>data preprocessing</b> by normalizing timestamps, converting time zones to EST, and removing noisy text/stopwords </li>
+        <li> I performed <b>EDA</b>, exploring tweet frequency by sentiment and time of day, generating word clouds, and comparing the average tweet length based on sentiment</li>
+        <li> I trained two different models, <b>Random Forest and XGBoost</b>, and hypertuned them to find the best possible hyperparameters</li>
+        <li> The best test accuracy obtained was <b>~78.5%</b>, achieved using the XGBoost model with 1,000,000 training tweets and 2500 trees</li>
+        <li> I included functionality for <b>real-time classification</b> on new tweet input using the trained model and vectorizer </li>
         <li> <a href="https://docs.google.com/presentation/d/e/2PACX-1vSOffim8oAY4UuielXu4wAQHRXD1puxc2szmvtBsZBtC6nnUoQOegfjHsK3UnQZdwZhD-QdjokBDBVx/pub?start=true&loop=false&delayms=5000" target="_blank">Project slidedeck</a> </li>
       </ul>
+
+      <div class="row g-2">
+        <div class="col-12 col-lg-7" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/twitter/happyWords.png">
+          <p class="caption">wordcloud of 800,000 happy tweets</p>
+        </div>
+        <div class="col-12 col-lg-7" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/twitter/sadWords.png">
+          <p class="caption">wordcloud of 800,000 sad tweets</p>
+        </div>
+        <div class="col-12 col-lg-7" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/twitter/confusionMatrix.png">
+          <p class="caption">confusion matrix of model with highest accuracy<br>(0 = sad, 1 = happy)</p>
+        </div>
+      </div>
     `
   },
   {
@@ -551,6 +566,31 @@ const projects = [
         <li>After tons of practices and attempts, we ended up with a <b>1:03:51.297</b> time, placing us <a target="_blank" href="https://www.speedrun.com/mc?h=Any_Glitchless_Co-op-Difficulty1%28Easy%29-random-seed-1-9-1-15-2-players&x=zd301qed-9l737pn1.4lxg24q2-rn1p34dn.5lm7wvjl-68kd9yql.jqzywvml-68k5jz82.jqz6vmm1"><b>93rd</b></a> in our category</li>
         <li>Watch the <a href="https://youtu.be/vlZ9YsXv1dc" target="_blank">VOD</a></li>
       </ul>
+
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <iframe width="100%" style="aspect-ratio: 16 / 10;" src="https://www.youtube.com/embed/vlZ9YsXv1dc?si=JVACnGrSH7AUImWB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <br>
+      <div class="row g-2">
+        <div class="col-md-6"> 
+          <img width="100%" src="assets/img/projects/mc/ripGolem.png">
+          <p class="caption">rip golem thank u for ur sacrifice</p>
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/mc/portal.png">
+          <p>we need to go deeper</p>
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/mc/death.png">
+          <p class="caption">when i almost lost all the blaze rods in lava</p>
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/mc/win.png">
+          <p class="caption">W</p>
+        </div>
+      </div>
     `
   }
 ];
