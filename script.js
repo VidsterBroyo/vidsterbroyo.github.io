@@ -219,6 +219,7 @@ function setup() {
 
 
 function openNetscape(index) {
+
   currentProjectIndex = index
 
   // if current project is last project, disable forward btn
@@ -249,6 +250,7 @@ function openNetscape(index) {
   // set the content and address
   netscapeContent.innerHTML = projects[index].html
   netscapeLocation.innerHTML = projects[index].location
+  netscapeContent.scrollTop = 0;
 
   techUsed.innerHTML = ""
   projects[index].tech.forEach((name) => {
@@ -340,22 +342,22 @@ const projects = [
 
       <div class="row g-2">
         <div class="col-md-6"> 
-          <img width="100%" src="assets/img/projects/slca/websiteHead.png">
+          <img width="100%" src="assets/img/projects/slca/websiteHead.png" alt="Vidu Widyalankara's student led chess association website header">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/slca/websiteAbout.png">
+          <img width="100%" src="assets/img/projects/slca/websiteAbout.png" alt="about page of Vidu Widyalankara's student led chess association website">
         </div>
         <div class="col-md-6">
-          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/slca/pawnAdd.png">
+          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/slca/pawnAdd.png" alt="picture of adding players to PAWn algorithm">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/slca/pawnPairings.png">
+          <img width="100%" src="assets/img/projects/slca/pawnPairings.png" alt="picture of PAWn algorithm-generated pairings">
         </div>
       </div>
       
       <div class="row">
         <div class="col-12 col-lg-6" style="display:block; margin: auto; margin-top: 10px">
-          <img width="100%" src="assets/img/projects/slca/leaderboard.png">
+          <img width="100%" src="assets/img/projects/slca/leaderboard.png" alt="picture of SCLA leaderboard on Vidu Widyalankara's SLCA website">
         </div>
       </div>
 
@@ -384,27 +386,27 @@ const projects = [
    
       <div class="row g-2">
         <div class="col-md-6">
-          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;"  src="assets/img/projects/mf/minvestHome.png">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;"  src="assets/img/projects/mf/minvestHome.png" alt="home page of minvest finance">
           <p class="caption">Home page</p>
         </div>
         <div class="col-md-6">
-          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/minvestStock.png">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/minvestStock.png" alt="a stock page on minvest finance">
           <p class="caption">A stock's page</p>
         </div>
         <div class="col-md-6"> 
-          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/minvested.png">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/minvested.png" alt="minvestEd page, which Vidu Widyalankara led the creation of">
           <p class="caption">MinvestEd</p>
         </div>
         <div class="col-md-6">
-          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/article.png">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/article.png" alt="a minvested article">
           <p class="caption">A MinvestEd article</p>
         </div>
         <div class="col-md-6">
-          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/quiz.png">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/quiz.png" alt="a minvested quiz, created in React.js by Vidu Widyalankara">
           <p class="caption">A MinvestEd quiz</p>
         </div>
         <div class="col-md-6">
-          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/simvest.png">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/simvest.png" alt="the simvest page of minvest finance, spearheaded by Vidu Widyalankara">
           <p class="caption">Simvest</p>
         </div>
       </div>
@@ -431,12 +433,12 @@ const projects = [
 
       <div class="row">
         <div class="col-12 col-lg-8" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/pposac/suikaTraining.png">
+          <img width="100%" src="assets/img/projects/pposac/suikaTraining.png" alt="a picture of 8 Unity-made suika games running concurrently, played by the model">
           <p class="caption">the PPO model training</p>
         </div>
         <div class="w-100"></div>
         <div class="col-12 col-lg-8" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/pposac/graph1.png">
+          <img width="100%" src="assets/img/projects/pposac/graph1.png" alt="a graph of steps vs rewards for both the PPO + SAC model">
           <p class="caption">"rewards" = points scored, "steps" = # of decisions made</p>
         </div>
       </div>
@@ -469,34 +471,34 @@ const projects = [
 
       <div class="row g-2">
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/tu20/celebration.jpg">
+          <img width="100%" src="assets/img/projects/tu20/celebration.jpg" alt="a team celebrating their win at TU20 Cup">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/tu20/convo.jpg">
+          <img width="100%" src="assets/img/projects/tu20/convo.jpg" alt="some guys having a conversation at TU20 Cup">
         </div>
         <div class="col-md-6"> 
-          <img width="100%" src="assets/img/projects/tu20/aur.JPG">
+          <img width="100%" src="assets/img/projects/tu20/aur.JPG" alt="guy showing group of other guys something on a laptop">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/tu20/interview.jpg">
+          <img width="100%" src="assets/img/projects/tu20/interview.jpg" alt="guy being interviewed by woman for a job">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/tu20/guys.jpg">
+          <img width="100%" src="assets/img/projects/tu20/guys.jpg" alt="guys sitting down at a circular table">
         </div>
         <div class="col-md-6">
-          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/tu20/group.jpg">
+          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/tu20/group.jpg" alt="a winning group taking a pic at TU20 Cup">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/tu20/rubrics.png">
+          <img width="100%" src="assets/img/projects/tu20/rubrics.png" alt="rubrics page of Cup judging platform, created by Vidu Widyalankara">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/tu20/stats.png">
+          <img width="100%" src="assets/img/projects/tu20/stats.png" alt="statistics page of Cup judging platform, created by Vidu Widyalankara">
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-12 col-lg-7" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/tu20/cupGroup.jpg">
+          <img width="100%" src="assets/img/projects/tu20/cupGroup.jpg" alt="big group standing together at TU20 Cup">
         </div>
       </div>
     `
@@ -520,16 +522,16 @@ const projects = [
     <br>
       <div class="row g-2">
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/ssync/homeHome.png">
+          <img width="100%" src="assets/img/projects/ssync/homeHome.png" alt="home page of studysync, showing study groups user is a part of">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/ssync/home.png">
+          <img width="100%" src="assets/img/projects/ssync/home.png" alt="AI lecture summarizer">
         </div>
         <div class="col-md-6"> 
-          <img width="100%" src="assets/img/projects/ssync/upload.png">
+          <img width="100%" src="assets/img/projects/ssync/upload.png" alt="page to upload audio or video lecture to get transcription of">
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/ssync/quiz.png">
+          <img width="100%" src="assets/img/projects/ssync/quiz.png" alt="AI-generated quiz based on notes - Vidu Widyalankara made the UI!">
         </div>
       </div>
     `
@@ -558,7 +560,7 @@ const projects = [
 
       <div class="row">
         <div class="col-12 col-lg-8" style="display:block; margin: auto;">
-          <video width="100%" controls >
+          <video width="100%" controls alt="a video demo of Vidu Widyalankara's project SummIT">
             <source src="assets/img/projects/ss/SummITDemo.mp4" type="video/mp4">
             a video demo of Vidu Widyalankara's project SummIT
           </video>
@@ -567,11 +569,11 @@ const projects = [
       <br>
       <div class="row g-2">
         <div class="col-md-6"> 
-          <img width="100%" src="assets/img/projects/ss/articlePostSummIT.jpg">
+          <img width="100%" src="assets/img/projects/ss/articlePostSummIT.jpg" alt="an article accessed through summit, with images & videos stripped">
           <p class="caption">News article accessed through SummIT</p>
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/ss/demo.png">
+          <img width="100%" src="assets/img/projects/ss/demo.png" alt="a side-by-side comparison of home page of a news site accessed with and without summit. Photo courtesy of Vidu Widyalankara.">
         </div>
       </div>
 
@@ -597,15 +599,15 @@ const projects = [
 
       <div class="row g-2">
         <div class="col-12 col-lg-7" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/twitter/happyWords.png">
+          <img width="100%" src="assets/img/projects/twitter/happyWords.png" alt="wordcloud of 800,000 happy tweets. words like know, lol, thank, like, love.">
           <p class="caption">wordcloud of 800,000 happy tweets</p>
         </div>
         <div class="col-12 col-lg-7" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/twitter/sadWords.png">
+          <img width="100%" src="assets/img/projects/twitter/sadWords.png" alt="wordcloud of 800,000 sad tweets. words like want, work, wish today, miss.">
           <p class="caption">wordcloud of 800,000 sad tweets</p>
         </div>
         <div class="col-12 col-lg-7" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/twitter/confusionMatrix.png">
+          <img width="100%" src="assets/img/projects/twitter/confusionMatrix.png" alt="confusion matrix.  too lazy to put numbers here but it's pretty good with some false positives. Photo courtesy of Vidu Widyalankara.">
           <p class="caption">confusion matrix of model with highest accuracy<br>(0 = sad, 1 = happy)</p>
         </div>
       </div>
@@ -634,19 +636,19 @@ const projects = [
       <br>
       <div class="row g-2">
         <div class="col-md-6"> 
-          <img width="100%" src="assets/img/projects/mc/ripGolem.png">
+          <img width="100%" src="assets/img/projects/mc/ripGolem.png" alt="rip golem thank u for ur sacrifice">
           <p class="caption">rip golem thank u for ur sacrifice</p>
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/mc/portal.png">
+          <img width="100%" src="assets/img/projects/mc/portal.png" alt="Vidu Widyalankara building nether portal">
           <p>we need to go deeper</p>
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/mc/death.png">
+          <img width="100%" src="assets/img/projects/mc/death.png" alt="Vidu Widyalankara almost throwing the run">
           <p class="caption">when i almost lost all the blaze rods in lava</p>
         </div>
         <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/mc/win.png">
+          <img width="100%" src="assets/img/projects/mc/win.png" alt="Vidu Widyalankara killing the dragon">
           <p class="caption">W</p>
         </div>
       </div>
