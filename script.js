@@ -164,7 +164,7 @@ function closeDragElement() {
 function setup() {
 
   // dial up animation
-  let dialUpInterval = 850; //850
+  let dialUpInterval = 50; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
@@ -447,14 +447,58 @@ const projects = [
     cover: 'assets/img/projects/tu20/cover.jpg',
     location: 'tu20:',
     liveSite: 'https://techundertwenty.com/',
-    tech: ['Node.js', 'Javascript', 'AWS'],
+    tech: ['Node.js', 'Express.js', 'AWS'],
     html: `
       <h2>Tech Under Twenty</h2>
       <ul>
-        <li>As <b>Team Lead</b>, I lead a <a href="https://techundertwenty.com" target="_blank">team of 30+ students</a> to provide youth in the GTA with opportunities in tech, business & entrepreneurship</li>
-        <li>I increased the total number of event attendees by 3x, helping to fulfill TU20’s mission statement</li>
-        <li>As <b>Development Team Lead</b>, I increase attendee satisfaction by leading a team to create IT solutions for TU20 events</li>
+        <li>While I was <b>President</b> of <a href="https://techundertwenty.com" target="_blank">TU20</a> from Grade 10 - 12, I led a team of 30+ students to provide youth in the GTA with opportunities in tech, business & entrepreneurship</li>
+        <li>Some things TU20 did during my presidency:</li>
+        <ul>
+          <li>Held <b>hiring workshops</b> connecting local companies + highschool students</li>
+          <li>Expanded our chapters program to highschools <b>across Canada</b></li>
+          <li>Gave out <b>$4,000</b> to competitors of our tech + business competitions</li>
+          <li>Increased the total number of event attendees by <b>3x</b></li>
+        </ul>
+        <li>As <b>Development Team Lead</b>, I handled the IT solutions for TU20, such as:</li>
+        <ul>
+          <li>Maintaining the website</li>
+          <li>Creating a judging platform to streamline our award deliberation process in competitions</li>
+          <li>Creating an online schedule + activity for our event attendees</li>
+        </ul>
       </ul>
+
+      <div class="row g-2">
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/tu20/celebration.jpg">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/tu20/convo.jpg">
+        </div>
+        <div class="col-md-6"> 
+          <img width="100%" src="assets/img/projects/tu20/aur.JPG">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/tu20/interview.jpg">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/tu20/guys.jpg">
+        </div>
+        <div class="col-md-6">
+          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/tu20/group.jpg">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/tu20/rubrics.png">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/tu20/stats.png">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-12 col-lg-7" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/tu20/cupGroup.jpg">
+        </div>
+      </div>
     `
   },
   {
@@ -467,12 +511,27 @@ const projects = [
       <h2>StudySync - HTN '24</h2>
       <ul>
         <li>At <b>Hack The North 2024</b>, with school just recently starting, our team felt it best to build a tool to help us in our studies</li>
-        <li>We all like to take collaborative notes, so we decided to build StudySync - a platform to enhance our notetaking process</li>
+        <li>We all like to take collaborative notes, so we decided to build StudySync - <b>a platform to enhance our notetaking process</b></li>
         <li>Built using <b>React.js</b>, StudySync allows you to create study groups for different classes, where you collaborators can publish notes for the group to see</li>
-        <li>Users can generate a transcription of a lecture with audio and get a quiz based on the content.</li>
-        <li>A super cool feature, made possible by the <b>Symphonics API</b>, is the ability to transcribe a video of the user mouthing their notes. This is perfect for when you're too lazy to type your notes, but also can't make a voice note in the middle of class!</li>
+        <li>Users can generate a <b>transcription</b> of a lecture with audio and get a quiz based on the content.</li>
+        <li>A super cool feature, made possible by the <b>Symphonics API</b>, is the ability to transcribe a video of the user <b>mouthing their notes</b>. This is perfect for when you're too lazy to type your notes, but also can't make a voice note in the middle of class!</li>
         <li>StudySync was awarded the <b>Best Use of Auth0</b> award</li>
       </ul>
+    <br>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/ssync/homeHome.png">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/ssync/home.png">
+        </div>
+        <div class="col-md-6"> 
+          <img width="100%" src="assets/img/projects/ssync/upload.png">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/ssync/quiz.png">
+        </div>
+      </div>
     `
   },
   {
