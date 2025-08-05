@@ -641,7 +641,7 @@ const projects = [
         </div>
         <div class="col-md-6">
           <img width="100%" src="assets/img/projects/mc/portal.png" alt="Vidu Widyalankara building nether portal">
-          <p>we need to go deeper</p>
+          <p class="caption">we need to go deeper</p>
         </div>
         <div class="col-md-6">
           <img width="100%" src="assets/img/projects/mc/death.png" alt="Vidu Widyalankara almost throwing the run">
