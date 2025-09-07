@@ -324,46 +324,6 @@ function changeBG() {
 // look i could turn this into a json file but im too lazy to turn all the ' into "
 const projects = [
   {
-    title: 'CTO of OntarioSLCA',
-    cover: 'assets/img/projects/slca/2goats.jpg',
-    location: 'ontarioslca:',
-    liveSite: 'https://ontarioslca.ca/',
-    github: 'https://github.com/HaltonChess/haltonchess.github.io',
-    tech: ['HTML/CSS', 'JS', 'Bootstrap', 'Google API', 'SEO'],
-    html: `
-      <h2>CTO of Ontario Student Led Chess Association</h2>
-      <ul>
-        <li>Designed a (gorgeous) website for <a href="https://ontarioslca.ca" target="_blank">OntarioSLCA</a> using <b>Bootstrap</b></li>
-        <li>Regularly updated website to showcase new tournaments & articles</li>
-        <li>Optimized SEO, bringing the website from <b>#33</b> to the <b>#1</b> spot for our search terms ("high school chess league").</li>
-        <li>Programmed an algorithm in JS to automate the management of the club’s <b>Chess Leaderboard</b> on <b>Google Sheets</b></li>
-        <li>Built <a href="https://ontarioslca.ca/PAWn" target="_blank"><b>PAWn</b></a> (Pairing Algorithm Wizard), a Swiss System-based pairing algorithm used to create match-ups in both team & individual competitions.</li>
-      </ul>
-
-      <div class="row g-2">
-        <div class="col-md-6"> 
-          <img width="100%" src="assets/img/projects/slca/websiteHead.png" alt="Vidu Widyalankara's student led chess association website header">
-        </div>
-        <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/slca/websiteAbout.png" alt="about page of Vidu Widyalankara's student led chess association website">
-        </div>
-        <div class="col-md-6">
-          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/slca/pawnAdd.png" alt="picture of adding players to PAWn algorithm">
-        </div>
-        <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/slca/pawnPairings.png" alt="picture of PAWn algorithm-generated pairings">
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-12 col-lg-6" style="display:block; margin: auto; margin-top: 10px">
-          <img width="100%" src="assets/img/projects/slca/leaderboard.png" alt="picture of SCLA leaderboard on Vidu Widyalankara's SLCA website">
-        </div>
-      </div>
-
-    `
-  },
-  {
     title: 'Minvest Finance',
     cover: 'assets/img/projects/mf/minvestStock.png',
     location: 'minvestFinance:',
@@ -408,38 +368,6 @@ const projects = [
         <div class="col-md-6">
           <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/mf/simvest.png" alt="the simvest page of minvest finance, spearheaded by Vidu Widyalankara">
           <p class="caption">Simvest</p>
-        </div>
-      </div>
-    `
-  },
-  {
-    title: 'Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity',
-    cover: 'assets/img/projects/pposac/cover.png',
-    location: 'iLoveSuikaGame:',
-    liveSite: 'https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub',
-    tech: ['Unity', 'ML-Agents', 'TensorBoard', 'C#'],
-    html: `
-      <h2>Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity</h2>
-      <ul>
-        <li>For my IB Extended Essay in Computer Science, I answered the research question: <b>How do the cumulative reward and convergence rate of Proximal Policy Optimization and Soft Actor-Critic algorithms compare when applied to learning puzzle games?</b></li>
-        <ul class="subList">
-          <li>Basically, which algorithm was better for this use case</li>
-        </ul>
-        <li>To answer it, I recreated <a href="https://suikagame.com/" target="_blank"><em>Suika Game</em></a> in Unity, trained a PPO and SAC model to play the game for <b>500,000</b> steps using ML-Agents, and compared their results using <b>TensorBoard</b>.</li>
-        
-        <li>The experiment found that the <b>PPO</b> algorithm achieved a greater cumulative reward and convergence rate</li>
-        <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub" target="_blank">here<a></li>
-      </ul>
-
-      <div class="row">
-        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/pposac/suikaTraining.png" alt="a picture of 8 Unity-made suika games running concurrently, played by the model">
-          <p class="caption">the PPO model training</p>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/pposac/graph1.png" alt="a graph of steps vs rewards for both the PPO + SAC model">
-          <p class="caption">"rewards" = points scored, "steps" = # of decisions made</p>
         </div>
       </div>
     `
@@ -501,6 +429,135 @@ const projects = [
           <img width="100%" src="assets/img/projects/tu20/cupGroup.jpg" alt="big group standing together at TU20 Cup">
         </div>
       </div>
+    `
+  },
+  {
+    title: 'DiscoDig',
+    cover: 'assets/img/projects/discodig/stats4.png',
+    location: 'discodig:',
+    liveSite: 'https://chromewebstore.google.com/detail/discodig/jdmfjjgfcajnfgibhmbacgfiiikbddoc',
+    tech: ['TS', 'ESBuild', 'plotly.js', 'Chrome Extensions'],
+    html: `
+      <h2>DiscoDig</h2>
+      <ul>
+        <li>Built a free <a target="_blank" href="https://chromewebstore.google.com/detail/discodig/jdmfjjgfcajnfgibhmbacgfiiikbddoc">Chrome Extension</a> that acts as a <b>Spotify Wrapped for your Discord DMs & GCs</b></li>
+        <li>Open a DM or GC, press the DiscoDig icon, enter how many messages you want DiscoDig to dig through, and press Dig!</li>
+        <li>DiscoDig will proceed to show you a <b>plethora of stats</b>such as:</li>
+        <ul>
+          <li>A <b>pie chart</b> of who sends the most messages</li>
+          <li>A <b>word cloud</b> of your most common topics</li>
+          <li>A <b>time graph</b> of message activity</li>
+          <li>A breakdown of <b>messages per time of day</b></li>
+          <li>A gallery of the chat’s <b>most used GIFs</b></li>
+        </ul>
+        <li>DiscoDig also shows stats for each person in the chat, including:</li>
+        <ul>
+          <li>Their <b>top 10 most used words</b></li>
+          <li>Average <b>message length</b></li>
+          <li>Average <b>reply time</b></li>
+          <li>Who they ping most + how many times they’ve been pinged</li>
+        </ul>
+      </ul>
+
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <iframe width="100%" style="aspect-ratio: 16 / 10;" src="https://www.youtube.com/embed/HzBVkQX4-C0?si=y0CrgqUhiPcVKr4n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row g-2">
+        <div class="col-md-6"> 
+          <img width="100%" src="assets/img/projects/discodig/splash.png" alt="splash page of discodig, a chrome extension made by Vidu Widyalankara">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/discodig/stats1.png" alt="a pie chart showing message distribution in a Discord chat and a word cloud. Photo courtesy of Vidu Widyalankara.">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/discodig/stats2.png" alt="a user panel showing the user's top 10 words and other statistics. Photo courtesy of Vidu Widyalankara.">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/discodig/stats3.png" alt="a time graph of number of messages sent per day & and a time of day graph of messages sent per time of day. Photo courtesy of Vidu Widyalankara.">
+        </div>
+         <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/discodig/stats4.png" alt="a gif gallery showing the most used gifs in a Discord chat">
+        </div>
+      </div>
+
+
+    `
+  },
+  {
+    title: 'Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity',
+    cover: 'assets/img/projects/pposac/cover.png',
+    location: 'iLoveSuikaGame:',
+    liveSite: 'https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub',
+    tech: ['Unity', 'ML-Agents', 'TensorBoard', 'C#'],
+    html: `
+      <h2>Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity</h2>
+      <ul>
+        <li>For my IB Extended Essay in Computer Science, I answered the research question: <b>How do the cumulative reward and convergence rate of Proximal Policy Optimization and Soft Actor-Critic algorithms compare when applied to learning puzzle games?</b></li>
+        <ul class="subList">
+          <li>Basically, which algorithm was better for this use case</li>
+        </ul>
+        <li>To answer it, I recreated <a href="https://suikagame.com/" target="_blank"><em>Suika Game</em></a> in Unity, trained a PPO and SAC model to play the game for <b>500,000</b> steps using ML-Agents, and compared their results using <b>TensorBoard</b>.</li>
+        
+        <li>The experiment found that the <b>PPO</b> algorithm achieved a greater cumulative reward and convergence rate</li>
+        <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub" target="_blank">here<a></li>
+      </ul>
+
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/pposac/suikaTraining.png" alt="a picture of 8 Unity-made suika games running concurrently, played by the model">
+          <p class="caption">the PPO model training</p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/pposac/graph1.png" alt="a graph of steps vs rewards for both the PPO + SAC model">
+          <p class="caption">"rewards" = points scored, "steps" = # of decisions made</p>
+        </div>
+      </div>
+    `
+  },
+  {
+    title: 'CTO of OntarioSLCA',
+    cover: 'assets/img/projects/slca/2goats.jpg',
+    location: 'ontarioslca:',
+    liveSite: 'https://ontarioslca.ca/',
+    github: 'https://github.com/HaltonChess/haltonchess.github.io',
+    tech: ['HTML/CSS', 'JS', 'Bootstrap', 'Google API', 'SEO'],
+    html: `
+      <h2>CTO of Ontario Student Led Chess Association</h2>
+      <ul>
+        <li>Designed a (gorgeous) website for <a href="https://ontarioslca.ca" target="_blank">OntarioSLCA</a> using <b>Bootstrap</b></li>
+        <li>Regularly updated website to showcase new tournaments & articles</li>
+        <li>Optimized SEO, bringing the website from <b>#33</b> to the <b>#1</b> spot for our search terms ("high school chess league").</li>
+        <li>Programmed an algorithm in JS to automate the management of the club’s <b>Chess Leaderboard</b> on <b>Google Sheets</b></li>
+        <li>Built <a href="https://ontarioslca.ca/PAWn" target="_blank"><b>PAWn</b></a> (Pairing Algorithm Wizard), a Swiss System-based pairing algorithm used to create match-ups in both team & individual competitions.</li>
+      </ul>
+
+      <div class="row g-2">
+        <div class="col-md-6"> 
+          <img width="100%" src="assets/img/projects/slca/websiteHead.png" alt="Vidu Widyalankara's student led chess association website header">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/slca/websiteAbout.png" alt="about page of Vidu Widyalankara's student led chess association website">
+        </div>
+        <div class="col-md-6">
+          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/slca/pawnAdd.png" alt="picture of adding players to PAWn algorithm">
+        </div>
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/slca/pawnPairings.png" alt="picture of PAWn algorithm-generated pairings">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12 col-lg-6" style="display:block; margin: auto; margin-top: 10px">
+          <img width="100%" src="assets/img/projects/slca/leaderboard.png" alt="picture of SCLA leaderboard on Vidu Widyalankara's SLCA website">
+        </div>
+      </div>
+
     `
   },
   {
