@@ -1,5 +1,4 @@
-console.log("%cpls don't hack me", "color: lime; font-size: 20px; background: black; padding: 4px; border: 1px solid lime;");
-console.log("this site is held together solely by hopes and dreams")
+console.log("%cstop snooping", "color: lime; font-size: 20px; background: black; padding: 4px; border: 1px solid lime;");
 /* WHY ARE YOU HERE - DID YOU NOT HEED MY REQUEST ??? */
 
 // DOM handles
@@ -204,7 +203,7 @@ function setup() {
                                         <div>
                                           <h2>${project.title}</h2>
                                           <p>
-                                          ${project.tech.map((name) => `<span>${name}</span>`).join("")}
+                                          ${project.tech.map((name) => (name == "Hackathon Win") ? `<span style="background-color: gold; color: black;">${name}</span>&nbsp;&nbsp;&nbsp;&nbsp;` : `<span>${name}</span>`).join("")}
                                           </p>
                                         </div>
                                       </div>
@@ -561,7 +560,7 @@ const projects = [
     `
   },
   {
-    title: 'StudySync - HTN \'24',
+    title: 'StudySync - HTN \'24 Win',
     cover: 'assets/img/projects/ssync/cover.jpg',
     location: 'hackTheNorthWin',
     devpost: 'https://devpost.com/software/studying-with-hack-the-north',
@@ -634,6 +633,53 @@ const projects = [
         </div>
       </div>
 
+    `
+  },
+  {
+    title: 'vibesB2B - HackGT \'25 Win',
+    cover: 'assets/img/projects/hackgt/cover.png',
+    location: 'hackGTWin',
+    liveSite: 'https://vibesb2b.vercel.app/',
+    devpost: 'https://devpost.com/software/vibesb2b',
+    tech: ['Flask', 'Recall.ai', 'ngrok', 'Webhooks', 'Hackathon Win'],
+    html: `
+      <h2>vibesB2B - HackGT '25 Win</h2>
+      <ul>
+        <li>At <b>HackGT 2025</b>, my team and I built vibesB2B - a coach to <b>enhance your online pitches</b> and presentations</li>
+        <li>Once you open the app & join an online meeting, vibesB2B uses <b>Recall.ai</b> to get a live transcript and recording.</li>
+        <li>The video is then fed through our <b>custom CV stack</b> which detects real-time audience reactions such as confusion, excitement, and engagement. </li>
+        <li>Using the <b>live sentiment analysis</b> & transcript, Gemini is able to generate feedback on the pitch which is <b>sent to the user’s Slack</b> and used to <b>update a CRM</b> through Attio</li>
+        <li>All of this allows the user to refine their pitches and make every meeting that much more impactful.</li>
+        <li>vibesB2B won us <b>3rd place overall</b> + a PS5 for each of us</li>
+      </ul>
+      <br>
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <iframe width="100%" style="aspect-ratio: 16 / 10;" src="https://www.youtube.com/embed/oRyB2NW-Wkc?si=84AHV7Pr3V2S0voi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="caption">Awesome funny demo featuring yours truly</p>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row g-10">
+        <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/hackgt/techStack.png" alt="our awesome tech stack. Photo courtesy of Vidu Widyalankara.">
+          <br><br>
+        </div>
+        
+        <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
+          <img style="width: 100%; object-fit: contain;" src="assets/img/projects/hackgt/slackMsg.png" alt="A slack message with feedback sent by vibesB2B. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">A Slack message with feedback sent by vibesB2B</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+                    <img width="100%" src="assets/img/projects/hackgt/teamPic.jpg" alt="The team posted up with the new PS5s. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">The team posted up with the new PS5s</p>
+        </div>
+      </div>
     `
   },
   {
