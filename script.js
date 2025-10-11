@@ -75,9 +75,9 @@ function triggerAnimation() {
 
 
     // if user still hovering, repeat animation 
-    if (nameContainer.matches(":hover")) {
-      triggerAnimation()
-    }
+    // if (nameContainer.matches(":hover")) {
+    //   triggerAnimation()
+    // }
 
   }
     , 1900)
