@@ -523,17 +523,17 @@ const projects = [
     title: 'CTO of OntarioSLCA',
     cover: 'assets/img/projects/slca/2goats.jpg',
     location: 'ontarioslca:',
-    liveSite: 'https://ontarioslca.ca/',
+    liveSite: 'https://haltonchess.github.io/',
     github: 'https://github.com/HaltonChess/haltonchess.github.io',
     tech: ['HTML/CSS', 'JS', 'Bootstrap', 'Google API', 'SEO'],
     html: `
       <h2>CTO of Ontario Student Led Chess Association</h2>
       <ul>
-        <li>Designed a (gorgeous) website for <a href="https://ontarioslca.ca" target="_blank">OntarioSLCA</a> using <b>Bootstrap</b></li>
+        <li>Designed a (gorgeous) website for <a href="https://haltonchess.github.io/" target="_blank">OntarioSLCA</a> using <b>Bootstrap</b></li>
         <li>Regularly updated website to showcase new tournaments & articles</li>
         <li>Optimized SEO, bringing the website from <b>#33</b> to the <b>#1</b> spot for our search terms ("high school chess league").</li>
         <li>Programmed an algorithm in JS to automate the management of the club’s <b>Chess Leaderboard</b> on <b>Google Sheets</b></li>
-        <li>Built <a href="https://ontarioslca.ca/PAWn" target="_blank"><b>PAWn</b></a> (Pairing Algorithm Wizard), a Swiss System-based pairing algorithm used to create match-ups in both team & individual competitions.</li>
+        <li>Built <a href="https://haltonchess.github.io/PAWn" target="_blank"><b>PAWn</b></a> (Pairing Algorithm Wizard), a Swiss System-based pairing algorithm used to create match-ups in both team & individual competitions.</li>
       </ul>
 
       <div class="row g-2">
