@@ -488,7 +488,7 @@ const projects = [
       <ul>
         <li>Built a free <a target="_blank" href="https://chromewebstore.google.com/detail/discodig/jdmfjjgfcajnfgibhmbacgfiiikbddoc">Chrome Extension</a> that acts as a <b>Spotify Wrapped for your Discord DMs & GCs</b></li>
         <li>Open a DM or GC, press the DiscoDig icon, enter how many messages you want DiscoDig to dig through, and press Dig!</li>
-        <li>DiscoDig will proceed to show you a <b>plethora of stats </b>such as:</li>
+        <li>DiscoDig will proceed to show you a <b>plethora of stats</b> such as:</li>
         <ul>
           <li>A <b>pie chart</b> of who sends the most messages</li>
           <li>A <b>word cloud</b> of your most common topics</li>
@@ -550,7 +550,7 @@ const projects = [
         <li>To answer it, I recreated <a href="https://suikagame.com/" target="_blank"><em>Suika Game</em></a> in Unity, trained a PPO and SAC model to play the game for <b>500,000</b> steps using ML-Agents, and compared their results using <b>TensorBoard</b>.</li>
         
         <li>The experiment found that the <b>PPO</b> algorithm achieved a greater cumulative reward and convergence rate</li>
-        <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub" target="_blank">here<a></li>
+        <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub" target="_blank">here</a></li>
       </ul>
 
       <div class="row">
@@ -666,7 +666,7 @@ const projects = [
       <ul>
         <li>At <b>Hack The North 2024</b>, with school just recently starting, our team felt it best to build a tool to help us in our studies</li>
         <li>We all like to take collaborative notes, so we decided to build StudySync - <b>a platform to enhance our notetaking process</b></li>
-        <li>Built using <b>React.js</b>, StudySync allows you to create study groups for different classes, where you collaborators can publish notes for the group to see</li>
+        <li>Built using <b>React.js</b>, StudySync allows you to create study groups for different classes, where your collaborators can publish notes for the group to see</li>
         <li>Users can generate a <b>transcription</b> of a lecture with audio and get a quiz based on the content.</li>
         <li>A super cool feature, made possible by the <b>Symphonics API</b>, is the ability to transcribe a video of the user <b>mouthing their notes</b>. This is perfect for when you're too lazy to type your notes, but also can't make a voice note in the middle of class!</li>
         <li>StudySync was awarded the <b>Best Use of Auth0</b> award</li>
