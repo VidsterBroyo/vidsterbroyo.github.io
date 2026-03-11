@@ -721,12 +721,12 @@ const projects = [
       </div>
       <br>
       <div class="row g-2">
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/ss/demo.png" alt="a side-by-side comparison of home page of a news site accessed with and without summit. Photo courtesy of Vidu Widyalankara.">
+        </div>
         <div class="col-md-6"> 
           <img width="100%" src="assets/img/projects/ss/articlePostSummIT.jpg" alt="an article accessed through summit, with images & videos stripped">
           <p class="caption">News article accessed through SummIT</p>
-        </div>
-        <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/ss/demo.png" alt="a side-by-side comparison of home page of a news site accessed with and without summit. Photo courtesy of Vidu Widyalankara.">
         </div>
       </div>
 
