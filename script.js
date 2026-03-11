@@ -187,8 +187,7 @@ function setup() {
     document.body.style.backgroundImage = "url('assets/img/bgs/cobblestone.png')"
     document.body.style.cursor = "url('./assets/img/cursors/whiteCursor.svg') 0 0, auto"
     marquee2.style.left = marquee1.offsetWidth + marquee1.offsetLeft + 200 + "px"
-    console.log(marquee1.offsetWidth + marquee1.offsetLeft)
-    console.log(marquee2.style.left)
+
     setInterval(move, 30)
   }, dialUpInterval * 5)
 
@@ -251,7 +250,6 @@ function openNetscape(index) {
   // set the content and address
   netscapeContent.innerHTML = projects[index].html
   netscapeLocation.innerHTML = projects[index].location
-  netscapeContent.scrollTop = 0;
 
   techUsed.innerHTML = ""
   projects[index].tech.forEach((name) => {
@@ -293,6 +291,7 @@ function openNetscape(index) {
 
   // show the window
   netscapeWindow.style.display = "flex"
+  netscapeContent.scrollTop = 0 // this goes after showing, otherwise it doesn't work 
 }
 
 
