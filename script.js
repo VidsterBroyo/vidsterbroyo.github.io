@@ -658,6 +658,7 @@ const projects = [
     title: 'StudySync - HTN \'24',
     cover: 'assets/img/projects/ssync/cover.jpg',
     location: 'hackTheNorthWin:',
+    github: "https://github.com/VidsterBroyo/StudySync-HTN",
     badge: 'assets/img/projects/ssync/badge.png',
     devpost: 'https://devpost.com/software/studying-with-hack-the-north',
     tech: ['MongoDB', 'Express.js', 'ReactJS', 'Auth0', 'Flask'],
