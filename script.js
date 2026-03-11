@@ -102,10 +102,10 @@ function move() {
     marquee2.style.left = (marquee2.offsetLeft - 4) + "px"
 
     if (marquee1.offsetLeft < -(marquee1.offsetWidth)) {
-      marquee1.style.left = marquee2.offsetWidth + "px"
+      marquee1.style.left = (marquee2.offsetLeft + marquee2.offsetWidth) + "px"
     }
     if (marquee2.offsetLeft < -(marquee2.offsetWidth)) {
-      marquee2.style.left = marquee1.offsetWidth + "px"
+      marquee2.style.left = (marquee1.offsetLeft + marquee1.offsetWidth) + "px"
     }
   }
 }
@@ -163,7 +163,7 @@ function closeDragElement() {
 function setup() {
 
   // dial up animation
-  let dialUpInterval = 850; //850
+  let dialUpInterval = 8; //850
 
   setTimeout(() => {
     document.getElementById("dialUpGif").src = "assets/img/dialUpGif/frame2.png"
@@ -186,9 +186,10 @@ function setup() {
     document.getElementById("content").style.display = "block"
     document.body.style.backgroundImage = "url('assets/img/bgs/cobblestone.png')"
     document.body.style.cursor = "url('./assets/img/cursors/whiteCursor.svg') 0 0, auto"
-    marquee2.style.left = marquee1.offsetWidth + marquee1.offsetLeft + "px"
+    marquee2.style.left = marquee1.offsetWidth + marquee1.offsetLeft + 200 + "px"
+    console.log(marquee1.offsetWidth + marquee1.offsetLeft)
+    console.log(marquee2.style.left)
     setInterval(move, 30)
-
   }, dialUpInterval * 5)
 
 
@@ -200,10 +201,11 @@ function setup() {
                                     <div class="card">
                                       <div class="cardInner" onclick="openNetscape(${i})"
                                         style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${project.cover});">
+                                        ${project.badge ? `<img class="cardBadge" src="${project.badge}" alt="badge">` : ''}
                                         <div>
                                           <h2>${project.title}</h2>
                                           <p>
-                                          ${project.tech.map((name) => (name == "Hackathon Win") ? `<span style="background-color: gold; color: black;">${name}</span>&nbsp;&nbsp;&nbsp;&nbsp;` : `<span>${name}</span>`).join("")}
+                                          ${project.tech.map((name) => `<span>${name}</span>`).join("")}
                                           </p>
                                         </div>
                                       </div>
@@ -323,6 +325,50 @@ function changeBG() {
 // look i could turn this into a json file but im too lazy to turn all the ' into "
 const projects = [
   {
+    title: 'Hack The North',
+    cover: 'assets/img/projects/htn/htnCover.png',
+    location: 'dreamBigBuildBig:',
+    liveSite: 'https://hackthenorth.com/',
+    tech: ['Node.js', 'Typescript', 'Prisma', 'Docker', 'Kubernetes'],
+    html: `
+      <h2>Hack The North</h2>
+      <ul>
+        <li>As a <b>Backend Developer</b> at Canada's largest hackathon, I help design & build systems for tens of thousands of hackers </li> 
+        <li>I've only been on the team for a week <small>(as of 03/11/26)</small>, so come back when I've done more cool shit to talk about!</li>     
+      </ul>
+
+      <div class="row g-10">
+        <div class="col-md-12 col-lg-3" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/htn/honk.webp" alt="our awesome UWaterloo blueprint team for mississippi school to food network. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">Honk!</p>
+        </div>
+      </div>
+    `
+  },
+  {
+    title: 'UWBlueprint',
+    cover: 'assets/img/projects/bp/blueprintTeam.png',
+    location: 'techForSocialGood:',
+    liveSite: 'https://uwblueprint.org',
+    github: 'https://github.com/uwblueprint/mississippi-farm-to-school-network',
+    tech: ['Angular', 'Typescript', 'Sequelize', 'Docker', 'GraphQL'],
+    html: `
+      <h2>UWBlueprint</h2>
+      <ul>
+        <li>I'm a developer on the <b>Mississippi School to Food Network</b> team, where we're helping connect Mississippi schools with local food producers to <b>keep kids fed</b>.</li>
+        <li>We're currently developing an Angular app to make it easier for farms & educators to connect</li>
+        <li>I've been personally responsible for the creation of an optimized PostgreSQL schema to support <b>180 farms and counting</b></li>    
+      </ul>
+   
+      <div class="row g-10">
+        <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/bp/msfnTeam.jpg" alt="our awesome UWaterloo blueprint team for mississippi school to food network. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">App still in development, so for now enjoy this team picture I'm not even in</p>
+        </div>
+      </div>
+    `
+  },
+  {
     title: 'Minvest Finance',
     cover: 'assets/img/projects/mf/minvestStock.png',
     location: 'minvestFinance:',
@@ -436,12 +482,13 @@ const projects = [
     location: 'discodig:',
     liveSite: 'https://chromewebstore.google.com/detail/discodig/jdmfjjgfcajnfgibhmbacgfiiikbddoc',
     tech: ['TS', 'ESBuild', 'plotly.js', 'Chrome Extensions'],
+    badge: 'assets/img/projects/discodig/badgeDiscoDig.png',
     html: `
       <h2>DiscoDig</h2>
       <ul>
         <li>Built a free <a target="_blank" href="https://chromewebstore.google.com/detail/discodig/jdmfjjgfcajnfgibhmbacgfiiikbddoc">Chrome Extension</a> that acts as a <b>Spotify Wrapped for your Discord DMs & GCs</b></li>
         <li>Open a DM or GC, press the DiscoDig icon, enter how many messages you want DiscoDig to dig through, and press Dig!</li>
-        <li>DiscoDig will proceed to show you a <b>plethora of stats</b>such as:</li>
+        <li>DiscoDig will proceed to show you a <b>plethora of stats </b>such as:</li>
         <ul>
           <li>A <b>pie chart</b> of who sends the most messages</li>
           <li>A <b>word cloud</b> of your most common topics</li>
@@ -488,7 +535,7 @@ const projects = [
     `
   },
   {
-    title: 'Investigating PPO & SAC Algorithms for Reinforcement Learning in Unity',
+    title: 'Investigating PPO & SAC Algorithms for RL in Unity',
     cover: 'assets/img/projects/pposac/cover.png',
     location: 'iLoveSuikaGame:',
     liveSite: 'https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub',
@@ -560,11 +607,60 @@ const projects = [
     `
   },
   {
-    title: 'StudySync - HTN \'24 Win',
+    title: 'vibesB2B - HackGT \'25',
+    cover: 'assets/img/projects/hackgt/cover.png',
+    location: 'hackGTWin:',
+    liveSite: 'https://vibesb2b.vercel.app/',
+    devpost: 'https://devpost.com/software/vibesb2b',
+    badge: 'assets/img/projects/hackgt/badge.png',
+    tech: ['Flask', 'Recall.ai', 'ngrok', 'Webhooks'],
+    html: `
+      <h2>vibesB2B - HackGT '25</h2>
+      <ul>
+        <li>At <b>HackGT 2025</b>, my team and I built vibesB2B - a coach to <b>enhance your online pitches</b> and presentations</li>
+        <li>Once you open the app & join an online meeting, vibesB2B uses <b>Recall.ai</b> to get a live transcript and recording.</li>
+        <li>The video is then fed through our <b>custom CV stack</b> which detects real-time audience reactions such as confusion, excitement, and engagement. </li>
+        <li>Using the <b>live sentiment analysis</b> & transcript, Gemini is able to generate feedback on the pitch which is <b>sent to the user’s Slack</b> and used to <b>update a CRM</b> through Attio</li>
+        <li>All of this allows the user to refine their pitches and make every meeting that much more impactful.</li>
+        <li>vibesB2B won us <b>3rd place overall</b> + a PS5 for each of us</li>
+      </ul>
+      <br>
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <iframe width="100%" style="aspect-ratio: 16 / 10;" src="https://www.youtube.com/embed/oRyB2NW-Wkc?si=84AHV7Pr3V2S0voi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="caption">Awesome funny demo featuring yours truly</p>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row g-10">
+        <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/hackgt/techStack.png" alt="our awesome tech stack. Photo courtesy of Vidu Widyalankara.">
+          <br><br>
+        </div>
+        
+        <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
+          <img style="width: 100%; object-fit: contain;" src="assets/img/projects/hackgt/slackMsg.png" alt="A slack message with feedback sent by vibesB2B. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">A Slack message with feedback sent by vibesB2B</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+                    <img width="100%" src="assets/img/projects/hackgt/teamPic.jpg" alt="The team posted up with the new PS5s. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">The team posted up with the new PS5s</p>
+        </div>
+      </div>
+    `
+  },
+  {
+    title: 'StudySync - HTN \'24',
     cover: 'assets/img/projects/ssync/cover.jpg',
-    location: 'hackTheNorthWin',
+    location: 'hackTheNorthWin:',
+    badge: 'assets/img/projects/ssync/badge.png',
     devpost: 'https://devpost.com/software/studying-with-hack-the-north',
-    tech: ['MongoDB', 'Express.js', 'ReactJS', 'Auth0', 'Flask', 'Hackathon Win'],
+    tech: ['MongoDB', 'Express.js', 'ReactJS', 'Auth0', 'Flask'],
     html: `
       <h2>StudySync - HTN '24</h2>
       <ul>
@@ -633,53 +729,6 @@ const projects = [
         </div>
       </div>
 
-    `
-  },
-  {
-    title: 'vibesB2B - HackGT \'25 Win',
-    cover: 'assets/img/projects/hackgt/cover.png',
-    location: 'hackGTWin',
-    liveSite: 'https://vibesb2b.vercel.app/',
-    devpost: 'https://devpost.com/software/vibesb2b',
-    tech: ['Flask', 'Recall.ai', 'ngrok', 'Webhooks', 'Hackathon Win'],
-    html: `
-      <h2>vibesB2B - HackGT '25 Win</h2>
-      <ul>
-        <li>At <b>HackGT 2025</b>, my team and I built vibesB2B - a coach to <b>enhance your online pitches</b> and presentations</li>
-        <li>Once you open the app & join an online meeting, vibesB2B uses <b>Recall.ai</b> to get a live transcript and recording.</li>
-        <li>The video is then fed through our <b>custom CV stack</b> which detects real-time audience reactions such as confusion, excitement, and engagement. </li>
-        <li>Using the <b>live sentiment analysis</b> & transcript, Gemini is able to generate feedback on the pitch which is <b>sent to the user’s Slack</b> and used to <b>update a CRM</b> through Attio</li>
-        <li>All of this allows the user to refine their pitches and make every meeting that much more impactful.</li>
-        <li>vibesB2B won us <b>3rd place overall</b> + a PS5 for each of us</li>
-      </ul>
-      <br>
-      <div class="row">
-        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
-          <iframe width="100%" style="aspect-ratio: 16 / 10;" src="https://www.youtube.com/embed/oRyB2NW-Wkc?si=84AHV7Pr3V2S0voi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          <p class="caption">Awesome funny demo featuring yours truly</p>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="row g-10">
-        <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/hackgt/techStack.png" alt="our awesome tech stack. Photo courtesy of Vidu Widyalankara.">
-          <br><br>
-        </div>
-        
-        <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
-          <img style="width: 100%; object-fit: contain;" src="assets/img/projects/hackgt/slackMsg.png" alt="A slack message with feedback sent by vibesB2B. Photo courtesy of Vidu Widyalankara.">
-          <p class="caption">A Slack message with feedback sent by vibesB2B</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
-                    <img width="100%" src="assets/img/projects/hackgt/teamPic.jpg" alt="The team posted up with the new PS5s. Photo courtesy of Vidu Widyalankara.">
-          <p class="caption">The team posted up with the new PS5s</p>
-        </div>
-      </div>
     `
   },
   {
