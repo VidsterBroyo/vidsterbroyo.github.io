@@ -333,7 +333,6 @@ const projects = [
       <h2>Hack The North</h2>
       <ul>
         <li>As a <b>Backend Developer</b> at Canada's largest hackathon, I help design & build systems for tens of thousands of hackers </li> 
-        <li>I've only been on the team for a week <small>(as of 03/11/26)</small>, so come back when I've done more cool shit to talk about!</li>     
       </ul>
 
       <div class="row g-10">
