@@ -358,12 +358,15 @@ const projects = [
         <li>I've been personally responsible for the creation of an optimized PostgreSQL schema to support <b>180 farms and counting</b></li>    
       </ul>
    
-      <div class="row g-10">
-        <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
+      <div class="row g-2">
+        <div class="col-md-8">
           <img width="100%" src="assets/img/projects/bp/msfnTeam.jpg" alt="our awesome UWaterloo blueprint team for mississippi school to food network. Photo courtesy of Vidu Widyalankara.">
-          <p class="caption">App still in development, so for now enjoy this team picture I'm not even in</p>
+        </div>
+        <div class="col-md-4">
+          <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/projects/bp/ballPit.jpg" alt="UWBlueprint team hanging out in a ball pit. Photo courtesy of Vidu Widyalankara.">
         </div>
       </div>
+      <p class="caption">App still in development, so for now enjoy these team photos</p>
     `
   },
   {
