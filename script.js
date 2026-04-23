@@ -1,5 +1,4 @@
-console.log("%cstop snooping", "color: lime; font-size: 20px; background: black; padding: 4px; border: 1px solid lime;");
-/* WHY ARE YOU HERE - DID YOU NOT HEED MY REQUEST ??? */
+console.log("%cboo!", "color: lime; font-size: 20px; background: black; padding: 4px; border: 1px solid lime;");
 
 // DOM handles
 const marquee1 = document.getElementById("marquee")

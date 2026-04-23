@@ -754,6 +754,21 @@ a,
 }
 
 
+#uwaterloo-webring img {
+    width: 27px !important;
+    height: 27px !important;
+}
+
+#uwaterloo-webring div[style*="mask"] {
+    width: 27px !important;
+    height: 27px !important;
+}
+
+#uwaterloo-webring button {
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+
 #waterlooWR {
     display: flex;
     align-items: center;
