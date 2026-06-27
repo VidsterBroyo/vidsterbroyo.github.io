@@ -199,7 +199,6 @@ function setup() {
                                     <div class="card">
                                       <div class="cardInner" onclick="openNetscape(${i})"
                                         style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${project.cover});">
-                                        ${project.badge ? `<img class="cardBadge" src="${project.badge}" alt="badge">` : ''}
                                         <div>
                                           <h2>${project.title}</h2>
                                           <p>
@@ -208,10 +207,91 @@ function setup() {
                                         </div>
                                       </div>
                                     </div>
+                                    ${project.badge ? `<img class="cardBadge" src="${project.badge}" alt="badge">` : ''}
                                   </div>
                                 `
   )
 
+  setupSpeechBubble()
+  setupModalScrollLock()
+  setupNameAnimation()
+  setupResumeDownload()
+}
+
+function setupResumeDownload() {
+  const resumeLink = document.getElementById("resumeA")
+  resumeLink.addEventListener("click", (e) => {
+    // fetch() doesn't work on file:// — let the native link handle it
+    if (window.location.protocol === "file:") return
+
+    e.preventDefault()
+    downloadFile(resumeLink.href, "Vidu_Widyalankara_Resume.pdf")
+  })
+}
+
+function downloadFile(url, filename) {
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) throw new Error("fetch failed")
+      return res.blob()
+    })
+    .then((blob) => {
+      const blobUrl = URL.createObjectURL(blob)
+      const a = document.createElement("a")
+      a.href = blobUrl
+      a.download = filename
+      a.click()
+      URL.revokeObjectURL(blobUrl)
+    })
+    .catch(() => {
+      const a = document.createElement("a")
+      a.href = url
+      a.download = filename
+      a.click()
+    })
+}
+
+function setupNameAnimation() {
+  const nameContainer = document.getElementById("nameContainer")
+  nameContainer.addEventListener("mouseenter", triggerAnimation)
+}
+
+function setupModalScrollLock() {
+  function preventScrollOutsideContent(e) {
+    if (!netscapeContent.contains(e.target)) {
+      e.preventDefault()
+    }
+  }
+
+  netscapeWindow.addEventListener("wheel", preventScrollOutsideContent, { passive: false })
+  netscapeWindow.addEventListener("touchmove", preventScrollOutsideContent, { passive: false })
+}
+
+function lockPageScroll() {
+  document.documentElement.style.overflow = "hidden"
+  document.body.style.overflow = "hidden"
+}
+
+function unlockPageScroll() {
+  document.documentElement.style.overflow = ""
+  document.body.style.overflow = ""
+}
+
+function setupSpeechBubble() {
+  const speech = document.getElementById("speech")
+  if (!speech) return
+
+  let played = false
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting || played) return
+      played = true
+      observer.disconnect()
+      speech.play()
+    })
+  }, { threshold: 0.3 })
+
+  observer.observe(speech)
 }
 
 
@@ -290,6 +370,7 @@ function openNetscape(index) {
 
   // show the window
   netscapeWindow.style.display = "flex"
+  lockPageScroll()
   netscapeContent.scrollTop = 0 // this goes after showing, otherwise it doesn't work 
 }
 
@@ -307,6 +388,7 @@ function backProject() {
 
 function closeWindow() {
   netscapeWindow.style.display = "none"
+  unlockPageScroll()
 }
 
 
@@ -323,21 +405,74 @@ function changeBG() {
 // look i could turn this into a json file but im too lazy to turn all the ' into "
 const projects = [
   {
-    title: 'Hack The North',
+    title: 'SWE @ TMX Group (TSX/MX)',
+    cover: 'assets/img/projects/tmx/tmx_cover.jpg',
+    location: 'TheFutureIsYoursToSee:',
+    liveSite: 'https://www.tmx.com/',
+    tech: ['Python', 'SQL', 'C++', 'Kubernetes'],
+    html: `
+      <h2>TMX Group (TSX/MX)</h2>
+      <ul>
+        <li>As a <b>Software Engineer</b> @ TMX, I maintain and extend the <b>automated monthly billing</b> using Python, SQL, and C++</li>
+        <li>Wrote scripts and SQL to process <b>millions of monthly transactions</b> across 30+ clients on TMX's AlphaX US exchange</li>
+        <li>Diagnosed & resolved production failures in Lambda & S3-based pipelines powering monthly invoice billing for nearly <b>100 institutional MX & CDCC clients</b> via root-cause analysis of CloudWatch logs</li> 
+        <ul>
+          <li> MX = Montreal Exchange, Canada's sole derivatives exchange </li>
+          <li> CDCC = Canadian Derivatives Clearing Corporation </li>
+        </ul>
+        <li> Played a lot of foosball, lost a lot of foosball </li>
+      </ul>
+      <br>
+      <div class="row g-2">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/tmx/tmxInterns.jpg" alt="TMX summer interns. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">the TMX S26 interns!</p>
+        </div>
+      </div>
+
+      <div class="row g-2 justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/tmx/baseball.webp" alt="TMX interns at a Toronto Blue Jays game. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">TMX at a Jays game (we won btw)</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/tmx/tmxGames.jpg" alt="TMX interns playing games together. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">me vs. my friend in street fighter games in the lunch room (i won btw)</p>
+        </div>
+      </div>
+    `
+  },
+  {
+    title: 'BE @ Hack The North',
     cover: 'assets/img/projects/htn/htnCover.png',
     location: 'dreamBigBuildBig:',
     liveSite: 'https://hackthenorth.com/',
-    tech: ['Node.js', 'Typescript', 'Prisma', 'Docker', 'Kubernetes'],
+    tech: ['Node.js', 'Typescript', 'Prisma', 'Docker', 'Kubernetes', 'GitHub Actions'],
     html: `
       <h2>Hack The North</h2>
+      <h4 style="text-align: center">canada's largest hackathon 🤯</h3>
+      <br>
       <ul>
-        <li>As a <b>Backend Developer</b> at Canada's largest hackathon, I help design & build systems for tens of thousands of hackers </li> 
+        <li>As a <b>Backend Developer</b>, I improved the sponsor interface for <b>500+ sponsors</b> by designing schema changes that allowed for easier data entry, better tracking, and more perks </li>
+          <ul><li>One of which was sponsor job postings!</li></ul>
+        <li>A key promise we made to sponsors was that we'd have the jobs they submit to us posted on <a href="https://hackthenorth.com"> hackthenorth.com</a> by the <b>next day</b></li>
+        <li>To achieve this, I set up scripts and <b>GitHub Actions cronjobs</b> that:
+        <ul>
+          <li>Fetched new job postings submitted to us</li>
+          <li>Cleaned up excess whitespace from company logo images</li>
+          <li>Created automated PRs that added the postings to our site</li>
+          <ul>
+            <li>While I was at it, I had these PRs also automate adding company logos to our sponsor section, <b>saving FE 15+ hours</b> of work (yw FE)</li>
+          </ul>
+          <li>Sent out email blasts to 500+ subscribed hackers everytime a batch of new postings came out!</li>
+        </ul>
+        <li>Improved internal tools using a Typescript-based pipeline that brings event ideas submitted on Slack into a centralized Notion database, enabling easier & more visible tracking of 1000s of ideas</li>
       </ul>
-
-      <div class="row g-10">
-        <div class="col-md-12 col-lg-3" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/htn/honk.webp" alt="our awesome UWaterloo blueprint team for mississippi school to food network. Photo courtesy of Vidu Widyalankara.">
-          <p class="caption">Honk!</p>
+      <br>
+      <div class="row g-2">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/htn/htnBeach.jpg" alt="Hack The North team at the beach. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">the HTN team @ Wasaga Beach!</p>
         </div>
       </div>
     `
@@ -354,9 +489,9 @@ const projects = [
       <ul>
         <li>I'm a developer on the <b>Mississippi School to Food Network</b> team, where we're helping connect Mississippi schools with local food producers to <b>keep kids fed</b>.</li>
         <li>We're currently developing an Angular app to make it easier for farms & educators to connect</li>
-        <li>I've been personally responsible for the creation of an optimized PostgreSQL schema to support <b>180 farms and counting</b></li>    
+        <li>I've been personally responsible for the creation of an optimized PostgreSQL schema to support <b>180 farms and counting</b>, as well as CRUD services to allow admins to create site-wide announcements</li>    
       </ul>
-   
+      <br>
       <div class="row g-2">
         <div class="col-md-8">
           <img width="100%" src="assets/img/projects/bp/msfnTeam.jpg" alt="our awesome UWaterloo blueprint team for mississippi school to food network. Photo courtesy of Vidu Widyalankara.">
@@ -369,7 +504,7 @@ const projects = [
     `
   },
   {
-    title: 'Minvest Finance',
+    title: 'Co-Lead SWE @ Minvest Finance',
     cover: 'assets/img/projects/mf/minvestStock.png',
     location: 'minvestFinance:',
     liveSite: 'https://beta.minvestfinance.com/',
@@ -387,8 +522,7 @@ const projects = [
           <li>I also saved the company a minimum of CA$580+ per year by using AWS resources efficiently</li>
         </ul>
       </ul>
-
-   
+      <br>
       <div class="row g-2">
         <div class="col-md-6">
           <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;"  src="assets/img/projects/mf/minvestHome.png" alt="home page of minvest finance">
@@ -418,7 +552,7 @@ const projects = [
     `
   },
   {
-    title: 'Tech Under Twenty',
+    title: 'President @ Tech Under Twenty',
     cover: 'assets/img/projects/tu20/cover.jpg',
     location: 'tu20:',
     liveSite: 'https://techundertwenty.com/',
@@ -426,7 +560,7 @@ const projects = [
     html: `
       <h2>Tech Under Twenty</h2>
       <ul>
-        <li>While I was <b>President</b> of <a href="https://techundertwenty.com" target="_blank">TU20</a> from Grade 10 - 12, I led a team of 30+ students to provide youth in the GTA with opportunities in tech, business & entrepreneurship</li>
+        <li>While I was <b>President</b> of <a href="https://techundertwenty.com" target="_blank">TU20</a> from 2022 to 2025, I led a team of 30+ students to provide youth in the GTA with opportunities in tech, business & entrepreneurship</li>
         <li>Some things TU20 did during my presidency:</li>
         <ul>
           <li>Held <b>hiring workshops</b> connecting local companies + highschool students</li>
@@ -441,7 +575,7 @@ const projects = [
           <li>Creating an online schedule + activity for our event attendees</li>
         </ul>
       </ul>
-
+      <br>
       <div class="row g-2">
         <div class="col-md-6">
           <img width="100%" src="assets/img/projects/tu20/celebration.jpg" alt="a team celebrating their win at TU20 Cup">
@@ -504,7 +638,7 @@ const projects = [
           <li>Who they ping most + how many times they’ve been pinged</li>
         </ul>
       </ul>
-
+      <br>
       <div class="row">
         <div class="col-12 col-lg-8" style="display:block; margin: auto;">
           <iframe width="100%" style="aspect-ratio: 16 / 10;" src="https://www.youtube.com/embed/HzBVkQX4-C0?si=y0CrgqUhiPcVKr4n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -552,7 +686,7 @@ const projects = [
         <li>The experiment found that the <b>PPO</b> algorithm achieved a greater cumulative reward and convergence rate</li>
         <li>Read the 4000-word paper <a href="https://docs.google.com/document/d/e/2PACX-1vTNPVxiDZ0eqbbwmNluJvt3BvW7hxJBSEo8EwJ_eK5JMvnrmg79EnchnCqgMMeWBtg6qw7cV-HNKejS/pub" target="_blank">here</a></li>
       </ul>
-
+      <br>
       <div class="row">
         <div class="col-12 col-lg-8" style="display:block; margin: auto;">
           <img width="100%" src="assets/img/projects/pposac/suikaTraining.png" alt="a picture of 8 Unity-made suika games running concurrently, played by the model">
@@ -567,22 +701,21 @@ const projects = [
     `
   },
   {
-    title: 'CTO of OntarioSLCA',
+    title: 'SWE @ OntarioSLCA',
     cover: 'assets/img/projects/slca/2goats.jpg',
     location: 'ontarioslca:',
     liveSite: 'https://haltonchess.github.io/',
     github: 'https://github.com/HaltonChess/haltonchess.github.io',
     tech: ['HTML/CSS', 'JS', 'Bootstrap', 'Google API', 'SEO'],
     html: `
-      <h2>CTO of Ontario Student Led Chess Association</h2>
+      <h2>SWE @ Ontario Student Led Chess Association</h2>
       <ul>
-        <li>Designed a (gorgeous) website for <a href="https://haltonchess.github.io/" target="_blank">OntarioSLCA</a> using <b>Bootstrap</b></li>
-        <li>Regularly updated website to showcase new tournaments & articles</li>
-        <li>Optimized SEO, bringing the website from <b>#33</b> to the <b>#1</b> spot for our search terms ("high school chess league").</li>
-        <li>Programmed an algorithm in JS to automate the management of the club’s <b>Chess Leaderboard</b> on <b>Google Sheets</b></li>
         <li>Built <a href="https://haltonchess.github.io/PAWn" target="_blank"><b>PAWn</b></a> (Pairing Algorithm Wizard), a Swiss System-based pairing algorithm used to create match-ups in both team & individual competitions.</li>
+        <li>Implemented JS software to automate the management of the club’s <b>Chess Leaderboard</b> on <b>Google Sheets</b></li>
+        <li>Designed a (gorgeous) website for <a href="https://haltonchess.github.io/" target="_blank">OntarioSLCA</a> using <b>Bootstrap</b></li>
+        <li>Optimized SEO, bringing the website from <b>#33</b> to the <b>#1</b> spot for our search terms ("high school chess league").</li>
       </ul>
-
+      <br>
       <div class="row g-2">
         <div class="col-md-6"> 
           <img width="100%" src="assets/img/projects/slca/websiteHead.png" alt="Vidu Widyalankara's student led chess association website header">
@@ -655,6 +788,49 @@ const projects = [
     `
   },
   {
+    title: 'SummIT',
+    cover: 'assets/img/projects/ss/newsPostSummIT.jpg',
+    location: 'summit:',
+    github: 'https://github.com/VidsterBroyo/SummIT',
+    tech: ['Flask', 'BeautifulSoup4', 'Web Scraping', 'AWS'],
+    html: `
+      <h2>SummIT</h2>
+      <ul>
+        <li>A (formerly live) web browser designed to <b>remove high-bandwidth content</b> such as images, videos, ad trackers, and inessential JS scripts from websites</li>
+        <li>The primary intended use case is to allow those in <b>communities lacking high-speed internet</b> to still access important sites such as news sites</li>
+        <br>
+        <li>From testing, SummIT showed to result in a <b>92% reduction</b> in both download and upload sizes of sites</li>
+        <li>This translates to 92%:</li>
+        <ul class="subList">
+          <li>faster load times</li>
+          <li>lower internet costs</li>
+          <li>lower carbon emissions generated from servers</li>
+        </ul>
+        <li>Created using Flask & BeautifulSoup4</li>
+      </ul>
+      <br>
+      <div class="row">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <video width="100%" controls alt="a video demo of Vidu Widyalankara's project SummIT">
+            <source src="assets/img/projects/ss/SummITDemo.mp4" type="video/mp4">
+            a video demo of Vidu Widyalankara's project SummIT
+          </video>
+        </div>
+      </div>
+      <br>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <img width="100%" src="assets/img/projects/ss/demo.png" alt="a side-by-side comparison of home page of a news site accessed with and without summit. Photo courtesy of Vidu Widyalankara.">
+        </div>
+        <div class="col-md-6"> 
+          <img width="100%" src="assets/img/projects/ss/articlePostSummIT.jpg" alt="an article accessed through summit, with images & videos stripped">
+          <p class="caption">News article accessed through SummIT</p>
+        </div>
+      </div>
+
+    `
+  },
+  {
     title: 'StudySync - HTN \'24',
     cover: 'assets/img/projects/ssync/cover.jpg',
     location: 'hackTheNorthWin:',
@@ -690,49 +866,6 @@ const projects = [
     `
   },
   {
-    title: 'SummIT',
-    cover: 'assets/img/projects/ss/newsPostSummIT.jpg',
-    location: 'summit:',
-    github: 'https://github.com/VidsterBroyo/SummIT',
-    tech: ['Flask', 'BeautifulSoup4', 'Web Scraping', 'AWS'],
-    html: `
-      <h2>SummIT</h2>
-      <ul>
-        <li>A (formerly live) web browser designed to <b>remove high-bandwidth content</b> such as images, videos, ad trackers, and inessential JS scripts from websites</li>
-        <li>The primary intended use case is to allow those in <b>communities lacking high-speed internet</b> to still access important sites such as news sites</li>
-        <br>
-        <li>From testing, SummIT showed to result in a <b>92% reduction</b> in both download and upload sizes of sites</li>
-        <li>This translates to 92%:</li>
-        <ul class="subList">
-          <li>faster load times</li>
-          <li>lower internet costs</li>
-          <li>lower carbon emissions generated from servers</li>
-        </ul>
-        <li>Created using Flask & BeautifulSoup4</li>
-      </ul>
-
-      <div class="row">
-        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
-          <video width="100%" controls alt="a video demo of Vidu Widyalankara's project SummIT">
-            <source src="assets/img/projects/ss/SummITDemo.mp4" type="video/mp4">
-            a video demo of Vidu Widyalankara's project SummIT
-          </video>
-        </div>
-      </div>
-      <br>
-      <div class="row g-2">
-        <div class="col-md-6">
-          <img width="100%" src="assets/img/projects/ss/demo.png" alt="a side-by-side comparison of home page of a news site accessed with and without summit. Photo courtesy of Vidu Widyalankara.">
-        </div>
-        <div class="col-md-6"> 
-          <img width="100%" src="assets/img/projects/ss/articlePostSummIT.jpg" alt="an article accessed through summit, with images & videos stripped">
-          <p class="caption">News article accessed through SummIT</p>
-        </div>
-      </div>
-
-    `
-  },
-  {
     title: 'Twitter Sentiment Detection',
     cover: 'assets/img/projects/twitter/oldTwitter.png',
     location: 'twitterFeelsDetector:',
@@ -749,7 +882,7 @@ const projects = [
         <li> I included functionality for <b>real-time classification</b> on new tweet input using the trained model and vectorizer </li>
         <li> <a href="https://docs.google.com/presentation/d/e/2PACX-1vSOffim8oAY4UuielXu4wAQHRXD1puxc2szmvtBsZBtC6nnUoQOegfjHsK3UnQZdwZhD-QdjokBDBVx/pub?start=true&loop=false&delayms=5000" target="_blank">Project slidedeck</a> </li>
       </ul>
-
+      <br>
       <div class="row g-2">
         <div class="col-12 col-lg-7" style="display:block; margin: auto;">
           <img width="100%" src="assets/img/projects/twitter/happyWords.png" alt="wordcloud of 800,000 happy tweets. words like know, lol, thank, like, love.">
@@ -760,7 +893,7 @@ const projects = [
           <p class="caption">wordcloud of 800,000 sad tweets</p>
         </div>
         <div class="col-12 col-lg-7" style="display:block; margin: auto;">
-          <img width="100%" src="assets/img/projects/twitter/confusionMatrix.png" alt="confusion matrix.  too lazy to put numbers here but it's pretty good with some false positives. Photo courtesy of Vidu Widyalankara.">
+          <img width="100%" src="assets/img/projects/twitter/confusionMatrix.png" alt="confusion matrix.  it's pretty good with some false positives. Photo courtesy of Vidu Widyalankara.">
           <p class="caption">confusion matrix of model with highest accuracy<br>(0 = sad, 1 = happy)</p>
         </div>
       </div>
@@ -776,11 +909,11 @@ const projects = [
       <h2>Top 100 Minecraft Speedrun*</h2>
       <p style="text-align: center">*for Any% Glitchless 2-player 1.9-1.15 (Easy) category.... sorry if i baited you into thinking i'm actually good </p>
       <ul>
-        <li>My friend and I started our Summer after Grade 12 by trying to get a top 100 Minecraft speedrun in any category</li>
+        <li>My friend and I started our Summer before uni by trying to get a top 100 Minecraft speedrun in any category</li>
         <li>After tons of practices and attempts, we ended up with a <b>1:03:51.297</b> time, placing us <a target="_blank" href="https://www.speedrun.com/mc?h=Any_Glitchless_Co-op-Difficulty1%28Easy%29-random-seed-1-9-1-15-2-players&x=zd301qed-9l737pn1.4lxg24q2-rn1p34dn.5lm7wvjl-68kd9yql.jqzywvml-68k5jz82.jqz6vmm1"><b>93rd</b></a> in our category</li>
         <li>Watch the <a href="https://youtu.be/vlZ9YsXv1dc" target="_blank">VOD</a></li>
       </ul>
-
+      <br>
       <div class="row">
         <div class="col-12 col-lg-8" style="display:block; margin: auto;">
           <iframe width="100%" style="aspect-ratio: 16 / 10;" src="https://www.youtube.com/embed/vlZ9YsXv1dc?si=JVACnGrSH7AUImWB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

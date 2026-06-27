@@ -9,8 +9,8 @@
   <link rel="icon" id="favicon" href="/assets/img/favicon.ico" type="image/png" sizes="48x48">
 
   <!-- open graph properties -->
-  <meta property="og:title" content="Vidu Widyalankara | Student, Developer, Builder" />
-  <meta name="twitter:title" content="Vidu Widyalankara | Student, Developer, Builder">
+  <meta property="og:title" content="Vidu Widyalankara | SWE @ TMX · CS @ UWaterloo · Seeking W27 Internships" />
+  <meta name="twitter:title" content="Vidu Widyalankara | SWE @ TMX · CS @ UWaterloo · Seeking W27 Internships">
   <meta property="og:description" content="come visit my corner of the web 👾" />
   <meta property="og:image" content="https://vidsterbroyo.com/assets/img/favicon.png" />
   <meta property="og:url" content="https://vidsterbroyo.com" />
@@ -56,16 +56,16 @@
 
     <div id="marqueeContainer" onmouseenter="pauseScroll()" onmouseleave="resumeScroll()">
       <pre
-        id="marquee">reach for the <b>stars</b>         qwertyuiopasdfghjklzxcvbnm       lgtm (let's gamble, try merging)       please don't break anything       delete the test cases       no actually i don't think this purple color is obnoxious       this looks better on my machine       </pre>
+        id="marquee">reach for the <b>stars</b>         please don't break anything       delete the test cases       no actually i don't think this purple color is obnoxious       this looks better on my machine       who or where is localhost       shipit       </pre>
       <pre
-        id="followupMarquee">reach for the <b>stars</b>         qwertyuiopasdfghjklzxcvbnm       lgtm (let's gamble, try merging)       please don't break anything       delete the test cases       no actually i don't think this purple color is obnoxious       this looks better on my machine       </pre>
+        id="followupMarquee">reach for the <b>stars</b>         please don't break anything       delete the test cases       no actually i don't think this purple color is obnoxious       this looks better on my machine       who or where is localhost       shipit       </pre>
     </div>
 
     <header>
       <div id="heroHeader">
         <img id="star1" src="assets/img/star.png" alt="a cute, draggable star - because vidu widyalankara is a star himself"/>
 
-        <div id="nameContainer" onmouseover="triggerAnimation()">
+        <div id="nameContainer">
           <h1 id="name">
               <div><span>V</span><span>i</span><span>d</span><span>u</span>
                 <div>
@@ -73,12 +73,16 @@
                 </div>
             </h1>
           <p id="subtitle">aka&nbsp;&nbsp;<span style="font-family: 'Bitcount Grid Double'">vidsterbroyo</span></p>
-          <p id="desc">CS @ UWaterloo</p>
+          <p id="desc">SWE @ TMX&nbsp;&nbsp; | &nbsp;&nbsp;CS @ UWaterloo</p>
+          <p id="tagline"> I build software people use and communities that bring people together. </p>
+          <p id="seeking">Seeking 2027 Winter Internships</p>
 
-          <a id="githubA" href="https://github.com/VidsterBroyo" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a id="linkedinA" href="https://www.linkedin.com/in/viduw" target="_blank"><i
-              class="fa-brands fa-linkedin"></i></a>
-          <br><br><br>
+          <div id="heroLinks">
+            <a id="emailA" href="mailto:vidsterbroyo@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a id="githubA" href="https://github.com/VidsterBroyo" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a id="linkedinA" href="https://www.linkedin.com/in/viduw" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a id="resumeA" href="assets/resume.pdf" download="Vidu_Widyalankara_Resume.pdf" aria-label="Download resume"><i class="fa-solid fa-file-lines"></i></a>
+          </div>
         </div>
 
         <img id="star2" src="assets/img/star.png" alt="a cute, draggable star - because vidu widyalankara is a star himself">
@@ -159,7 +163,11 @@
 
       <div class="heartContainer">
         <div></div>
-        <div><img id="speech" src="assets/img/pixel-speech-bubble.gif" alt="want a change of scenery? click me!"></div>
+        <div>
+          <video id="speech" muted playsinline preload="none" poster="assets/img/pixel-speech-bubble-poster.webp" width="459" height="225" aria-label="want a change of scenery? click me!">
+            <source src="assets/img/pixel-speech-bubble.webm" type="video/webm">
+          </video>
+        </div>
         <div class="clickable"><img id="heart" class="clickable" onclick="changeBG()" src="assets/img/love.gif" alt="spinning heart"></div>
       </div>
     </main>
