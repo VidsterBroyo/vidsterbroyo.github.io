@@ -507,7 +507,6 @@ const projects = [
     title: 'Co-Lead SWE @ Minvest Finance',
     cover: 'assets/img/projects/mf/minvestStock.png',
     location: 'minvestFinance:',
-    liveSite: 'https://beta.minvestfinance.com/',
     tech: ['React.js', 'Typescript', 'AWS', 'Docker', 'Flask', 'Auth0'],
     html: `
       <h2>Minvest Finance</h2>
@@ -521,6 +520,8 @@ const projects = [
         <ul>
           <li>I also saved the company a minimum of CA$580+ per year by using AWS resources efficiently</li>
         </ul>
+        <li>The founder unfortunately stopped paying the AWS bills, so the live site is dead :(</li>
+        <li>But enjoy these pictures of what it looked like!</li>
       </ul>
       <br>
       <div class="row g-2">
