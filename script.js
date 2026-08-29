@@ -188,6 +188,7 @@ function setup() {
     marquee2.style.left = marquee1.offsetWidth + marquee1.offsetLeft + 200 + "px"
 
     setInterval(move, 30)
+    setupSpeechBubble()
   }, dialUpInterval * 5)
 
 
@@ -212,7 +213,6 @@ function setup() {
                                 `
   )
 
-  setupSpeechBubble()
   setupModalScrollLock()
   setupNameAnimation()
   setupResumeDownload()
@@ -279,19 +279,44 @@ function unlockPageScroll() {
 
 function setupSpeechBubble() {
   const speech = document.getElementById("speech")
-  if (!speech) return
+  const container = document.querySelector(".heartContainer")
+  if (!speech || !container) return
 
+  const gifSrc = "assets/img/pixel-speech-bubble.gif"
+  const canWebM = typeof speech.canPlayType === "function" && speech.canPlayType("video/webm") !== ""
   let played = false
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting || played) return
-      played = true
-      observer.disconnect()
-      speech.play()
-    })
-  }, { threshold: 0.3 })
 
-  observer.observe(speech)
+  function playGif() {
+    const img = document.createElement("img")
+    img.id = "speech"
+    img.src = gifSrc
+    img.alt = speech.getAttribute("aria-label") || ""
+    speech.replaceWith(img)
+  }
+
+  function play() {
+    if (played) return
+    played = true
+
+    if (!canWebM) {
+      playGif()
+      return
+    }
+
+    const playPromise = speech.play()
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(playGif)
+    }
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) {
+      observer.disconnect()
+      play()
+    }
+  }, { threshold: 0.2 })
+
+  observer.observe(container)
 }
 
 

@@ -767,6 +767,7 @@ a,
     transform: translate(-20px, 30px);
     width: 300px;
     height: auto;
+    pointer-events: none;
 }
 
 #heart {
