@@ -2,7 +2,11 @@
 
 @font-face {
     font-family: 'DOSVGA';
-    src: url('./assets/fonts/DOSVGA.ttf') format('truetype');
+    src: url('./assets/fonts/DOSVGA.woff2') format('woff2'),
+         url('./assets/fonts/DOSVGA.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -570,7 +574,7 @@ a,
     width: 100%;
     background-color: #000080;
     /* background-image: linear-gradient(to right, #00007B, #1085D2); */
-    font-family: "DOSVGA";
+    font-family: "DOSVGA", ui-monospace, monospace;
     color: white;
     height: 30px;
     line-height: 30px;
@@ -663,26 +667,33 @@ a,
 
 #locationBarLabel {
     display: inline-block;
-    font-family: "DOSVGA";
+    font-family: "DOSVGA", ui-monospace, monospace;
     color: black;
     margin: 0px;
     margin-right: 5px;
-    font-weight: normal;
+    font-weight: 400;
 }
 
 #locationBar {
     width: 60%;
     background-color: white;
     color: black;
-    font-family: "DOSVGA";
+    font-family: "DOSVGA", ui-monospace, monospace;
     display: inline-block;
     height: 24px;
     border: 2px solid black;
 }
 
-#locationBar p {
+#locationBar p,
+#netscapeLocation {
     margin: 0px;
     margin-left: 5px;
+    font-family: "DOSVGA", ui-monospace, monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 
