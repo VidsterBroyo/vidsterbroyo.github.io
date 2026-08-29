@@ -282,41 +282,43 @@ function setupSpeechBubble() {
   const container = document.querySelector(".heartContainer")
   if (!speech || !container) return
 
-  const gifSrc = "assets/img/pixel-speech-bubble.gif"
-  const canWebM = typeof speech.canPlayType === "function" && speech.canPlayType("video/webm") !== ""
   let played = false
-
-  function playGif() {
-    const img = document.createElement("img")
-    img.id = "speech"
-    img.src = gifSrc
-    img.alt = speech.getAttribute("aria-label") || ""
-    speech.replaceWith(img)
-  }
 
   function play() {
     if (played) return
     played = true
-
-    if (!canWebM) {
-      playGif()
-      return
-    }
-
-    const playPromise = speech.play()
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(playGif)
-    }
+    window.removeEventListener("scroll", onCheck)
+    window.removeEventListener("touchmove", onCheck)
+    window.removeEventListener("resize", onCheck)
+    speech.classList.add("is-playing")
   }
+
+  function isInView() {
+    const rect = container.getBoundingClientRect()
+    return rect.bottom > 40 && rect.top < window.innerHeight - 40 && rect.height > 0
+  }
+
+  function onCheck() {
+    if (isInView()) play()
+  }
+
+  window.addEventListener("scroll", onCheck, { passive: true })
+  window.addEventListener("touchmove", onCheck, { passive: true })
+  window.addEventListener("resize", onCheck)
 
   const observer = new IntersectionObserver((entries) => {
     if (entries.some((entry) => entry.isIntersecting)) {
       observer.disconnect()
       play()
     }
-  }, { threshold: 0.2 })
+  }, { threshold: 0, rootMargin: "80px 0px" })
 
-  observer.observe(container)
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      observer.observe(container)
+      onCheck()
+    })
+  })
 }
 
 
