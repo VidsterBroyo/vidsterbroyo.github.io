@@ -766,53 +766,51 @@ a,
     display: block;
     transform: translate(-20px, 30px);
     width: 300px;
-    height: auto;
     pointer-events: none;
 }
 
 #speech.speech-sprite {
     aspect-ratio: 459 / 225;
-    overflow: hidden;
-}
-
-#speech.speech-sprite img {
-    display: block;
-    width: 100%;
     height: auto;
+    overflow: hidden;
+    background-image: url("assets/img/pixel-speech-bubble-sprite.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0 0;
     image-rendering: pixelated;
 }
 
-#speech.speech-sprite.is-playing img {
-    animation: speechBubble 8.08s linear forwards;
+#speech.speech-sprite.is-playing {
+    animation: speechBubble 8.08s step-end forwards;
 }
 
 @keyframes speechBubble {
-    0.0000%, 12.3762% { transform: translateY(calc(-100% / 26 * 0)); }
-    12.3762%, 14.3564% { transform: translateY(calc(-100% / 26 * 1)); }
-    14.3564%, 15.5941% { transform: translateY(calc(-100% / 26 * 2)); }
-    15.5941%, 17.4505% { transform: translateY(calc(-100% / 26 * 3)); }
-    17.4505%, 18.6881% { transform: translateY(calc(-100% / 26 * 4)); }
-    18.6881%, 20.2970% { transform: translateY(calc(-100% / 26 * 5)); }
-    20.2970%, 21.2871% { transform: translateY(calc(-100% / 26 * 6)); }
-    21.2871%, 22.7723% { transform: translateY(calc(-100% / 26 * 7)); }
-    22.7723%, 24.6287% { transform: translateY(calc(-100% / 26 * 8)); }
-    24.6287%, 26.2376% { transform: translateY(calc(-100% / 26 * 9)); }
-    26.2376%, 27.2277% { transform: translateY(calc(-100% / 26 * 10)); }
-    27.2277%, 29.2079% { transform: translateY(calc(-100% / 26 * 11)); }
-    29.2079%, 31.5594% { transform: translateY(calc(-100% / 26 * 12)); }
-    31.5594%, 32.5495% { transform: translateY(calc(-100% / 26 * 13)); }
-    32.5495%, 34.1584% { transform: translateY(calc(-100% / 26 * 14)); }
-    34.1584%, 36.3861% { transform: translateY(calc(-100% / 26 * 15)); }
-    36.3861%, 37.9950% { transform: translateY(calc(-100% / 26 * 16)); }
-    37.9950%, 38.9851% { transform: translateY(calc(-100% / 26 * 17)); }
-    38.9851%, 40.0990% { transform: translateY(calc(-100% / 26 * 18)); }
-    40.0990%, 42.2030% { transform: translateY(calc(-100% / 26 * 19)); }
-    42.2030%, 43.9356% { transform: translateY(calc(-100% / 26 * 20)); }
-    43.9356%, 44.9257% { transform: translateY(calc(-100% / 26 * 21)); }
-    44.9257%, 46.1634% { transform: translateY(calc(-100% / 26 * 22)); }
-    46.1634%, 47.5248% { transform: translateY(calc(-100% / 26 * 23)); }
-    47.5248%, 49.0099% { transform: translateY(calc(-100% / 26 * 24)); }
-    49.0099%, 100.0000% { transform: translateY(calc(-100% / 26 * 25)); }
+    0% { background-position: 0 0%; }
+    12.3762% { background-position: 0 4%; }
+    14.3564% { background-position: 0 8%; }
+    15.5941% { background-position: 0 12%; }
+    17.4505% { background-position: 0 16%; }
+    18.6881% { background-position: 0 20%; }
+    20.2970% { background-position: 0 24%; }
+    21.2871% { background-position: 0 28%; }
+    22.7723% { background-position: 0 32%; }
+    24.6287% { background-position: 0 36%; }
+    26.2376% { background-position: 0 40%; }
+    27.2277% { background-position: 0 44%; }
+    29.2079% { background-position: 0 48%; }
+    31.5594% { background-position: 0 52%; }
+    32.5495% { background-position: 0 56%; }
+    34.1584% { background-position: 0 60%; }
+    36.3861% { background-position: 0 64%; }
+    37.9950% { background-position: 0 68%; }
+    38.9851% { background-position: 0 72%; }
+    40.0990% { background-position: 0 76%; }
+    42.2030% { background-position: 0 80%; }
+    43.9356% { background-position: 0 84%; }
+    44.9257% { background-position: 0 88%; }
+    46.1634% { background-position: 0 92%; }
+    47.5248% { background-position: 0 96%; }
+    49.0099%, 100% { background-position: 0 100%; }
 }
 
 #heart {
