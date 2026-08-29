@@ -405,39 +405,50 @@ function changeBG() {
 // look i could turn this into a json file but im too lazy to turn all the ' into "
 const projects = [
   {
-    title: 'SWE @ TMX Group (TSX/MX)',
+    title: 'SWE @ Toronto Stock Exchange',
     cover: 'assets/img/projects/tmx/tmx_cover.jpg',
     location: 'TheFutureIsYoursToSee:',
     liveSite: 'https://www.tmx.com/',
-    tech: ['Python', 'SQL', 'C++', 'Kubernetes'],
+    tech: ['Python', 'SQL', 'C++', 'Bash', 'Kubernetes'],
     html: `
-      <h2>TMX Group (TSX/MX)</h2>
+      <h2>Toronto Stock Exchange</h2>
       <ul>
-        <li>As a <b>Software Engineer</b> @ TMX, I maintain and extend the <b>automated monthly billing</b> using Python, SQL, and C++</li>
+        <li>As a <b>Software Engineer</b> @ TSX, I maintained and extended the <b>automated monthly billing</b> using Python, SQL, and C++</li>
         <li>Wrote scripts and SQL to process <b>millions of monthly transactions</b> across 30+ clients on TMX's AlphaX US exchange</li>
         <li>Diagnosed & resolved production failures in Lambda & S3-based pipelines powering monthly invoice billing for nearly <b>100 institutional MX & CDCC clients</b> via root-cause analysis of CloudWatch logs</li> 
         <ul>
-          <li> MX = Montreal Exchange, Canada's sole derivatives exchange </li>
-          <li> CDCC = Canadian Derivatives Clearing Corporation </li>
+          <li>MX = Montreal Exchange, Canada's sole derivatives exchange</li>
+          <li>CDCC = Canadian Derivatives Clearing Corporation</li>
         </ul>
-        <li> Played a lot of foosball, lost a lot of foosball </li>
+        <li>Built a Bash/Python pipeline that queried an Oracle DB and generated DOCX/XLSX/PDF/CSV reports, replacing <b>SAP BOE</b> for 40+ internal reports and cutting licensing costs</li>
+        <ul>
+          <li>BOE = BusinessObjects, SAP's ancient reporting tool that we were very much still paying for</li>
+        </ul>
+        <li>Played a lot of foosball, lost a lot of foosball, learnt a lot about the art of foosball</li>
       </ul>
       <br>
       <div class="row g-2">
         <div class="col-12 col-lg-8" style="display:block; margin: auto;">
           <img width="100%" src="assets/img/projects/tmx/tmxInterns.jpg" alt="TMX summer interns. Photo courtesy of Vidu Widyalankara.">
-          <p class="caption">the TMX S26 interns!</p>
+          <p class="caption">the TSX S26 interns!</p>
         </div>
       </div>
 
-      <div class="row g-2 justify-content-center">
+      <div class="row g-2 justify-content-center equal-photos">
         <div class="col-md-6 col-lg-4">
-          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/tmx/baseball.webp" alt="TMX interns at a Toronto Blue Jays game. Photo courtesy of Vidu Widyalankara.">
-          <p class="caption">TMX at a Jays game (we won btw)</p>
+          <img src="assets/img/projects/tmx/baseball.webp" alt="TMX interns at a Toronto Blue Jays game. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">TSX at a Jays game (we won btw)</p>
         </div>
         <div class="col-md-6 col-lg-4">
-          <img style="height: calc(100% - 40px); width: 100%; object-fit: cover;" src="assets/img/projects/tmx/tmxGames.jpg" alt="TMX interns playing games together. Photo courtesy of Vidu Widyalankara.">
+          <img src="assets/img/projects/tmx/tmxGames.jpg" alt="TMX interns playing games together. Photo courtesy of Vidu Widyalankara.">
           <p class="caption">me vs. my friend in street fighter games in the lunch room (i won btw)</p>
+        </div>
+      </div>
+
+      <div class="row g-2">
+        <div class="col-12 col-lg-8" style="display:block; margin: auto;">
+          <img width="100%" src="assets/img/projects/tmx/closingMarket.jpg" alt="TMX summer interns closing the market. Photo courtesy of Vidu Widyalankara.">
+          <p class="caption">the interns closing the market!</p>
         </div>
       </div>
     `
@@ -450,7 +461,7 @@ const projects = [
     tech: ['Node.js', 'Typescript', 'Prisma', 'Docker', 'Kubernetes', 'GitHub Actions'],
     html: `
       <h2>Hack The North</h2>
-      <h4 style="text-align: center">canada's largest hackathon 🤯</h3>
+      <h4 style="text-align: center">canada's largest hackathon 🤯</h4>
       <br>
       <ul>
         <li>As a <b>Backend Developer</b>, I improved the sponsor interface for <b>500+ sponsors</b> by designing schema changes that allowed for easier data entry, better tracking, and more perks </li>
@@ -464,7 +475,7 @@ const projects = [
           <ul>
             <li>While I was at it, I had these PRs also automate adding company logos to our sponsor section, <b>saving FE 15+ hours</b> of work (yw FE)</li>
           </ul>
-          <li>Sent out email blasts to 500+ subscribed hackers everytime a batch of new postings came out!</li>
+          <li>Sent out email blasts to 500+ subscribed hackers every time a batch of new postings came out!</li>
         </ul>
         <li>Improved internal tools using a Typescript-based pipeline that brings event ideas submitted on Slack into a centralized Notion database, enabling easier & more visible tracking of 1000s of ideas</li>
       </ul>
@@ -483,12 +494,12 @@ const projects = [
     location: 'techForSocialGood:',
     liveSite: 'https://uwblueprint.org',
     github: 'https://github.com/uwblueprint/mississippi-farm-to-school-network',
-    tech: ['Angular', 'Typescript', 'Sequelize', 'Docker', 'GraphQL'],
+    tech: ['Svelte', 'Typescript', 'Prisma', 'Docker', 'GraphQL'],
     html: `
       <h2>UWBlueprint</h2>
       <ul>
-        <li>I'm a developer on the <b>Mississippi School to Food Network</b> team, where we're helping connect Mississippi schools with local food producers to <b>keep kids fed</b>.</li>
-        <li>We're currently developing an Angular app to make it easier for farms & educators to connect</li>
+        <li>I'm a developer on the <b>Mississippi Farm to School Network</b> team, where we're helping connect Mississippi schools with local food producers to <b>keep kids fed</b>.</li>
+        <li>We're currently developing a Svelte app to make it easier for farms & educators to connect</li>
         <li>I've been personally responsible for the creation of an optimized PostgreSQL schema to support <b>180 farms and counting</b>, as well as CRUD services to allow admins to create site-wide announcements</li>    
       </ul>
       <br>
@@ -734,7 +745,7 @@ const projects = [
       
       <div class="row">
         <div class="col-12 col-lg-6" style="display:block; margin: auto; margin-top: 10px">
-          <img width="100%" src="assets/img/projects/slca/leaderboard.png" alt="picture of SCLA leaderboard on Vidu Widyalankara's SLCA website">
+          <img width="100%" src="assets/img/projects/slca/leaderboard.png" alt="picture of SLCA leaderboard on Vidu Widyalankara's SLCA website">
         </div>
       </div>
 
@@ -768,7 +779,7 @@ const projects = [
 
       <br>
 
-      <div class="row g-10">
+      <div class="row g-5">
         <div class="col-md-12 col-lg-8" style="display:block; margin: auto;">
           <img width="100%" src="assets/img/projects/hackgt/techStack.png" alt="our awesome tech stack. Photo courtesy of Vidu Widyalankara.">
           <br><br>
@@ -878,7 +889,7 @@ const projects = [
         <li> I built a <a href="https://www.kaggle.com/code/viduwidyalankara/twitter-sentiment-detection-vidu-widyalankara/notebook" target="_blank">machine learning model</a> to classify the sentiment of tweets (positive or negative) using <b>1.6M pre-labeled tweets</b> </li>
         <li> I performed <b>data preprocessing</b> by normalizing timestamps, converting time zones to EST, and removing noisy text/stopwords </li>
         <li> I performed <b>EDA</b>, exploring tweet frequency by sentiment and time of day, generating word clouds, and comparing the average tweet length based on sentiment</li>
-        <li> I trained two different models, <b>Random Forest and XGBoost</b>, and hypertuned them to find the best possible hyperparameters</li>
+        <li> I trained two different models, <b>Random Forest and XGBoost</b>, and tuned their hyperparameters to find the best possible configuration</li>
         <li> The best test accuracy obtained was <b>~78.5%</b>, achieved using the XGBoost model with 1,000,000 training tweets and 2500 trees</li>
         <li> I included functionality for <b>real-time classification</b> on new tweet input using the trained model and vectorizer </li>
         <li> <a href="https://docs.google.com/presentation/d/e/2PACX-1vSOffim8oAY4UuielXu4wAQHRXD1puxc2szmvtBsZBtC6nnUoQOegfjHsK3UnQZdwZhD-QdjokBDBVx/pub?start=true&loop=false&delayms=5000" target="_blank">Project slidedeck</a> </li>
